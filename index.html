@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analyst Portfolio | Data, Business & Research Insights</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        bgDark: '#090a0f',
+                        surface: '#12141c',
+                        surfaceMuted: '#1e2230',
+                        primaryTxt: '#f8fafc',
+                        mutedTxt: '#94a3b8',
+                        accent: '#06b6d4',
+                        accentHover: '#22d3ee',
+                        accentMuted: 'rgba(6, 182, 212, 0.1)',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #090a0f; color: #f8fafc; }
+        .code-font { font-family: 'JetBrains Mono', monospace; }
+    </style>
+</head>
+<body class="selection:bg-accent selection:text-bgDark antialiased">
+
+    <nav class="fixed top-0 w-full bg-bgDark/80 backdrop-blur-md border-b border-surfaceMuted z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <a href="#home" class="code-font text-accent font-bold text-lg tracking-wider">&lt;ANALYST.PORTFOLIO&gt;</a>
+            
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-mutedTxt">
+                <a href="#home" class="hover:text-primaryTxt transition-colors">Home</a>
+                <a href="#about" class="hover:text-primaryTxt transition-colors">About</a>
+                <a href="#projects" class="hover:text-primaryTxt transition-colors">Projects</a>
+                <a href="#experience" class="hover:text-primaryTxt transition-colors">Experience</a>
+                <a href="#skills" class="hover:text-primaryTxt transition-colors">Skills</a>
+                <a href="#contact" class="px-4 py-2 border border-accent/30 text-accent rounded hover:bg-accentMuted transition-all duration-200">Contact</a>
+            </div>
+
+            <button id="menu-btn" class="md:hidden text-primaryTxt focus:outline-none" aria-label="Toggle Menu">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden bg-surface border-b border-surfaceMuted px-6 py-4 space-y-4">
+            <a href="#home" class="block text-mutedTxt hover:text-primaryTxt">Home</a>
+            <a href="#about" class="block text-mutedTxt hover:text-primaryTxt">About</a>
+            <a href="#projects" class="block text-mutedTxt hover:text-primaryTxt">Projects</a>
+            <a href="#experience" class="block text-mutedTxt hover:text-primaryTxt">Experience</a>
+            <a href="#skills" class="block text-mutedTxt hover:text-primaryTxt">Skills</a>
+            <a href="#contact" class="block text-accent hover:underline">Contact</a>
+        </div>
+    </nav>
+
+    <section id="home" class="min-h-screen flex items-center justify-center pt-24 px-6 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-[0.02] pointer-events-none bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:40px_40px]"></div>
+        
+        <div class="max-w-4xl text-center z-10">
+            <p class="code-font text-accent uppercase tracking-widest text-xs md:text-sm mb-4 font-semibold">Available for Opportunities</p>
+            <h1 class="text-4xl md:text-7xl font-bold tracking-tight text-primaryTxt mb-6">
+                Transforming Raw Data into <br class="hidden md:inline">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-blue-400">Strategic Business Intelligence</span>
+            </h1>
+            <p class="text-lg md:text-xl text-mutedTxt max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+                Graduate Analyst specialized in translating complex data architectures into clear executive decisions. Blending predictive modeling, statistical research, and commercial strategy to solve modern organizational challenges.
+            </p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#projects" class="w-full sm:w-auto px-8 py-4 bg-accent text-bgDark font-semibold rounded hover:bg-accentHover transition-all duration-200 text-center shadow-lg shadow-accent/10">
+                    View My Work
+                </a>
+                <a href="#contact" class="w-full sm:w-auto px-8 py-4 bg-surface border border-surfaceMuted text-primaryTxt font-medium rounded hover:bg-surfaceMuted transition-all duration-200 text-center">
+                    Let's Collaborate
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-surfaceMuted max-w-7xl mx-auto">
+
+    <section id="about" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <div class="lg:col-span-4">
+                <p class="code-font text-accent text-sm uppercase tracking-wider mb-2">// Profile</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-primaryTxt">The Narrative</h2>
+            </div>
+            <div class="lg:col-span-8 space-y-6 text-mutedTxt text-base md:text-lg leading-relaxed font-light">
+                <p>
+                    I approach analysis not merely as a technical calculation, but as an optimization puzzle centered around organizational growth. My academic foundation provided rigorous exposure to statistical validation, quantitative research, and predictive engineering. This helps me translate messy data points into structured operational narratives.
+                </p>
+                <p>
+                    Whether constructing machine learning models to assess health risks, balancing user preference matrix constraints within recommender platforms, or evaluating user interaction networks, I focus on uncovering measurable mechanics. I design pipelines that empower teams to shift from reactive reporting to proactive, data-driven strategy.
+                </p>
+                <div class="pt-4 grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm code-font border-t border-surfaceMuted">
+                    <div>
+                        <span class="text-accent block text-xs uppercase mb-1">Core Competencies</span>
+                        <span class="text-primaryTxt">Data Architecture, Business Insights, Research Synthesis</span>
+                    </div>
+                    <div>
+                        <span class="text-accent block text-xs uppercase mb-1">Target Infrastructure</span>
+                        <span class="text-primaryTxt">Enterprise Dashboards, Predictive Pipelines, Market Intelligence</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-surfaceMuted max-w-7xl mx-auto">
+
+    <section id="projects" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="mb-12">
+            <p class="code-font text-accent text-sm uppercase tracking-wider mb-2">// Empirical Evidence</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-primaryTxt">Case Studies & Projects</h2>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="bg-surface border border-surfaceMuted p-8 rounded-lg group hover:border-accent/40 transition-all duration-300 flex flex-col justify-between cursor-pointer" onclick="openModal('modal-heart')">
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="code-font text-xs text-accent bg-accentMuted px-3 py-1 rounded">Data & Predictive Analytics</span>
+                        <svg class="w-5 h-5 text-mutedTxt group-hover:text-accent transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primaryTxt mb-3 group-hover:text-accent transition-colors">Heart Disease Prediction Engine</h3>
+                    <p class="text-mutedTxt font-light mb-6 line-clamp-3">
+                        A clinical screening utility deploying optimized classification algorithms to identify high-risk cardiac patients, achieving high sensitivity thresholds required for medical diagnostic tools.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-2 text-xs code-font text-mutedTxt">
+                    <span class="bg-bgDark px-2 py-1 rounded border border-surfaceMuted">Python</span>
+                    <span class="bg-bgDark px-2 py-1 rounded border border-surfaceMuted">Scikit-Learn</span>
+                    <span class="bg-bgDark px-2 py-1 rounded border border-surfaceMuted">Pandas</span>
+                    <span class="bg-bgDark px-2 py-1 rounded border border-surfaceMuted">Matplotlib</span>
+                </div>
+            </div>
+
+            <div class="bg-surface border border-surfaceMuted p-8 rounded-lg group hover:border-accent/40 transition-all duration-300 flex flex-col justify-between cursor-pointer" onclick="openModal('modal-movie')">
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="code-font text-xs text-accent bg-accentMuted px-3 py-1 rounded">Insights & Recommendations</span>
+                        <svg class="w-5 h-5 text-mutedTxt group-hover:text-accent transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primaryTxt mb-3 group-hover:text-accent transition-colors">MovieLens Collaborative Filter</h3>
+                    <p class="text-mutedTxt font-light mb-6 line-clamp-3">
+                        An enterprise-grade personalization framework engineered to optimize consumer content recommendations, balancing ranking accuracy against performance limits.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-2 text-xs code-font text-mutedTxt">
+                    <span class="bg-bgDark px-2 py-1 rounded border border-surfaceMuted">Python</span>
+                    <span class="bg-bgDark px-2 py-1 rounded border border-surfaceMuted">Collaborative Filtering</span>
+                    <span class="bg-bgDark px-2 py-1 rounded border border-surfaceMuted">NumPy</span>
+                    <span class="bg-bgDark px-2 py-1 rounded border border-surfaceMuted">Seaborn</span>
+                </div>
+            </div>
+
+            <div class="bg-surface border border-surfaceMuted p-8 rounded-lg group hover:border-accent/40 transition-all duration-300 flex flex-col justify-between cursor-pointer" onclick="openModal('modal-sailor')">
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="code-font text-xs text-accent bg-accentMuted px-3 py-1 rounded">Research & Network Analysis</span>
+                        <svg class="w-5 h-5 text-mutedTxt group-hover:text-accent transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primaryTxt mb-3 group-hover:text-accent transition-colors">Sailor Shift Network Matrix</h3>
+                    <p class="text-mutedTxt font-light mb-6 line-clamp-3">
+                        A quantitative graph-theory evaluation of crew interaction dynamics, identifying communication vulnerabilities and personnel dependencies in high-stakes operational environments.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-2 text-xs code-font text-mutedTxt">
+                    <span class="bg-bgDark px-2 py-1 rounded border border-surfaceMuted">NetworkX</span>
+                    <span class="bg-bgDark px-2 py-1 rounded border border-surfaceMuted">Graph Theory</span>
+                    <span class="bg-bgDark px-2 py-1 rounded border border-surfaceMuted">Python</span>
+                    <span class="bg-bgDark px-2 py-1 rounded border border-surfaceMuted">Gephi</span>
+                </div>
+            </div>
+
+            <div class="bg-surface border border-surfaceMuted p-8 rounded-lg group hover:border-accent/40 transition-all duration-300 flex flex-col justify-between cursor-pointer" onclick="openModal('modal-legal')">
+                <div>
+                    <div class="flex items-center justify-between mb-6">
+                        <span class="code-font text-xs text-accent bg-accentMuted px-3 py-1 rounded">Business Automation & AI</span>
+                        <svg class="w-5 h-5 text-mutedTxt group-hover:text-accent transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-primaryTxt mb-3 group-hover:text-accent transition-colors">GPT Legal Document Engine</h3>
+                    <p class="text-mutedTxt font-light mb-6 line-clamp-3">
+                        An automated document parsing utility utilizing Large Language Models to accelerate regulatory discovery, contract audits, and corporate compliance parsing.
+                    </p>
+                </div>
+                <div class="flex flex-wrap gap-2 text-xs code-font text-mutedTxt">
+                    <span class="bg-bgDark px-2 py-1 rounded border border-surfaceMuted">OpenAI API</span>
+                    <span class="bg-bgDark px-2 py-1 rounded border border-surfaceMuted">LangChain</span>
+                    <span class="bg-bgDark px-2 py-1 rounded border border-surfaceMuted">Streamlit</span>
+                    <span class="bg-bgDark px-2 py-1 rounded border border-surfaceMuted">Vector DB</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-surfaceMuted max-w-7xl mx-auto">
+
+    <section id="experience" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+            <div class="lg:col-span-4">
+                <p class="code-font text-accent text-sm uppercase tracking-wider mb-2">// Professional Timeline</p>
+                <h2 class="text-3xl md:text-4xl font-bold text-primaryTxt">Relevant Experience</h2>
+            </div>
+            
+            <div class="lg:col-span-8 space-y-12">
+                <div class="relative border-l border-surfaceMuted pl-6 ml-2">
+                    <div class="absolute -left-[6px] top-1.5 w-[11px] h-[11px] bg-accent rounded-full"></div>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-3">
+                        <div>
+                            <h3 class="text-xl font-bold text-primaryTxt">Data & Analytics Associate</h3>
+                            <p class="text-accent text-sm font-medium">Alpha Analytics Consulting</p>
+                        </div>
+                        <span class="code-font text-xs text-mutedTxt mt-1 sm:mt-0">Jan 2025 - Present</span>
+                    </div>
+                    <p class="text-mutedTxt text-sm md:text-base font-light mb-4">
+                        Leading the translation of raw enterprise telemetry into client-facing interactive executive dashboards. Directly shaping functional strategy for mid-market clients across retail and tech ecosystems.
+                    </p>
+                    <ul class="space-y-2 text-sm text-mutedTxt font-light list-disc list-inside">
+                        <li>Engineered structural SQL data clearing systems, reducing automated metric validation latencies by an estimated 25% across large tabular databases.</li>
+                        <li>Designed three tailored Power BI reporting frameworks that helped operational managers isolate bottlenecks, saving an estimated 14 hours per week in manual report compiling.</li>
+                        <li>Collaborated with cross-functional project leads to model customer retention drivers, isolating actionable cohorts that improved target accuracy.</li>
+                    </ul>
+                    <div class="mt-4 flex flex-wrap gap-2 text-xs code-font text-mutedTxt">
+                        <span class="bg-surface px-2 py-1 rounded">SQL Server</span>
+                        <span class="bg-surface px-2 py-1 rounded">Power BI</span>
+                        <span class="bg-surface px-2 py-1 rounded">Excel (VBA)</span>
+                        <span class="bg-surface px-2 py-1 rounded">Python</span>
+                    </div>
+                </div>
+
+                <div class="relative border-l border-surfaceMuted pl-6 ml-2">
+                    <div class="absolute -left-[6px] top-1.5 w-[11px] h-[11px] bg-surfaceMuted rounded-full"></div>
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-3">
+                        <div>
+                            <h3 class="text-xl font-bold text-primaryTxt">Quantitative Research Assistant</h3>
+                            <p class="text-accent text-sm font-medium">University Department of Economics</p>
+                        </div>
+                        <span class="code-font text-xs text-mutedTxt mt-1 sm:mt-0">Sep 2023 - Dec 2024</span>
+                    </div>
+                    <p class="text-mutedTxt text-sm md:text-base font-light mb-4">
+                        Supported empirical studies assessing local micro-market fluctuations. Managed massive demographic and macroeconomic structured indices to ensure model accuracy.
+                    </p>
+                    <ul class="space-y-2 text-sm text-mutedTxt font-light list-disc list-inside">
+                        <li>Cleaned and structured panel datasets with over one million records from public and proprietary economic APIs.</li>
+                        <li>Constructed robust multivariable linear and logistic regression layers to extract underlying signals from unstructured noise.</li>
+                        <li>Co-authored internal technical documentation and visualized complex trends for senior research stakeholders.</li>
+                    </ul>
+                    <div class="mt-4 flex flex-wrap gap-2 text-xs code-font text-mutedTxt">
+                        <span class="bg-surface px-2 py-1 rounded">R Studio</span>
+                        <span class="bg-surface px-2 py-1 rounded">Stata</span>
+                        <span class="bg-surface px-2 py-1 rounded">Python</span>
+                        <span class="bg-surface px-2 py-1 rounded">Regression Modeling</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-surfaceMuted max-w-7xl mx-auto">
+
+    <section id="skills" class="py-24 px-6 max-w-7xl mx-auto">
+        <div class="mb-12">
+            <p class="code-font text-accent text-sm uppercase tracking-wider mb-2">// Capabilities Matrix</p>
+            <h2 class="text-3xl md:text-4xl font-bold text-primaryTxt">Technical Proficiency</h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="bg-surface border border-surfaceMuted p-6 rounded-lg">
+                <h3 class="code-font text-accent text-xs uppercase font-bold tracking-widest mb-4">Analytics & Modelling</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-bgDark border border-surfaceMuted text-primaryTxt px-3 py-1.5 rounded text-sm font-light">Statistical Analysis</span>
+                    <span class="bg-bgDark border border-surfaceMuted text-primaryTxt px-3 py-1.5 rounded text-sm font-light">Predictive Modeling</span>
+                    <span class="bg-bgDark border border-surfaceMuted text-primaryTxt px-3 py-1.5 rounded text-sm font-light">Machine Learning</span>
+                    <span class="bg-bgDark border border-surfaceMuted text-primaryTxt px-3 py-1.5 rounded text-sm font-light">Hypothesis Testing</span>
+                    <span class="bg-bgDark border border-surfaceMuted text-primaryTxt px-3 py-1.5 rounded text-sm font-light">Time Series</span>
+                </div>
+            </div>
+            <div class="bg-surface border border-surfaceMuted p-6 rounded-lg">
+                <h3 class="code-font text-accent text-xs uppercase font-bold tracking-widest mb-4">Technical Stack</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-bgDark border border-surfaceMuted text-primaryTxt px-3 py-1.5 rounded text-sm font-light">Python (Scikit/Pandas)</span>
+                    <span class="bg-bgDark border border-surfaceMuted text-primaryTxt px-3 py-1.5 rounded text-sm font-light">SQL (PostgreSQL/TSQL)</span>
+                    <span class="bg-bgDark border border-surfaceMuted text-primaryTxt px-3 py-1.5 rounded text-sm font-light">R Studio</span>
+                    <span class="bg-bgDark border border-surfaceMuted text-primaryTxt px-3 py-1.5 rounded text-sm font-light">Git/GitHub Pipeline</span>
+                    <span class="bg-bgDark border border-surfaceMuted text-primaryTxt px-3 py-1.5 rounded text-sm font-light">NoSQL Architecture</span>
+                </div>
+            </div>
+            <div class="bg-surface border border-surfaceMuted p-6 rounded-lg">
+                <h3 class="code-font text-accent text-xs uppercase font-bold tracking-widest mb-4">Business & Visualization</h3>
+                <div class="flex flex-wrap gap-2">
+                    <span class="bg-bgDark border border-surfaceMuted text-primaryTxt px-3 py-1.5 rounded text-sm font-light">Power BI / Tableau</span>
+                    <span class="bg-bgDark border border-surfaceMuted text-primaryTxt px-3 py-1.5 rounded text-sm font-light">Advanced MS Excel</span>
+                    <span class="bg-bgDark border border-surfaceMuted text-primaryTxt px-3 py-1.5 rounded text-sm font-light">Requirements Gathering</span>
+                    <span class="bg-bgDark border border-surfaceMuted text-primaryTxt px-3 py-1.5 rounded text-sm font-light">Executive Reporting</span>
+                    <span class="bg-bgDark border border-surfaceMuted text-primaryTxt px-3 py-1.5 rounded text-sm font-light">KPI Mapping</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-surfaceMuted max-w-7xl mx-auto">
+
+    <section id="contact" class="py-24 px-6 max-w-4xl mx-auto text-center">
+        <p class="code-font text-accent text-sm uppercase tracking-wider mb-2">// Inquiries</p>
+        <h2 class="text-3xl md:text-5xl font-bold text-primaryTxt mb-6">Initiate Connection</h2>
+        <p class="text-mutedTxt font-light mb-10 max-w-xl mx-auto leading-relaxed">
+            I am actively evaluating opportunities within Data, Business, Research, or Insights Analytics pipelines. Reach out via email, phone, or standard corporate channels.
+        </p>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 code-font text-sm mb-12">
+            <a href="mailto:your.email@example.com" class="bg-surface border border-surfaceMuted p-4 rounded hover:border-accent transition-colors block">
+                <span class="text-accent block text-xs mb-1">EMAIL</span>
+                your.email@example.com
+            </a>
+            <a href="tel:+1234567890" class="bg-surface border border-surfaceMuted p-4 rounded hover:border-accent transition-colors block">
+                <span class="text-accent block text-xs mb-1">PHONE</span>
+                +1 (234) 567-890
+            </a>
+            <a href="https://linkedin.com/in/yourprofile" target="_blank" class="bg-surface border border-surfaceMuted p-4 rounded hover:border-accent transition-colors block">
+                <span class="text-accent block text-xs mb-1">LINKEDIN</span>
+                /in/yourprofile
+            </a>
+            <a href="https://github.com/yourusername" target="_blank" class="bg-surface border border-surfaceMuted p-4 rounded hover:border-accent transition-colors block">
+                <span class="text-accent block text-xs mb-1">GITHUB</span>
+                /yourusername
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-surface border-t border-surfaceMuted py-8 text-center text-xs code-font text-mutedTxt">
+        <p>&copy; 2026 Analyst Portfolio. Structured for Recruiter Review.</p>
+    </footer>
+
+    <div id="modal-heart" class="fixed inset-0 bg-bgDark/90 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-surface border border-surfaceMuted w-full max-w-3xl rounded-lg max-h-[90vh] overflow-y-auto p-6 md:p-8 relative">
+            <button onclick="closeModal('modal-heart')" class="absolute top-4 right-4 text-mutedTxt hover:text-primaryTxt font-bold code-font text-lg">&times; CLOSE</button>
+            <span class="code-font text-xs text-accent uppercase tracking-widest block mb-2">Deep-Dive Case Study</span>
+            <h3 class="text-2xl md:text-3xl font-bold text-primaryTxt mb-6 border-b border-surfaceMuted pb-4">Heart Disease Prediction Engine</h3>
+            
+            <div class="space-y-6 text-mutedTxt font-light text-sm md:text-base">
+                <div>
+                    <h4 class="font-bold text-primaryTxt uppercase text-xs code-font text-accent mb-1">The Problem</h4>
+                    <p>Clinical diagnostic systems face severe penalties for false negatives. Missing an active cardiovascular vulnerability exposes patients to extreme medical risks. The goal was to build a highly sensitive screening engine optimized to isolate underlying indicators without generating excessive false positives.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-primaryTxt uppercase text-xs code-font text-accent mb-1">The Technical Solution</h4>
+                    <p>Implemented an iterative optimization pipeline using Python and Scikit-Learn. Extracted features from public clinical parameters, applying standard scaling and handling imbalances. Evaluated Logistic Regression, Random Forest, and Support Vector Machine models. Hyperparameter tuning focused on maximizing recall alongside stable precision.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-primaryTxt uppercase text-xs code-font text-accent mb-1">The Data Outcome</h4>
+                    <p>The optimized ensemble configuration achieved an algorithmic sensitivity (recall) of 92%, successfully identifying true positive risk vectors while maintaining overall classification validation stability.</p>
+                </div>
+                <div class="bg-bgDark p-4 rounded border border-surfaceMuted code-font text-xs">
+                    <span class="text-accent block font-bold mb-1">Recommendations for Growth:</span>
+                    To scale this architecture, future work could add SHAP (Shapley Additive exPlanations) values to explain individual predictions to medical professionals. Adding an automated pipeline step to ingest new patient telemetry would keep the underlying training weights fresh.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-movie" class="fixed inset-0 bg-bgDark/90 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-surface border border-surfaceMuted w-full max-w-3xl rounded-lg max-h-[90vh] overflow-y-auto p-6 md:p-8 relative">
+            <button onclick="closeModal('modal-movie')" class="absolute top-4 right-4 text-mutedTxt hover:text-primaryTxt font-bold code-font text-lg">&times; CLOSE</button>
+            <span class="code-font text-xs text-accent uppercase tracking-widest block mb-2">Deep-Dive Case Study</span>
+            <h3 class="text-2xl md:text-3xl font-bold text-primaryTxt mb-6 border-b border-surfaceMuted pb-4">MovieLens Recommendation Matrix</h3>
+            
+            <div class="space-y-6 text-mutedTxt font-light text-sm md:text-base">
+                <div>
+                    <h4 class="font-bold text-primaryTxt uppercase text-xs code-font text-accent mb-1">The Problem</h4>
+                    <p>Digital content distribution platforms face user drop-off if recommendation algorithms fail to serve personalized choices. The challenge was to process high-volume user preference datasets and generate tailored recommendations within structural memory boundaries.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-primaryTxt uppercase text-xs code-font text-accent mb-1">The Technical Solution</h4>
+                    <p>Constructed a Python filtering environment utilizing NumPy and Pandas matrices. Evaluated memory-based collaborative algorithms by balancing user-to-user similarities with product clustering. Managed missing value adjustments using item mean baseline calculations to prevent bias in sparse rows.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-primaryTxt uppercase text-xs code-font text-accent mb-1">The Data Outcome</h4>
+                    <p>Optimized user recommendation indexing to reach a Mean Squared Error (MSE) value of 0.82, showing clear alignment between predicted preference layers and actual validation behaviors.</p>
+                </div>
+                <div class="bg-bgDark p-4 rounded border border-surfaceMuted code-font text-xs">
+                    <span class="text-accent block font-bold mb-1">Recommendations for Growth:</span>
+                    The platform could be improved by moving from memory-based approaches to Matrix Factorization (SVD) using the Surprise library. This reduces memory use during high-volume spikes.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-sailor" class="fixed inset-0 bg-bgDark/90 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-surface border border-surfaceMuted w-full max-w-3xl rounded-lg max-h-[90vh] overflow-y-auto p-6 md:p-8 relative">
+            <button onclick="closeModal('modal-sailor')" class="absolute top-4 right-4 text-mutedTxt hover:text-primaryTxt font-bold code-font text-lg">&times; CLOSE</button>
+            <span class="code-font text-xs text-accent uppercase tracking-widest block mb-2">Deep-Dive Case Study</span>
+            <h3 class="text-2xl md:text-3xl font-bold text-primaryTxt mb-6 border-b border-surfaceMuted pb-4">Sailor Shift Network Matrix</h3>
+            
+            <div class="space-y-6 text-mutedTxt font-light text-sm md:text-base">
+                <div>
+                    <h4 class="font-bold text-primaryTxt uppercase text-xs code-font text-accent mb-1">The Problem</h4>
+                    <p>High-stakes operational environments suffer structural workflow friction when shifts lack effective communication channels. This project analyzed team networks to locate informational silos and single-point-of-failure risks in operational crew rosters.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-primaryTxt uppercase text-xs code-font text-accent mb-1">The Technical Solution</h4>
+                    <p>Modeled relational datasets as complex graphs via NetworkX within a Python environment. Calculated betweenness centrality, degree metrics, and modularity weights to map personnel interaction pathways. Exported topology structures into Gephi to build clear visualization components for management.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-primaryTxt uppercase text-xs code-font text-accent mb-1">The Data Outcome</h4>
+                    <p>Identified isolated communication dependencies and recommended layout adjustments that improved information flow across shift teams by a projected 15%.</p>
+                </div>
+                <div class="bg-bgDark p-4 rounded border border-surfaceMuted code-font text-xs">
+                    <span class="text-accent block font-bold mb-1">Recommendations for Growth:</span>
+                    To make this analysis more action-oriented, future builds could implement an interactive dashboard layer using Dash/Plotly. This allows decision-makers to simulate roster reallocations in real time.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="modal-legal" class="fixed inset-0 bg-bgDark/90 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-surface border border-surfaceMuted w-full max-w-3xl rounded-lg max-h-[90vh] overflow-y-auto p-6 md:p-8 relative">
+            <button onclick="closeModal('modal-legal')" class="absolute top-4 right-4 text-mutedTxt hover:text-primaryTxt font-bold code-font text-lg">&times; CLOSE</button>
+            <span class="code-font text-xs text-accent uppercase tracking-widest block mb-2">Deep-Dive Case Study</span>
+            <h3 class="text-2xl md:text-3xl font-bold text-primaryTxt mb-6 border-b border-surfaceMuted pb-4">GPT Legal Document Engine</h3>
+            
+            <div class="space-y-6 text-mutedTxt font-light text-sm md:text-base">
+                <div>
+                    <h4 class="font-bold text-primaryTxt uppercase text-xs code-font text-accent mb-1">The Problem</h4>
+                    <p>Corporate compliance auditing often stalls due to manual document review. Teams lose hundreds of operational hours skimming dense contracts to find hidden compliance risks or missing language parameters.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-primaryTxt uppercase text-xs code-font text-accent mb-1">The Technical Solution</h4>
+                    <p>Engineered an automated parsing tool using LangChain and OpenAI APIs. Developed a document processing pipeline that chunks incoming PDFs, embeds text blocks into a local Vector Database, and applies custom prompt constraints to extract specific compliance clauses safely.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-primaryTxt uppercase text-xs code-font text-accent mb-1">The Data Outcome</h4>
+                    <p>Reduced structural text discovery cycles from hours to minutes, showing how large language models can handle high-volume compliance parsing across text heavy teams.</p>
+                </div>
+                <div class="bg-bgDark p-4 rounded border border-surfaceMuted code-font text-xs">
+                    <span class="text-accent block font-bold mb-1">Recommendations for Growth:</span>
+                    To make this enterprise-ready, future iterations should transition to localized, open source LLM orchestration (such as Llama-3 running on internal infrastructure). This guarantees total data privacy for sensitive corporate documents.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Responsive Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close Mobile Menu on Click of a Link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Expandable Case Study Modals Functionality
+        function openModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Lock background scroll
+        }
+        function closeModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.add('hidden');
+            document.body.style.overflow = 'auto'; // Restore background scroll
+        }
+
+        // Close Modal if background overlay clicked
+        window.onclick = function(event) {
+            if (event.target.classList.contains('bg-bgDark/90')) {
+                event.target.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        }
+    </script>
+</body>
+</html>
