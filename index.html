@@ -2,7 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
   <meta
     name="description"
     content="Tanaya Jadhav — Data Analyst portfolio spanning data, statistics, business analytics and visual storytelling."
@@ -11,13 +16,20 @@
   <title>Tanaya Jadhav | Data Analyst</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+  >
+
   <link
     href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap"
     rel="stylesheet"
   >
 
   <style>
+
     :root {
       --bg: #1d1d1d;
       --bg-soft: #232323;
@@ -45,13 +57,16 @@
       --ease: cubic-bezier(.22, .8, .25, 1);
     }
 
+
     * {
       box-sizing: border-box;
     }
 
+
     html {
       scroll-behavior: smooth;
     }
+
 
     body {
       margin: 0;
@@ -62,36 +77,43 @@
       overflow-x: hidden;
     }
 
+
     button,
     a {
       font: inherit;
     }
 
+
     button {
       color: inherit;
     }
+
 
     a {
       color: inherit;
     }
 
+
     .hidden {
       display: none !important;
     }
 
-    /* =========================
+
+    /* =====================================================
        HOME
-    ========================== */
+    ====================================================== */
 
     #home-view {
       min-height: 100vh;
       display: flex;
       align-items: center;
       padding: 54px 7vw;
+
       transition:
         transform .75s var(--ease),
         opacity .55s ease;
     }
+
 
     #home-view.slide-away {
       transform: translateX(-105%);
@@ -99,97 +121,134 @@
       pointer-events: none;
     }
 
+
     .home-grid {
       width: 100%;
       max-width: 1450px;
       margin: 0 auto;
+
       display: grid;
-      grid-template-columns: minmax(320px, 0.95fr) minmax(420px, 1.1fr);
+      grid-template-columns:
+        minmax(320px, 0.95fr)
+        minmax(420px, 1.1fr);
+
       gap: 8vw;
       align-items: center;
     }
+
 
     .portrait-column {
       width: 100%;
     }
 
+
     .name {
       margin: 0 0 28px;
+
       font-size: clamp(1.45rem, 2.2vw, 2.5rem);
       font-weight: 700;
+
       letter-spacing: .14em;
       text-transform: uppercase;
     }
 
+
     .portrait-frame {
       width: 100%;
       max-width: 590px;
+
       aspect-ratio: 0.83;
+
       overflow: hidden;
       background: #111;
     }
 
+
     .portrait-frame img {
       width: 100%;
       height: 100%;
+
       object-fit: cover;
       object-position: center top;
+
       display: block;
     }
 
+
     .menu-column {
       min-height: 590px;
+
       display: flex;
       align-items: center;
     }
+
 
     .menu-wrap {
       width: 100%;
       max-width: 600px;
     }
 
+
     .menu-item {
       border: 0;
       background: transparent;
+
       width: 100%;
       padding: 23px 0;
+
       display: grid;
       grid-template-columns: 1fr 55px;
+
       gap: 24px;
       align-items: center;
+
       text-align: left;
       cursor: pointer;
+
       transition:
         opacity .25s ease,
         transform .25s ease;
     }
 
+
     .menu-item:hover {
       transform: translateX(8px);
     }
 
+
+    /* ALL FOUR MENU ITEMS NOW USE THE SAME FONT */
+
     .menu-title {
-  font-family: "DM Sans", sans-serif;
-  font-size: clamp(2.3rem, 4.8vw, 4.9rem);
-  font-weight: 300;
-  line-height: 1;
-  letter-spacing: -.045em;
-}
+      font-family: "DM Sans", sans-serif;
+
+      font-size: clamp(2.3rem, 4.8vw, 4.9rem);
+      font-weight: 300;
+
+      line-height: 1;
+      letter-spacing: -.045em;
+    }
+
 
     .menu-number {
       color: var(--muted);
+
       font-size: .95rem;
       letter-spacing: .1em;
     }
 
-    /* Expanded About / Contact / Lookbook intro */
+
+    /* =====================================================
+       HOME EXPANDED PANELS
+    ====================================================== */
 
     .home-panel {
       animation: fadePanel .45s var(--ease);
       width: 100%;
     }
 
+
     @keyframes fadePanel {
+
       from {
         opacity: 0;
         transform: translateY(14px);
@@ -199,250 +258,371 @@
         opacity: 1;
         transform: translateY(0);
       }
+
     }
+
 
     .panel-back {
       border: 0;
       background: transparent;
+
       padding: 0;
+
       cursor: pointer;
+
       display: inline-flex;
       align-items: center;
+
       gap: 15px;
       margin-bottom: 32px;
+
       transition: opacity .2s ease;
     }
+
 
     .panel-back:hover {
       opacity: .65;
     }
 
+
     .panel-back-title {
+      font-family: "DM Sans", sans-serif;
+
       font-size: clamp(2.6rem, 5vw, 5rem);
       font-weight: 300;
+
       letter-spacing: -.045em;
     }
 
+
     .panel-number {
       color: var(--muted);
+
       font-size: .9rem;
       margin-top: 10px;
     }
 
+
     .panel-copy {
       max-width: 650px;
+
       color: #d3d0ca;
+
       font-size: clamp(1rem, 1.25vw, 1.17rem);
       line-height: 1.85;
+
       font-weight: 300;
     }
+
 
     .panel-copy p {
       margin: 0 0 18px;
     }
+
 
     .panel-accent {
       color: var(--text);
       font-weight: 500;
     }
 
-    /* CONTACT */
+
+    /* =====================================================
+       CONTACT
+    ====================================================== */
 
     .contact-line {
       font-family: "Playfair Display", serif;
       font-style: italic;
+
       font-size: clamp(1.65rem, 2.8vw, 2.8rem);
       line-height: 1.35;
+
       margin: 0 0 34px;
+
       max-width: 650px;
     }
+
 
     .contact-badges {
       display: flex;
       flex-wrap: wrap;
+
       gap: 12px;
     }
+
 
     .contact-badge {
       display: inline-flex;
       align-items: center;
+
       gap: 10px;
+
       text-decoration: none;
+
       border: 1px solid var(--line);
+
       padding: 12px 17px;
+
       transition:
         background .2s ease,
         border-color .2s ease,
         transform .2s ease;
     }
 
+
     .contact-badge:hover {
       background: #292929;
       border-color: #666;
+
       transform: translateY(-2px);
     }
 
+
     .contact-badge strong {
       font-size: .82rem;
+
       text-transform: uppercase;
       letter-spacing: .12em;
     }
+
 
     .contact-badge span {
       color: var(--muted);
       font-size: .82rem;
     }
 
-    /* LOOKBOOK LANGUAGE CARDS */
+
+    /* =====================================================
+       LOOKBOOK LANGUAGE CARDS
+    ====================================================== */
 
     .language-intro {
       color: #d3d0ca;
+
       max-width: 650px;
+
       font-size: 1.03rem;
       line-height: 1.8;
+
       font-weight: 300;
+
       margin-bottom: 34px;
     }
+
 
     .language-grid {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
+
       border-top: 1px solid var(--line);
       border-left: 1px solid var(--line);
+
       max-width: 690px;
     }
 
+
     .language-card {
       border: 0;
+
       border-right: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
+
       background: transparent;
+
       min-height: 120px;
+
       color: var(--text);
+
       cursor: pointer;
+
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       justify-content: space-between;
+
       padding: 18px;
+
       text-align: left;
+
       transition:
         background .25s ease,
         color .25s ease;
     }
+
 
     .language-card:hover {
       background: var(--text);
       color: #111;
     }
 
+
     .language-card strong {
       font-size: 1.45rem;
       font-weight: 500;
     }
 
+
     .language-card span {
       font-size: .74rem;
+
       text-transform: uppercase;
       letter-spacing: .1em;
+
       opacity: .65;
     }
 
-    /* =========================
+
+    /* =====================================================
        PERSONAL FAVOURITES
-    ========================== */
+    ====================================================== */
 
     #favourites-view {
       position: fixed;
       inset: 0;
+
       background: var(--bg);
+
       z-index: 20;
+
       transform: translateX(105%);
       opacity: 0;
+
       pointer-events: none;
+
       transition:
         transform .75s var(--ease),
         opacity .5s ease;
+
       overflow-y: auto;
     }
+
 
     #favourites-view.active {
       transform: translateX(0);
       opacity: 1;
+
       pointer-events: auto;
     }
 
+
     .favourites-shell {
       min-height: 100vh;
+
       display: flex;
       flex-direction: column;
     }
 
+
     .favourites-header {
       min-height: 95px;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       padding: 26px;
+
       position: relative;
+
       background: var(--bg);
-      z-index: 2;
+
+      z-index: 10;
     }
+
 
     .favourites-home {
       border: 0;
       background: transparent;
+
       cursor: pointer;
+
       font-family: "Playfair Display", serif;
       font-style: italic;
+
       font-size: clamp(1.5rem, 2.3vw, 2.2rem);
+
       color: var(--text);
+
       transition: opacity .2s ease;
     }
+
 
     .favourites-home:hover {
       opacity: .6;
     }
 
+
     .favourite-grid {
       flex: 1;
+
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+
       min-height: calc(100vh - 95px);
     }
 
+
     .favourite-card {
       position: relative;
+
       overflow: hidden;
+
       border: 0;
+
       color: inherit;
+
       cursor: pointer;
+
       padding: 42px;
+
       text-align: left;
+
       min-height: 600px;
+
+      isolation: isolate;
+
       transition:
-        flex .5s var(--ease),
-        filter .3s ease;
+        filter .3s ease,
+        transform .35s var(--ease);
     }
+
 
     .favourite-card:hover {
       filter: brightness(1.06);
     }
 
+
     .favourite-card::after {
       content: "OPEN →";
+
       position: absolute;
+
       bottom: 34px;
       right: 34px;
+
       font-size: .74rem;
+
       letter-spacing: .16em;
       font-weight: 600;
+
       opacity: .68;
+
+      z-index: 8;
     }
+
+
+    /* =====================================================
+       EDTECH
+    ====================================================== */
 
     .fav-edtech {
       background:
-        radial-gradient(circle at 78% 22%, rgba(255,255,255,.18), transparent 18%),
+        radial-gradient(
+          circle at 78% 22%,
+          rgba(255,255,255,.18),
+          transparent 18%
+        ),
+
         repeating-linear-gradient(
           45deg,
           rgba(255,255,255,.035) 0,
@@ -450,24 +630,229 @@
           transparent 2px,
           transparent 18px
         ),
-        linear-gradient(145deg, #155e9c 0%, #2589d9 46%, #092f53 100%);
+
+        linear-gradient(
+          145deg,
+          #155e9c 0%,
+          #2589d9 46%,
+          #092f53 100%
+        );
     }
+
+
+    /* UNO CARD */
+
+    .uno-hover-card {
+      position: absolute;
+
+      top: 47%;
+      left: 50%;
+
+      width: clamp(115px, 11vw, 180px);
+      height: auto;
+
+      z-index: 6;
+
+      pointer-events: none;
+
+      opacity: 0;
+
+      transform-origin: center;
+
+      transform:
+        translate(-50%, -50%)
+        scale(.05)
+        perspective(1000px)
+        rotateY(0deg)
+        rotateZ(-18deg);
+
+      filter:
+        drop-shadow(
+          0 25px 35px rgba(0, 0, 0, .40)
+        );
+    }
+
+
+    .fav-edtech:hover .uno-hover-card {
+      animation:
+        unoReverseFly
+        2.2s
+        cubic-bezier(.22,.8,.25,1);
+    }
+
+
+    @keyframes unoReverseFly {
+
+      0% {
+        opacity: 0;
+
+        transform:
+          translate(-50%, -50%)
+          scale(.04)
+          perspective(1000px)
+          rotateY(0deg)
+          rotateZ(-18deg);
+      }
+
+
+      12% {
+        opacity: .6;
+      }
+
+
+      30% {
+        opacity: 1;
+
+        transform:
+          translate(-50%, -50%)
+          scale(.72)
+          perspective(1000px)
+          rotateY(120deg)
+          rotateZ(-7deg);
+      }
+
+
+      47% {
+        opacity: 1;
+
+        transform:
+          translate(-50%, -50%)
+          scale(1.06)
+          perspective(1000px)
+          rotateY(220deg)
+          rotateZ(4deg);
+      }
+
+
+      60% {
+        opacity: 1;
+
+        transform:
+          translate(-50%, -50%)
+          scale(1)
+          perspective(1000px)
+          rotateY(360deg)
+          rotateZ(0deg);
+      }
+
+
+      /* pause briefly */
+
+      72% {
+        opacity: 1;
+
+        transform:
+          translate(-50%, -50%)
+          scale(1)
+          perspective(1000px)
+          rotateY(360deg)
+          rotateZ(0deg);
+      }
+
+
+      86% {
+        opacity: .75;
+
+        transform:
+          translate(-50%, -50%)
+          scale(.55)
+          perspective(1000px)
+          rotateY(470deg)
+          rotateZ(10deg);
+      }
+
+
+      100% {
+        opacity: 0;
+
+        transform:
+          translate(-50%, -50%)
+          scale(.04)
+          perspective(1000px)
+          rotateY(540deg)
+          rotateZ(20deg);
+      }
+
+    }
+
+
+    /* Makes text remain above background,
+       but below flying card */
+
+    .fav-number,
+    .fav-title,
+    .fav-subtitle {
+      z-index: 7;
+    }
+
+
+    /* =====================================================
+       ATP
+    ====================================================== */
 
     .fav-atp {
       color: #35100e;
+
       background:
-        radial-gradient(circle at 25% 20%, #d3283c 0 5%, transparent 5.3%),
-        radial-gradient(circle at 72% 68%, #d3283c 0 6%, transparent 6.3%),
-        radial-gradient(circle at 17% 76%, #1a563f 0 2%, transparent 2.3%),
-        linear-gradient(145deg, #fbf4e7 0%, #efe1c9 65%, #decab0 100%);
+
+        radial-gradient(
+          circle at 25% 20%,
+          #d3283c 0 5%,
+          transparent 5.3%
+        ),
+
+        radial-gradient(
+          circle at 72% 68%,
+          #d3283c 0 6%,
+          transparent 6.3%
+        ),
+
+        radial-gradient(
+          circle at 17% 76%,
+          #1a563f 0 2%,
+          transparent 2.3%
+        ),
+
+        linear-gradient(
+          145deg,
+          #fbf4e7 0%,
+          #efe1c9 65%,
+          #decab0 100%
+        );
     }
+
+
+    /* =====================================================
+       MUE
+    ====================================================== */
 
     .fav-mue {
       background:
-        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px),
-        radial-gradient(circle at 80% 16%, rgba(200,150,255,.28), transparent 20%),
-        linear-gradient(145deg, #3b1f58 0%, #7b3fc6 55%, #271137 100%);
+
+        linear-gradient(
+          rgba(255,255,255,.035) 1px,
+          transparent 1px
+        ),
+
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,.035) 1px,
+          transparent 1px
+        ),
+
+        radial-gradient(
+          circle at 80% 16%,
+          rgba(200,150,255,.28),
+          transparent 20%
+        ),
+
+        linear-gradient(
+          145deg,
+          #3b1f58 0%,
+          #7b3fc6 55%,
+          #271137 100%
+        );
+
       background-size:
         35px 35px,
         35px 35px,
@@ -475,466 +860,757 @@
         auto;
     }
 
+
     .fav-number {
+      position: relative;
+
       font-size: .78rem;
+
       letter-spacing: .16em;
       text-transform: uppercase;
+
       opacity: .7;
     }
 
+
     .fav-title {
       position: absolute;
+
       left: 42px;
       right: 42px;
       bottom: 105px;
+
       margin: 0;
+
       font-size: clamp(2.3rem, 3.7vw, 4.7rem);
+
       line-height: .98;
+
       font-weight: 500;
+
       letter-spacing: -.05em;
     }
 
+
     .fav-subtitle {
       position: absolute;
+
       left: 42px;
       right: 42px;
       bottom: 62px;
+
       margin: 0;
+
       font-family: "Playfair Display", serif;
       font-style: italic;
+
       font-size: 1.15rem;
+
       opacity: .8;
     }
 
-    /* =========================
+
+    /* =====================================================
        PROJECT DETAIL / LOOKBOOK
-    ========================== */
+    ====================================================== */
 
     #project-view {
       position: fixed;
       inset: 0;
+
       background: var(--bg);
+
       z-index: 40;
+
       transform: translateX(105%);
       opacity: 0;
+
       pointer-events: none;
+
       transition:
         transform .7s var(--ease),
         opacity .45s ease;
+
       overflow-y: auto;
     }
+
 
     #project-view.active {
       transform: translateX(0);
       opacity: 1;
+
       pointer-events: auto;
     }
 
+
     .project-topbar {
       min-height: 88px;
+
       padding: 24px 5vw;
+
       display: flex;
       align-items: center;
       justify-content: space-between;
+
       border-bottom: 1px solid var(--line);
     }
+
 
     .project-back {
       border: 0;
       background: transparent;
+
       color: var(--text);
+
       cursor: pointer;
+
       text-transform: uppercase;
       letter-spacing: .14em;
+
       font-size: .75rem;
     }
+
 
     .project-back:hover {
       opacity: .6;
     }
 
+
     .project-index {
       color: var(--muted);
+
       font-size: .78rem;
       letter-spacing: .12em;
     }
 
+
     .project-spread {
       min-height: calc(100vh - 89px);
+
       display: grid;
-      grid-template-columns: minmax(0, 1.12fr) minmax(360px, .88fr);
+
+      grid-template-columns:
+        minmax(0, 1.12fr)
+        minmax(360px, .88fr);
     }
+
 
     .project-visual {
       min-height: 650px;
+
       position: relative;
+
       overflow: hidden;
+
       display: flex;
       align-items: center;
       justify-content: center;
+
       padding: 7vw;
     }
 
+
     .project-visual-art {
       width: min(650px, 92%);
+
       aspect-ratio: 1.25;
+
       border: 1px solid rgba(255,255,255,.18);
+
       position: relative;
-      box-shadow: 0 30px 80px rgba(0,0,0,.25);
+
+      box-shadow:
+        0 30px 80px rgba(0,0,0,.25);
+
       overflow: hidden;
     }
+
 
     .project-visual-art::before,
     .project-visual-art::after {
       content: "";
+
       position: absolute;
     }
 
+
+    /* EDTECH VISUAL */
+
     .visual-edtech {
       background:
-        linear-gradient(125deg, #0c3559, #2589d9 55%, #74bff7);
+        linear-gradient(
+          125deg,
+          #0c3559,
+          #2589d9 55%,
+          #74bff7
+        );
     }
+
 
     .visual-edtech::before {
       width: 56%;
       height: 56%;
-      border: 2px solid rgba(255,255,255,.55);
+
+      border:
+        2px solid rgba(255,255,255,.55);
+
       border-radius: 20px;
+
       top: 20%;
       left: 22%;
+
       transform: rotate(-11deg);
+
       box-shadow:
         18px 18px 0 rgba(255,255,255,.08),
         36px 36px 0 rgba(255,255,255,.04);
     }
 
+
     .visual-edtech::after {
       content: "↶";
+
       inset: 0;
+
       display: grid;
       place-items: center;
-      font-size: clamp(7rem, 14vw, 13rem);
+
+      font-size:
+        clamp(7rem, 14vw, 13rem);
+
       color: rgba(255,255,255,.88);
+
       font-weight: 300;
     }
 
+
+    /* ATP VISUAL */
+
     .visual-atp {
       background:
-        radial-gradient(circle at 50% 48%, #be2236 0 13%, transparent 13.5%),
-        linear-gradient(90deg, transparent 49.5%, rgba(24,76,58,.35) 50%, transparent 50.5%),
-        linear-gradient(#f5ead4, #e7d4b7);
+
+        radial-gradient(
+          circle at 50% 48%,
+          #be2236 0 13%,
+          transparent 13.5%
+        ),
+
+        linear-gradient(
+          90deg,
+          transparent 49.5%,
+          rgba(24,76,58,.35) 50%,
+          transparent 50.5%
+        ),
+
+        linear-gradient(
+          #f5ead4,
+          #e7d4b7
+        );
     }
+
 
     .visual-atp::before {
       width: 68%;
       height: 85%;
-      border: 3px solid rgba(24,76,58,.6);
+
+      border:
+        3px solid rgba(24,76,58,.6);
+
       left: 16%;
       top: 7.5%;
     }
 
+
     .visual-atp::after {
       width: 40%;
       height: 40%;
+
       border-radius: 50%;
-      border: 3px solid rgba(181,31,53,.75);
+
+      border:
+        3px solid rgba(181,31,53,.75);
+
       left: 30%;
       top: 30%;
     }
 
+
+    /* MUE VISUAL */
+
     .visual-mue {
       background:
-        linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px),
-        linear-gradient(145deg, #271137, #7b3fc6);
-      background-size: 28px 28px, 28px 28px, auto;
+
+        linear-gradient(
+          rgba(255,255,255,.05) 1px,
+          transparent 1px
+        ),
+
+        linear-gradient(
+          90deg,
+          rgba(255,255,255,.05) 1px,
+          transparent 1px
+        ),
+
+        linear-gradient(
+          145deg,
+          #271137,
+          #7b3fc6
+        );
+
+      background-size:
+        28px 28px,
+        28px 28px,
+        auto;
     }
 
+
     .visual-mue::before {
-      content: "2019";
+      content: "THEN";
+
       left: 8%;
       top: 10%;
-      font-family: "Playfair Display", serif;
-      font-size: clamp(4rem, 9vw, 9rem);
-      color: rgba(255,255,255,.12);
+
+      font-family:
+        "Playfair Display", serif;
+
+      font-size:
+        clamp(4rem, 9vw, 9rem);
+
+      color:
+        rgba(255,255,255,.12);
     }
+
 
     .visual-mue::after {
       content: "→ NOW";
+
       right: 8%;
       bottom: 12%;
-      font-size: clamp(2rem, 5vw, 4.7rem);
+
+      font-size:
+        clamp(2rem, 5vw, 4.7rem);
+
       letter-spacing: -.04em;
-      color: rgba(255,255,255,.88);
+
+      color:
+        rgba(255,255,255,.88);
     }
 
+
     .project-copy {
-      padding: clamp(42px, 6vw, 95px);
+      padding:
+        clamp(42px, 6vw, 95px);
+
       display: flex;
       flex-direction: column;
       justify-content: center;
+
       background: #202020;
     }
 
+
     .project-category {
       color: var(--muted);
+
       font-size: .72rem;
+
       letter-spacing: .15em;
+
       text-transform: uppercase;
+
       margin-bottom: 20px;
     }
 
+
     .project-copy h1 {
       margin: 0 0 40px;
-      font-size: clamp(2.8rem, 5vw, 5.7rem);
+
+      font-size:
+        clamp(2.8rem, 5vw, 5.7rem);
+
       line-height: .96;
+
       font-weight: 400;
+
       letter-spacing: -.055em;
     }
 
+
     .detail-block {
       padding: 20px 0;
-      border-top: 1px solid var(--line);
+
+      border-top:
+        1px solid var(--line);
     }
+
 
     .detail-label {
       font-size: .68rem;
+
       text-transform: uppercase;
+
       letter-spacing: .16em;
+
       color: var(--muted);
+
       margin-bottom: 8px;
     }
 
+
     .detail-value {
       color: #dedbd5;
+
       line-height: 1.7;
+
       font-size: .96rem;
+
       font-weight: 300;
     }
+
 
     .tech-row {
       display: flex;
       flex-wrap: wrap;
+
       gap: 8px;
     }
 
+
     .tech-chip {
       border: 1px solid #555;
+
       padding: 7px 11px;
+
       font-size: .72rem;
+
       color: #ddd9d1;
     }
 
+
     .project-link {
       margin-top: 35px;
+
       align-self: flex-start;
+
       text-decoration: none;
+
       text-transform: uppercase;
+
       letter-spacing: .13em;
+
       font-size: .76rem;
-      border-bottom: 1px solid currentColor;
+
+      border-bottom:
+        1px solid currentColor;
+
       padding-bottom: 5px;
     }
+
 
     .project-link:hover {
       opacity: .6;
     }
 
-    /* =========================
+
+    /* =====================================================
        LANGUAGE PROJECT BROWSER
-    ========================== */
+    ====================================================== */
 
     #language-view {
       position: fixed;
       inset: 0;
+
       background: var(--bg);
+
       z-index: 30;
+
       transform: translateX(105%);
       opacity: 0;
+
       pointer-events: none;
+
       transition:
         transform .7s var(--ease),
         opacity .45s ease;
+
       overflow-y: auto;
     }
+
 
     #language-view.active {
       transform: translateX(0);
       opacity: 1;
+
       pointer-events: auto;
     }
 
+
     .language-page {
       max-width: 1400px;
+
       margin: auto;
-      padding: 38px 6vw 90px;
+
+      padding:
+        38px 6vw 90px;
     }
+
 
     .language-page-header {
       display: flex;
-      justify-content: space-between;
+
+      justify-content:
+        space-between;
+
       align-items: center;
+
       padding-bottom: 25px;
-      border-bottom: 1px solid var(--line);
+
+      border-bottom:
+        1px solid var(--line);
     }
+
 
     .language-back {
       border: 0;
+
       background: transparent;
+
       cursor: pointer;
+
       font-size: .75rem;
+
       text-transform: uppercase;
+
       letter-spacing: .14em;
     }
 
+
     .language-heading {
-      font-family: "Playfair Display", serif;
+      font-family:
+        "Playfair Display", serif;
+
       font-style: italic;
-      font-size: clamp(2rem, 4vw, 4rem);
-      margin: 75px 0 50px;
+
+      font-size:
+        clamp(2rem, 4vw, 4rem);
+
+      margin:
+        75px 0 50px;
     }
+
 
     .language-project-list {
       display: grid;
+
       gap: 1px;
-      background: var(--line);
-      border: 1px solid var(--line);
+
+      background:
+        var(--line);
+
+      border:
+        1px solid var(--line);
     }
 
+
     .language-project {
-      background: var(--bg);
+      background:
+        var(--bg);
+
       display: grid;
-      grid-template-columns: 80px minmax(260px, 1fr) 1.5fr 80px;
+
+      grid-template-columns:
+        80px
+        minmax(260px, 1fr)
+        1.5fr
+        80px;
+
       align-items: center;
+
       gap: 24px;
-      padding: 28px 32px;
+
+      padding:
+        28px 32px;
+
       text-decoration: none;
-      transition: background .2s ease;
+
+      transition:
+        background .2s ease;
     }
+
 
     .language-project:hover {
       background: #242424;
     }
 
+
     .language-project-number {
       color: var(--muted);
+
       font-size: .8rem;
     }
 
+
     .language-project-title {
       font-size: 1.3rem;
+
       font-weight: 500;
     }
 
+
     .language-project-desc {
       color: var(--muted);
+
       line-height: 1.6;
+
       font-size: .92rem;
     }
 
+
     .language-project-arrow {
       text-align: right;
+
       font-size: 1.25rem;
     }
 
+
     .empty-state {
       padding: 50px;
+
       color: var(--muted);
+
       background: var(--bg);
+
       line-height: 1.8;
     }
 
-    /* =========================
+
+    /* =====================================================
        RESPONSIVE
-    ========================== */
+    ====================================================== */
 
     @media (max-width: 900px) {
+
       #home-view {
-        padding: 35px 6vw 60px;
+        padding:
+          35px 6vw 60px;
+
         align-items: flex-start;
       }
 
+
       .home-grid {
         grid-template-columns: 1fr;
+
         gap: 45px;
       }
 
+
       .portrait-frame {
         max-width: 100%;
+
         aspect-ratio: 1 / 1.12;
       }
+
 
       .menu-column {
         min-height: auto;
       }
 
+
       .menu-wrap {
         max-width: none;
       }
+
 
       .menu-item {
         padding: 16px 0;
       }
 
+
       .menu-title {
-        font-size: clamp(2.4rem, 10vw, 4rem);
+        font-size:
+          clamp(2.4rem, 10vw, 4rem);
       }
 
+
       .language-grid {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns:
+          repeat(2, 1fr);
       }
+
 
       .favourite-grid {
         grid-template-columns: 1fr;
       }
 
+
       .favourite-card {
         min-height: 420px;
       }
+
 
       .project-spread {
         grid-template-columns: 1fr;
       }
 
+
       .project-visual {
         min-height: 470px;
       }
 
+
       .language-project {
-        grid-template-columns: 45px 1fr 45px;
+        grid-template-columns:
+          45px 1fr 45px;
       }
+
 
       .language-project-desc {
         display: none;
       }
+
     }
 
+
     @media (max-width: 560px) {
+
       .name {
         font-size: 1.25rem;
       }
 
+
       .language-grid {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:
+          1fr 1fr;
       }
+
 
       .contact-badges {
         flex-direction: column;
+
         align-items: stretch;
       }
 
+
       .contact-badge {
-        justify-content: space-between;
+        justify-content:
+          space-between;
       }
 
+
       .project-copy {
-        padding: 40px 7vw 60px;
+        padding:
+          40px 7vw 60px;
       }
+
     }
+
   </style>
 </head>
 
+
 <body>
+
 
   <!-- =====================================================
        HOME
@@ -944,7 +1620,9 @@
 
     <div class="home-grid">
 
-      <!-- LEFT: NAME + PORTRAIT -->
+
+      <!-- LEFT -->
+
       <section class="portrait-column">
 
         <h1 class="name">
@@ -952,21 +1630,26 @@
         </h1>
 
         <div class="portrait-frame">
+
           <img
-            src="tanaya-portrait.png?v=2"
+            src="tanaya-portrait.png?v=3"
             alt="Portrait of Tanaya Jadhav"
           >
+
         </div>
 
       </section>
 
 
-      <!-- RIGHT: INTERACTIVE MENU -->
+      <!-- RIGHT -->
+
       <section class="menu-column">
 
         <div class="menu-wrap">
 
-          <!-- Main four-item menu -->
+
+          <!-- HOME MENU -->
+
           <div id="main-menu">
 
             <button
@@ -974,71 +1657,125 @@
               type="button"
               onclick="openHomePanel('about')"
             >
-              <span class="menu-title">About</span>
-              <span class="menu-number">01</span>
+
+              <span class="menu-title">
+                About
+              </span>
+
+              <span class="menu-number">
+                01
+              </span>
+
             </button>
+
 
             <button
               class="menu-item"
               type="button"
               onclick="openFavourites()"
             >
-              <span class="menu-title">Personal Favourites</span>
-              <span class="menu-number">02</span>
+
+              <span class="menu-title">
+                Personal Favourites
+              </span>
+
+              <span class="menu-number">
+                02
+              </span>
+
             </button>
+
 
             <button
               class="menu-item"
               type="button"
               onclick="openHomePanel('lookbook')"
             >
-              <span class="menu-title">Lookbook</span>
-              <span class="menu-number">03</span>
+
+              <span class="menu-title">
+                Lookbook
+              </span>
+
+              <span class="menu-number">
+                03
+              </span>
+
             </button>
+
 
             <button
               class="menu-item"
               type="button"
               onclick="openHomePanel('contact')"
             >
-              <span class="menu-title">Contact</span>
-              <span class="menu-number">04</span>
+
+              <span class="menu-title">
+                Contact
+              </span>
+
+              <span class="menu-number">
+                04
+              </span>
+
             </button>
 
           </div>
 
 
           <!-- ABOUT -->
-          <div id="about-panel" class="home-panel hidden">
+
+          <div
+            id="about-panel"
+            class="home-panel hidden"
+          >
 
             <button
               class="panel-back"
               type="button"
               onclick="closeHomePanel()"
             >
-              <span class="panel-back-title">About</span>
-              <span class="panel-number">01</span>
+
+              <span class="panel-back-title">
+                About
+              </span>
+
+              <span class="panel-number">
+                01
+              </span>
+
             </button>
+
 
             <div class="panel-copy">
 
               <p>
                 I'm a Data Science postgraduate at the
-                <span class="panel-accent">University of Nottingham</span>,
-                working across data analysis, statistics, machine learning,
+                <span class="panel-accent">
+                  University of Nottingham
+                </span>,
+                working across data analysis,
+                statistics, machine learning,
                 business intelligence and visualisation.
               </p>
 
-              <p>
-                I like starting with the question before choosing the tool:
-                understanding what the data is actually saying, why it matters,
-                and how the result can support a useful decision.
-              </p>
 
               <p>
-                My work spans commercial analytics, sports modelling,
-                cybersecurity, healthcare, marketing and user engagement,
-                using <span class="panel-accent">Python, SQL, R, Power BI and Excel</span>.
+                I like starting with the question before
+                choosing the tool: understanding what the
+                data is actually saying, why it matters,
+                and how the result can support a useful
+                decision.
+              </p>
+
+
+              <p>
+                My work spans commercial analytics,
+                sports modelling, cybersecurity,
+                healthcare, marketing and user engagement,
+                using
+                <span class="panel-accent">
+                  Python, SQL, R, Power BI and Excel
+                </span>.
               </p>
 
             </div>
@@ -1046,61 +1783,102 @@
           </div>
 
 
-          <!-- LOOKBOOK INTRO -->
-          <div id="lookbook-panel" class="home-panel hidden">
+          <!-- LOOKBOOK -->
+
+          <div
+            id="lookbook-panel"
+            class="home-panel hidden"
+          >
 
             <button
               class="panel-back"
               type="button"
               onclick="closeHomePanel()"
             >
-              <span class="panel-back-title">Lookbook</span>
-              <span class="panel-number">03</span>
+
+              <span class="panel-back-title">
+                Lookbook
+              </span>
+
+              <span class="panel-number">
+                03
+              </span>
+
             </button>
 
+
             <p class="language-intro">
+
               Different questions call for different tools.
-              This collection moves across statistical work in R,
-              relational analysis in SQL, broader analytical workflows
-              in Python, and spreadsheet-based analysis in Excel.
+
+              This collection moves across statistical work
+              in R, relational analysis in SQL, broader
+              analytical workflows in Python, and
+              spreadsheet-based analysis in Excel.
+
             </p>
 
+
             <div class="language-grid">
+
 
               <button
                 class="language-card"
                 type="button"
                 onclick="openLanguage('R')"
               >
+
                 <strong>R</strong>
-                <span>View projects →</span>
+
+                <span>
+                  View projects →
+                </span>
+
               </button>
+
 
               <button
                 class="language-card"
                 type="button"
                 onclick="openLanguage('SQL')"
               >
+
                 <strong>SQL</strong>
-                <span>View projects →</span>
+
+                <span>
+                  View projects →
+                </span>
+
               </button>
+
 
               <button
                 class="language-card"
                 type="button"
                 onclick="openLanguage('Python')"
               >
+
                 <strong>Python</strong>
-                <span>View projects →</span>
+
+                <span>
+                  View projects →
+                </span>
+
               </button>
+
 
               <button
                 class="language-card"
                 type="button"
                 onclick="openLanguage('Excel')"
               >
+
                 <strong>Excel</strong>
-                <span>View projects →</span>
+
+                <span>
+                  View projects →
+                </span>
+
               </button>
 
             </div>
@@ -1109,21 +1887,36 @@
 
 
           <!-- CONTACT -->
-          <div id="contact-panel" class="home-panel hidden">
+
+          <div
+            id="contact-panel"
+            class="home-panel hidden"
+          >
 
             <button
               class="panel-back"
               type="button"
               onclick="closeHomePanel()"
             >
-              <span class="panel-back-title">Contact</span>
-              <span class="panel-number">04</span>
+
+              <span class="panel-back-title">
+                Contact
+              </span>
+
+              <span class="panel-number">
+                04
+              </span>
+
             </button>
 
+
             <p class="contact-line">
+
               Got a project, role, or data problem in mind?
               Let’s collaborate.
+
             </p>
+
 
             <div class="contact-badges">
 
@@ -1133,21 +1926,37 @@
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <strong>LinkedIn</strong>
-                <span>Connect →</span>
+
+                <strong>
+                  LinkedIn
+                </strong>
+
+                <span>
+                  Connect →
+                </span>
+
               </a>
+
 
               <a
                 class="contact-badge"
                 href="mailto:tanaya.nsj@gmail.com"
               >
-                <strong>Email</strong>
-                <span>Contact →</span>
+
+                <strong>
+                  Email
+                </strong>
+
+                <span>
+                  Contact →
+                </span>
+
               </a>
 
             </div>
 
           </div>
+
 
         </div>
 
@@ -1158,6 +1967,7 @@
   </main>
 
 
+
   <!-- =====================================================
        PERSONAL FAVOURITES
   ====================================================== -->
@@ -1166,85 +1976,126 @@
 
     <div class="favourites-shell">
 
+
       <header class="favourites-header">
 
-        <!-- Clicking this returns to the homepage -->
         <button
           class="favourites-home"
           type="button"
           onclick="closeFavourites()"
         >
+
           Personal Favourites
+
         </button>
 
       </header>
 
+
       <div class="favourite-grid">
 
-        <!-- 01 EDTECH -->
+
+        <!-- =================================================
+             EDTECH
+        ================================================== -->
+
         <button
           class="favourite-card fav-edtech"
           type="button"
           onclick="openFavouriteProject('edtech')"
         >
 
+
+          <!-- UNO ANIMATION -->
+
+          <img
+            src="uno-reverse.png"
+            alt=""
+            class="uno-hover-card"
+            aria-hidden="true"
+          >
+
+
           <span class="fav-number">
             01 / Business Analytics
           </span>
 
+
           <h2 class="fav-title">
-            EdTech<br>Analytics
+            EdTech<br>
+            Analytics
           </h2>
+
 
           <p class="fav-subtitle">
             The Uno Reverse Project
           </p>
 
+
         </button>
 
 
-        <!-- 02 ATP -->
+
+        <!-- =================================================
+             ATP
+        ================================================== -->
+
         <button
           class="favourite-card fav-atp"
           type="button"
           onclick="openFavouriteProject('atp')"
         >
 
+
           <span class="fav-number">
             02 / Sports Analytics
           </span>
 
+
           <h2 class="fav-title">
-            ATP Tennis<br>Match Prediction
+            ATP Tennis<br>
+            Match Prediction
           </h2>
+
 
           <p class="fav-subtitle">
             The One Wimbledon Started
           </p>
 
+
         </button>
 
 
-        <!-- 03 MUE -->
+
+        <!-- =================================================
+             MUE
+        ================================================== -->
+
         <button
           class="favourite-card fav-mue"
           type="button"
           onclick="openFavouriteProject('mue')"
         >
 
+
           <span class="fav-number">
             03 / Data Analytics
           </span>
 
+
           <h2 class="fav-title">
-            Market User<br>Engagement
+            Market User<br>
+            Engagement
           </h2>
+
 
           <p class="fav-subtitle">
             The Project I Came Back To
           </p>
 
+
         </button>
+
 
       </div>
 
@@ -1253,22 +2104,26 @@
   </section>
 
 
+
   <!-- =====================================================
-       PROJECT LOOKBOOK DETAIL
+       PROJECT DETAIL
   ====================================================== -->
 
   <section id="project-view">
 
+
     <header class="project-topbar">
 
       <button
-        id="project-back"
         class="project-back"
         type="button"
         onclick="closeProject()"
       >
+
         ← Personal Favourites
+
       </button>
+
 
       <span
         id="project-index"
@@ -1277,31 +2132,43 @@
         01 / 03
       </span>
 
+
     </header>
+
+
 
     <div class="project-spread">
 
-      <!-- LEFT: HERO VISUAL -->
+
+      <!-- HERO -->
+
       <section
         id="project-visual"
         class="project-visual"
       >
+
         <div
           id="project-art"
           class="project-visual-art"
         ></div>
+
       </section>
 
 
-      <!-- RIGHT: PROJECT STORY -->
+
+      <!-- COPY -->
+
       <section class="project-copy">
+
 
         <p
           id="project-category"
           class="project-category"
         ></p>
 
+
         <h1 id="project-title"></h1>
+
 
 
         <div class="detail-block">
@@ -1309,6 +2176,7 @@
           <div class="detail-label">
             The Vibe
           </div>
+
 
           <div
             id="project-vibe"
@@ -1318,11 +2186,13 @@
         </div>
 
 
+
         <div class="detail-block">
 
           <div class="detail-label">
             The Tech
           </div>
+
 
           <div
             id="project-tech"
@@ -1332,11 +2202,13 @@
         </div>
 
 
+
         <div class="detail-block">
 
           <div class="detail-label">
             The Insight
           </div>
+
 
           <div
             id="project-insight"
@@ -1346,6 +2218,7 @@
         </div>
 
 
+
         <a
           id="project-link"
           class="project-link"
@@ -1353,8 +2226,11 @@
           target="_blank"
           rel="noopener noreferrer"
         >
+
           View Project →
+
         </a>
+
 
       </section>
 
@@ -1363,45 +2239,63 @@
   </section>
 
 
+
   <!-- =====================================================
-       LANGUAGE PROJECT LISTS
+       LANGUAGE PROJECT LIST
   ====================================================== -->
 
   <section id="language-view">
 
+
     <div class="language-page">
 
+
       <header class="language-page-header">
+
 
         <button
           class="language-back"
           type="button"
           onclick="closeLanguage()"
         >
+
           ← Lookbook
+
         </button>
 
+
         <span class="project-index">
+
           Data Project Lookbook
+
         </span>
 
+
       </header>
+
+
 
       <h1
         id="language-heading"
         class="language-heading"
       >
+
         Python
+
       </h1>
+
+
 
       <div
         id="language-project-list"
         class="language-project-list"
       ></div>
 
+
     </div>
 
   </section>
+
 
 
   <!-- =====================================================
@@ -1410,422 +2304,736 @@
 
   <script>
 
-    /* -----------------------------------------
-       HOME PANELS
-    ----------------------------------------- */
 
-    const mainMenu = document.getElementById("main-menu");
+    /* =====================================================
+       HOME PANELS
+    ====================================================== */
+
+    const mainMenu =
+      document.getElementById("main-menu");
+
 
     const homePanels = {
-      about: document.getElementById("about-panel"),
-      lookbook: document.getElementById("lookbook-panel"),
-      contact: document.getElementById("contact-panel")
+
+      about:
+        document.getElementById("about-panel"),
+
+      lookbook:
+        document.getElementById("lookbook-panel"),
+
+      contact:
+        document.getElementById("contact-panel")
+
     };
+
 
     function openHomePanel(panelName) {
 
       mainMenu.classList.add("hidden");
 
-      Object.values(homePanels).forEach(panel => {
-        panel.classList.add("hidden");
-      });
 
-      homePanels[panelName].classList.remove("hidden");
+      Object.values(homePanels).forEach(
+        panel => {
+
+          panel.classList.add("hidden");
+
+        }
+      );
+
+
+      homePanels[panelName]
+        .classList
+        .remove("hidden");
+
     }
+
+
 
     function closeHomePanel() {
 
-      Object.values(homePanels).forEach(panel => {
-        panel.classList.add("hidden");
-      });
+      Object.values(homePanels).forEach(
+        panel => {
+
+          panel.classList.add("hidden");
+
+        }
+      );
+
 
       mainMenu.classList.remove("hidden");
+
     }
 
 
-    /* -----------------------------------------
+
+    /* =====================================================
        PERSONAL FAVOURITES
-    ----------------------------------------- */
+    ====================================================== */
 
-    const homeView = document.getElementById("home-view");
-    const favouritesView = document.getElementById("favourites-view");
+    const homeView =
+      document.getElementById("home-view");
 
-    function openFavourites(updateHash = true) {
+
+    const favouritesView =
+      document.getElementById(
+        "favourites-view"
+      );
+
+
+    function openFavourites(
+      updateHash = true
+    ) {
 
       closeHomePanel();
 
-      homeView.classList.add("slide-away");
 
-      setTimeout(() => {
-        favouritesView.classList.add("active");
-      }, 110);
+      homeView.classList.add(
+        "slide-away"
+      );
+
+
+      setTimeout(
+        () => {
+
+          favouritesView.classList.add(
+            "active"
+          );
+
+        },
+        110
+      );
+
 
       if (updateHash) {
-        history.pushState(null, "", "#personal-favourites");
+
+        history.pushState(
+          null,
+          "",
+          "#personal-favourites"
+        );
+
       }
+
     }
+
+
 
     function closeFavourites() {
 
-      favouritesView.classList.remove("active");
+      favouritesView.classList.remove(
+        "active"
+      );
 
-      setTimeout(() => {
-        homeView.classList.remove("slide-away");
-      }, 120);
+
+      setTimeout(
+        () => {
+
+          homeView.classList.remove(
+            "slide-away"
+          );
+
+        },
+        120
+      );
+
 
       history.pushState(
+
         "",
+
         document.title,
-        window.location.pathname + window.location.search
+
+        window.location.pathname +
+        window.location.search
+
       );
+
     }
 
 
-    /* -----------------------------------------
-       PERSONAL FAVOURITE PROJECT DATA
-    ----------------------------------------- */
+
+    /* =====================================================
+       FAVOURITE PROJECT DATA
+    ====================================================== */
 
     const favouriteProjects = {
 
+
       edtech: {
-        index: "01 / 03",
-        category: "Business Analytics",
-        title: "EdTech Analytics",
+
+        index:
+          "01 / 03",
+
+        category:
+          "Business Analytics",
+
+        title:
+          "EdTech Analytics",
+
         vibe:
           "An end-to-end commercial view of an EdTech business — following attention from lead generation through enrolment, payments and revenue.",
+
         tech: [
           "SQL",
           "Power BI",
           "Data Modelling",
           "Business Analytics"
         ],
+
         insight:
           "The project connects marketing performance, funnel conversion and programme economics so decisions can be made around where money is being generated, where prospects are being lost, and which programmes deserve investment.",
-        visualClass: "visual-edtech",
-        background: "#155e9c",
+
+        visualClass:
+          "visual-edtech",
+
+        background:
+          "#155e9c",
+
         link:
           "https://github.com/Tanaya0210/edtech-analytics"
+
       },
 
+
       atp: {
-        index: "02 / 03",
-        category: "Sports Analytics / Statistical Modelling",
-        title: "ATP Tennis Match Prediction",
+
+        index:
+          "02 / 03",
+
+        category:
+          "Sports Analytics / Statistical Modelling",
+
+        title:
+          "ATP Tennis Match Prediction",
+
         vibe:
           "Wimbledon took over my Instagram feed and left me wondering: how much of a tennis match can we actually predict before it begins?",
+
         tech: [
           "Python",
           "Statistical Modelling",
           "Machine Learning",
           "Sports Analytics"
         ],
+
         insight:
           "Using ATP men's singles data from 2005–2025, the project combines Elo ratings, rankings, surface performance, head-to-head history and recent form while comparing chronological and random validation strategies.",
-        visualClass: "visual-atp",
-        background: "#f3ead7",
-        link: ""
+
+        visualClass:
+          "visual-atp",
+
+        background:
+          "#f3ead7",
+
+        link:
+          ""
+
       },
 
+
       mue: {
-        index: "03 / 03",
-        category: "Data Analytics",
-        title: "Market User Engagement",
+
+        index:
+          "03 / 03",
+
+        category:
+          "Data Analytics",
+
+        title:
+          "Market User Engagement",
+
         vibe:
           "A time capsule: the same analytical starting point revisited with a very different way of thinking.",
+
         tech: [
           "Python",
           "Pandas",
           "EDA",
           "Data Visualisation"
         ],
+
         insight:
           "Instead of treating predictive modelling as the destination, the refurbished project focuses on patterns, quantified findings, user behaviour and business recommendations — showing how my approach to analysis evolved.",
-        visualClass: "visual-mue",
-        background: "#402064",
+
+        visualClass:
+          "visual-mue",
+
+        background:
+          "#402064",
+
         link:
           "https://github.com/Tanaya0210/market-user-engagement"
+
       }
 
     };
 
 
-    /* -----------------------------------------
-       OPEN / CLOSE PROJECT LOOKBOOK
-    ----------------------------------------- */
+
+    /* =====================================================
+       PROJECT VIEW
+    ====================================================== */
 
     const projectView =
-      document.getElementById("project-view");
+      document.getElementById(
+        "project-view"
+      );
+
 
     const projectVisual =
-      document.getElementById("project-visual");
+      document.getElementById(
+        "project-visual"
+      );
+
 
     const projectArt =
-      document.getElementById("project-art");
+      document.getElementById(
+        "project-art"
+      );
+
 
     const projectTitle =
-      document.getElementById("project-title");
+      document.getElementById(
+        "project-title"
+      );
+
 
     const projectCategory =
-      document.getElementById("project-category");
+      document.getElementById(
+        "project-category"
+      );
+
 
     const projectVibe =
-      document.getElementById("project-vibe");
+      document.getElementById(
+        "project-vibe"
+      );
+
 
     const projectTech =
-      document.getElementById("project-tech");
+      document.getElementById(
+        "project-tech"
+      );
+
 
     const projectInsight =
-      document.getElementById("project-insight");
+      document.getElementById(
+        "project-insight"
+      );
+
 
     const projectIndex =
-      document.getElementById("project-index");
+      document.getElementById(
+        "project-index"
+      );
+
 
     const projectLink =
-      document.getElementById("project-link");
+      document.getElementById(
+        "project-link"
+      );
 
 
-    function openFavouriteProject(projectKey) {
+
+    function openFavouriteProject(
+      projectKey
+    ) {
+
 
       const project =
-        favouriteProjects[projectKey];
+        favouriteProjects[
+          projectKey
+        ];
+
 
       projectIndex.textContent =
         project.index;
 
+
       projectCategory.textContent =
         project.category;
+
 
       projectTitle.textContent =
         project.title;
 
+
       projectVibe.textContent =
         project.vibe;
+
 
       projectInsight.textContent =
         project.insight;
 
-      projectTech.innerHTML = "";
 
-      project.tech.forEach(tool => {
+      projectTech.innerHTML =
+        "";
 
-        const span =
-          document.createElement("span");
 
-        span.className =
-          "tech-chip";
+      project.tech.forEach(
+        tool => {
 
-        span.textContent =
-          tool;
 
-        projectTech.appendChild(span);
-      });
+          const span =
+            document.createElement(
+              "span"
+            );
+
+
+          span.className =
+            "tech-chip";
+
+
+          span.textContent =
+            tool;
+
+
+          projectTech.appendChild(
+            span
+          );
+
+
+        }
+      );
+
 
       projectVisual.style.background =
         project.background;
+
 
       projectArt.className =
         "project-visual-art " +
         project.visualClass;
 
 
-      /*
-        Only display the View Project link
-        when we actually have a confirmed URL.
-      */
 
       if (project.link) {
 
         projectLink.href =
           project.link;
 
+
         projectLink.style.display =
           "inline-block";
 
-      } else {
+      }
+
+      else {
 
         projectLink.style.display =
           "none";
+
       }
 
-      projectView.classList.add("active");
+
+      projectView.classList.add(
+        "active"
+      );
+
     }
+
 
 
     function closeProject() {
 
-      projectView.classList.remove("active");
+      projectView.classList.remove(
+        "active"
+      );
+
     }
 
 
-    /* -----------------------------------------
-       LANGUAGE LOOKBOOK PROJECT DATA
-    ----------------------------------------- */
+
+    /* =====================================================
+       LANGUAGE PROJECT DATA
+    ====================================================== */
 
     const languageProjects = {
 
+
       R: [
+
         {
-          title: "Advertising & Sales Performance",
+
+          title:
+            "Advertising & Sales Performance",
+
           description:
             "Statistical analysis of advertising expenditure and sales performance using R.",
+
           url:
             "https://github.com/Tanaya0210/Advertising-Data-Analysis"
+
         },
+
+
         {
-          title: "Diabetes Pedigree Function Analysis",
+
+          title:
+            "Diabetes Pedigree Function Analysis",
+
           description:
             "Statistical exploration and modelling of diabetes-related data using R.",
+
           url:
             "https://github.com/Tanaya0210/Predicting-Diabetes-Pedigree-Function"
+
         }
+
       ],
+
+
 
       SQL: [
+
         {
-          title: "Colorado Motor Vehicle Sales",
+
+          title:
+            "Colorado Motor Vehicle Sales",
+
           description:
             "Relational data analysis exploring vehicle sales patterns and structured querying.",
+
           url:
             "https://github.com/Tanaya0210/Colorado-Motor-Vehicle-Sales"
+
         },
+
+
         {
-          title: "EdTech Analytics",
+
+          title:
+            "EdTech Analytics",
+
           description:
             "SQL-backed funnel, marketing and commercial analytics for an EdTech business.",
+
           url:
             "https://github.com/Tanaya0210/edtech-analytics"
+
         }
+
       ],
+
+
 
       Python: [
+
         {
-          title: "Heart Disease Prediction",
+
+          title:
+            "Heart Disease Prediction",
+
           description:
             "Classification modelling and clinical-data analysis for cardiovascular risk prediction.",
+
           url:
             "https://github.com/Tanaya0210/heart-disease-prediction"
+
         },
+
+
         {
-          title: "Cybersecurity Threat Analysis",
+
+          title:
+            "Cybersecurity Threat Analysis",
+
           description:
             "Exploratory analysis of suspicious web interactions and behavioural threat patterns.",
+
           url:
             "https://github.com/Tanaya0210/Cybersecurity-Suspicious-Web-Threat-Interactions"
+
         }
+
       ],
 
+
       Excel: []
+
     };
 
 
-    /* -----------------------------------------
+
+    /* =====================================================
        LANGUAGE LOOKBOOK
-    ----------------------------------------- */
+    ====================================================== */
 
     const languageView =
-      document.getElementById("language-view");
+      document.getElementById(
+        "language-view"
+      );
+
 
     const languageHeading =
-      document.getElementById("language-heading");
+      document.getElementById(
+        "language-heading"
+      );
+
 
     const languageProjectList =
-      document.getElementById("language-project-list");
+      document.getElementById(
+        "language-project-list"
+      );
 
 
-    function openLanguage(language) {
+
+    function openLanguage(
+      language
+    ) {
+
 
       languageHeading.textContent =
         language;
 
+
       languageProjectList.innerHTML =
         "";
 
+
       const projects =
-        languageProjects[language];
+        languageProjects[
+          language
+        ];
 
 
-      if (!projects || projects.length === 0) {
+
+      if (
+        !projects ||
+        projects.length === 0
+      ) {
+
 
         languageProjectList.innerHTML = `
+
           <div class="empty-state">
-            Selected Excel work will be added here as the portfolio develops.
+
+            Selected Excel work will be
+            added here as the portfolio
+            develops.
+
           </div>
+
         `;
 
-      } else {
-
-        projects.forEach((project, index) => {
-
-          const projectElement =
-            document.createElement("a");
-
-          projectElement.className =
-            "language-project";
-
-          projectElement.href =
-            project.url;
-
-          projectElement.target =
-            "_blank";
-
-          projectElement.rel =
-            "noopener noreferrer";
-
-          projectElement.innerHTML = `
-            <span class="language-project-number">
-              ${String(index + 1).padStart(2, "0")}
-            </span>
-
-            <span class="language-project-title">
-              ${project.title}
-            </span>
-
-            <span class="language-project-desc">
-              ${project.description}
-            </span>
-
-            <span class="language-project-arrow">
-              →
-            </span>
-          `;
-
-          languageProjectList.appendChild(
-            projectElement
-          );
-        });
       }
 
-      languageView.classList.add("active");
+
+      else {
+
+
+        projects.forEach(
+          (project, index) => {
+
+
+            const projectElement =
+              document.createElement(
+                "a"
+              );
+
+
+            projectElement.className =
+              "language-project";
+
+
+            projectElement.href =
+              project.url;
+
+
+            projectElement.target =
+              "_blank";
+
+
+            projectElement.rel =
+              "noopener noreferrer";
+
+
+            projectElement.innerHTML = `
+
+              <span class="language-project-number">
+
+                ${String(index + 1).padStart(2, "0")}
+
+              </span>
+
+
+              <span class="language-project-title">
+
+                ${project.title}
+
+              </span>
+
+
+              <span class="language-project-desc">
+
+                ${project.description}
+
+              </span>
+
+
+              <span class="language-project-arrow">
+
+                →
+
+              </span>
+
+            `;
+
+
+            languageProjectList.appendChild(
+              projectElement
+            );
+
+
+          }
+        );
+
+      }
+
+
+      languageView.classList.add(
+        "active"
+      );
+
     }
+
 
 
     function closeLanguage() {
 
-      languageView.classList.remove("active");
+      languageView.classList.remove(
+        "active"
+      );
+
     }
 
 
-    /* -----------------------------------------
-       DIRECT LINK FROM GITHUB
 
-       https://tanaya0210.github.io/#personal-favourites
-       opens the favourites screen automatically.
-    ----------------------------------------- */
+    /* =====================================================
+       DIRECT LINK FROM GITHUB
+    ====================================================== */
 
     function handleHash() {
+
 
       if (
         window.location.hash ===
         "#personal-favourites"
       ) {
+
         openFavourites(false);
+
       }
+
+
     }
+
 
     window.addEventListener(
       "load",
       handleHash
     );
+
 
   </script>
 
