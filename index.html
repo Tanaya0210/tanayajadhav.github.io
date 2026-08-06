@@ -40,13 +40,17 @@
       --muted: #aaa7a1;
 
       --blue: #2589d9;
+      --blue-mid: #1c75b8;
       --blue-dark: #155e9c;
 
-      --red: #df7789;
-      --red-dark: #b84d62;
-
       --purple: #7b3fc6;
-      --purple-dark: #402064;
+      --purple-mid: #6532a3;
+      --purple-dark: #4f287d;
+
+      --red-light: #f3a6a6;
+      --red-mid: #e46b6b;
+      --red-dark: #c93f3f;
+      --red-open: #c94a4a;
 
       --ease: cubic-bezier(.22, .8, .25, 1);
     }
@@ -227,7 +231,7 @@
     }
 
     /* ======================================================
-       HOME EXPANDED PANELS
+       HOME PANELS
     ====================================================== */
 
     .home-panel {
@@ -646,7 +650,9 @@
       letter-spacing: .16em;
     }
 
-    /* EDTECH */
+    /* ======================================================
+       EDTECH — BLUE
+    ====================================================== */
 
     .fav-edtech {
       background:
@@ -657,29 +663,22 @@
           transparent 2px,
           transparent 18px
         ),
+        radial-gradient(
+          circle at 72% 24%,
+          rgba(113,184,239,.35),
+          transparent 30%
+        ),
         linear-gradient(
           145deg,
-          #2589d9,
-          #155e9c 62%,
-          #092f53
+          #2589d9 0%,
+          #1c75b8 52%,
+          #155e9c 100%
         );
     }
 
-    /* ATP */
-
-    .fav-atp {
-      color: #4a1018;
-
-      background:
-        linear-gradient(
-          145deg,
-          #f7c6cf,
-          #ef9baa 58%,
-          #df7789
-        );
-    }
-
-    /* MUE */
+    /* ======================================================
+       MUE — PURPLE
+    ====================================================== */
 
     .fav-mue {
       background:
@@ -699,9 +698,9 @@
         ),
         linear-gradient(
           145deg,
-          #3b1f58,
-          #7b3fc6 55%,
-          #271137
+          #7b3fc6 0%,
+          #6532a3 55%,
+          #402064 100%
         );
 
       background-size:
@@ -709,6 +708,27 @@
         35px 35px,
         auto,
         auto;
+    }
+
+    /* ======================================================
+       ATP — RED
+    ====================================================== */
+
+    .fav-atp {
+      color: #501515;
+
+      background:
+        radial-gradient(
+          circle at 74% 22%,
+          rgba(255,255,255,.22),
+          transparent 28%
+        ),
+        linear-gradient(
+          145deg,
+          #f3a6a6 0%,
+          #e46b6b 55%,
+          #c93f3f 100%
+        );
     }
 
     /* ======================================================
@@ -796,8 +816,6 @@
         minmax(0, 1.12fr)
         minmax(360px, .88fr);
     }
-
-    /* BLANK VISUAL AREA */
 
     .project-visual {
       min-height: 650px;
@@ -1200,7 +1218,7 @@
         <div class="portrait-frame">
 
           <img
-            src="tanaya-portrait.png?v=5"
+            src="tanaya-portrait.png?v=6"
             alt="Portrait of Tanaya Jadhav"
           >
 
@@ -1370,10 +1388,10 @@
 
             <p class="language-intro">
               Different questions call for different tools.
-              This collection moves across statistical
-              work in R, relational analysis in SQL,
-              broader analytical workflows in Python,
-              and spreadsheet-based analysis in Excel.
+              This collection moves across statistical work
+              in R, relational analysis in SQL, broader
+              analytical workflows in Python, and
+              spreadsheet-based analysis in Excel.
             </p>
 
 
@@ -1531,6 +1549,7 @@
 
   <!-- ======================================================
        PERSONAL FAVOURITES
+       ORDER: BLUE → PURPLE → RED
   ====================================================== -->
 
   <section id="favourites-view">
@@ -1552,7 +1571,9 @@
 
       <div class="favourite-grid">
 
-        <!-- EDTECH -->
+        <!-- ==================================================
+             01 EDTECH — BLUE
+        =================================================== -->
 
         <button
           class="favourite-card fav-edtech"
@@ -1580,35 +1601,9 @@
         </button>
 
 
-        <!-- ATP -->
-
-        <button
-          class="favourite-card fav-atp"
-          type="button"
-          onclick="openFavouriteProject('atp')"
-        >
-
-          <span class="fav-number">
-            02 / Sports Analytics
-          </span>
-
-          <h2 class="fav-title">
-            ATP Tennis<br>
-            Match Prediction
-          </h2>
-
-          <p class="fav-subtitle">
-            The One Wimbledon Started
-          </p>
-
-          <span class="open-label">
-            OPEN →
-          </span>
-
-        </button>
-
-
-        <!-- MUE -->
+        <!-- ==================================================
+             02 MUE — PURPLE
+        =================================================== -->
 
         <button
           class="favourite-card fav-mue"
@@ -1617,7 +1612,7 @@
         >
 
           <span class="fav-number">
-            03 / Data Analytics
+            02 / Data Analytics
           </span>
 
           <h2 class="fav-title">
@@ -1627,6 +1622,36 @@
 
           <p class="fav-subtitle">
             The Project I Came Back To
+          </p>
+
+          <span class="open-label">
+            OPEN →
+          </span>
+
+        </button>
+
+
+        <!-- ==================================================
+             03 ATP — RED
+        =================================================== -->
+
+        <button
+          class="favourite-card fav-atp"
+          type="button"
+          onclick="openFavouriteProject('atp')"
+        >
+
+          <span class="fav-number">
+            03 / Sports Analytics
+          </span>
+
+          <h2 class="fav-title">
+            ATP Tennis<br>
+            Match Prediction
+          </h2>
+
+          <p class="fav-subtitle">
+            The One Wimbledon Started
           </p>
 
           <span class="open-label">
@@ -1671,7 +1696,7 @@
 
     <div class="project-spread">
 
-      <!-- BLANK COLOURED AREA FOR PROJECT VISUAL -->
+      <!-- BLANK PROJECT VISUAL AREA -->
 
       <section
         id="project-visual"
@@ -1955,6 +1980,7 @@
 
     /* ======================================================
        PROJECT DATA
+       ORDER: EDTECH → MUE → ATP
     ====================================================== */
 
     const favouriteProjects = {
@@ -1984,7 +2010,7 @@
           "The project connects marketing performance, funnel conversion and programme economics so decisions can be made around where money is being generated, where prospects are being lost, and which programmes deserve investment.",
 
         background:
-          "#216ba5",
+          "#155e9c",
 
         link:
           "https://github.com/Tanaya0210/edtech-analytics"
@@ -1992,43 +2018,10 @@
       },
 
 
-      atp: {
-
-        index:
-          "02 / 03",
-
-        category:
-          "Sports Analytics / Statistical Modelling",
-
-        title:
-          "ATP Tennis Match Prediction",
-
-        vibe:
-          "Wimbledon took over my Instagram feed and left me wondering: how much of a tennis match can we actually predict before it begins?",
-
-        tech: [
-          "Python",
-          "Statistical Modelling",
-          "Machine Learning",
-          "Sports Analytics"
-        ],
-
-        insight:
-          "Using ATP men's singles data from 2005–2025, the project combines Elo ratings, rankings, surface performance, head-to-head history and recent form while comparing chronological and random validation strategies.",
-
-        background:
-          "#df7789",
-
-        link:
-          ""
-
-      },
-
-
       mue: {
 
         index:
-          "03 / 03",
+          "02 / 03",
 
         category:
           "Data Analytics",
@@ -2050,10 +2043,43 @@
           "Instead of treating predictive modelling as the destination, the refurbished project focuses on patterns, quantified findings, user behaviour and business recommendations — showing how my approach to analysis evolved.",
 
         background:
-          "#5b2d83",
+          "#4f287d",
 
         link:
           "https://github.com/Tanaya0210/market-user-engagement"
+
+      },
+
+
+      atp: {
+
+        index:
+          "03 / 03",
+
+        category:
+          "Sports Analytics / Statistical Modelling",
+
+        title:
+          "ATP Tennis Match Prediction",
+
+        vibe:
+          "Wimbledon took over my Instagram feed and left me wondering: how much of a tennis match can we actually predict before it begins?",
+
+        tech: [
+          "Python",
+          "Statistical Modelling",
+          "Machine Learning",
+          "Sports Analytics"
+        ],
+
+        insight:
+          "Using ATP men's singles data from 2005–2025, the project combines Elo ratings, rankings, surface performance, head-to-head history and recent form while comparing chronological and random validation strategies.",
+
+        background:
+          "#c94a4a",
+
+        link:
+          ""
 
       }
 
@@ -2177,11 +2203,6 @@
         }
       );
 
-
-      /*
-        LEFT SIDE IS NOW JUST
-        THE PROJECT THEME COLOUR.
-      */
 
       projectVisual.style.background =
         project.background;
