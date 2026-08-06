@@ -1,523 +1,1837 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tanaya Jadhav | Analyst Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="description"
+    content="Tanaya Jadhav — Data Analyst portfolio spanning data, statistics, business analytics and visual storytelling."
+  >
 
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-  bgDark: '#090a0f',
-  surface: '#12141c',
-  surfaceMuted: '#1e2230',
-  primaryTxt: '#f8fafc',
-  mutedTxt: '#94a3b8',
+  <title>Tanaya Jadhav | Data Analyst</title>
 
-  blue: '#2589D9',
-  blueLight: '#55B0E7',
-  blueMuted: 'rgba(37, 137, 217, 0.10)',
-
-  purple: '#7B3FC6',
-  purpleLight: '#9967D8',
-  purpleMuted: 'rgba(123, 63, 198, 0.10)',
-
-  red: '#C62828',
-  redLight: '#E05252',
-  redMuted: 'rgba(198, 40, 40, 0.10)',
-
-  accent: '#2589D9',
-  accentHover: '#55B0E7',
-  accentMuted: 'rgba(37, 137, 217, 0.10)'
-},
-          fontFamily: {
-            sans: ['Inter', 'sans-serif'],
-            mono: ['JetBrains Mono', 'monospace']
-          }
-        }
-      }
-    }
-  </script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;1,500&display=swap"
+    rel="stylesheet"
+  >
 
   <style>
+    :root {
+      --bg: #1d1d1d;
+      --bg-soft: #232323;
+      --surface: #272727;
+      --line: #3b3b3b;
+
+      --text: #f4f1eb;
+      --muted: #aaa7a1;
+
+      --blue: #2589d9;
+      --blue-light: #71b8ef;
+      --blue-dark: #0f4f86;
+
+      --purple: #7b3fc6;
+      --purple-light: #b38ae3;
+      --purple-dark: #402064;
+
+      --red: #b51f35;
+      --red-light: #e06b79;
+      --red-dark: #711121;
+
+      --cream: #f3ead7;
+      --wimbledon-green: #184c3a;
+
+      --ease: cubic-bezier(.22, .8, .25, 1);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: #090a0f;
-      color: #f8fafc;
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
 
-    .code-font {
-      font-family: 'JetBrains Mono', monospace;
+    button,
+    a {
+      font: inherit;
     }
 
-    .section-label {
-      font-family: 'JetBrains Mono', monospace;
-      color: #06b6d4;
+    button {
+      color: inherit;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    /* =========================
+       HOME
+    ========================== */
+
+    #home-view {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 54px 7vw;
+      transition:
+        transform .75s var(--ease),
+        opacity .55s ease;
+    }
+
+    #home-view.slide-away {
+      transform: translateX(-105%);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .home-grid {
+      width: 100%;
+      max-width: 1450px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(320px, 0.95fr) minmax(420px, 1.1fr);
+      gap: 8vw;
+      align-items: center;
+    }
+
+    .portrait-column {
+      width: 100%;
+    }
+
+    .name {
+      margin: 0 0 28px;
+      font-size: clamp(1.45rem, 2.2vw, 2.5rem);
+      font-weight: 700;
+      letter-spacing: .14em;
       text-transform: uppercase;
-      letter-spacing: 0.15em;
-      font-size: 0.75rem;
-      font-weight: 600;
     }
 
-    .modal-bg {
-      background: rgba(9, 10, 15, 0.92);
+    .portrait-frame {
+      width: 100%;
+      max-width: 590px;
+      aspect-ratio: 0.83;
+      overflow: hidden;
+      background: #111;
+    }
+
+    .portrait-frame img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center top;
+      display: block;
+    }
+
+    .menu-column {
+      min-height: 590px;
+      display: flex;
+      align-items: center;
+    }
+
+    .menu-wrap {
+      width: 100%;
+      max-width: 600px;
+    }
+
+    .menu-item {
+      border: 0;
+      background: transparent;
+      width: 100%;
+      padding: 23px 0;
+      display: grid;
+      grid-template-columns: 1fr 55px;
+      gap: 24px;
+      align-items: center;
+      text-align: left;
+      cursor: pointer;
+      transition:
+        opacity .25s ease,
+        transform .25s ease;
+    }
+
+    .menu-item:hover {
+      transform: translateX(8px);
+    }
+
+    .menu-title {
+      font-size: clamp(2.3rem, 4.8vw, 4.9rem);
+      font-weight: 300;
+      line-height: 1;
+      letter-spacing: -.045em;
+    }
+
+    .menu-item:nth-child(even) .menu-title {
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+    }
+
+    .menu-number {
+      color: var(--muted);
+      font-size: .95rem;
+      letter-spacing: .1em;
+    }
+
+    /* Expanded About / Contact / Lookbook intro */
+
+    .home-panel {
+      animation: fadePanel .45s var(--ease);
+      width: 100%;
+    }
+
+    @keyframes fadePanel {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .panel-back {
+      border: 0;
+      background: transparent;
+      padding: 0;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 32px;
+      transition: opacity .2s ease;
+    }
+
+    .panel-back:hover {
+      opacity: .65;
+    }
+
+    .panel-back-title {
+      font-size: clamp(2.6rem, 5vw, 5rem);
+      font-weight: 300;
+      letter-spacing: -.045em;
+    }
+
+    .panel-number {
+      color: var(--muted);
+      font-size: .9rem;
+      margin-top: 10px;
+    }
+
+    .panel-copy {
+      max-width: 650px;
+      color: #d3d0ca;
+      font-size: clamp(1rem, 1.25vw, 1.17rem);
+      line-height: 1.85;
+      font-weight: 300;
+    }
+
+    .panel-copy p {
+      margin: 0 0 18px;
+    }
+
+    .panel-accent {
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    /* CONTACT */
+
+    .contact-line {
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-size: clamp(1.65rem, 2.8vw, 2.8rem);
+      line-height: 1.35;
+      margin: 0 0 34px;
+      max-width: 650px;
+    }
+
+    .contact-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .contact-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      border: 1px solid var(--line);
+      padding: 12px 17px;
+      transition:
+        background .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+    }
+
+    .contact-badge:hover {
+      background: #292929;
+      border-color: #666;
+      transform: translateY(-2px);
+    }
+
+    .contact-badge strong {
+      font-size: .82rem;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+    }
+
+    .contact-badge span {
+      color: var(--muted);
+      font-size: .82rem;
+    }
+
+    /* LOOKBOOK LANGUAGE CARDS */
+
+    .language-intro {
+      color: #d3d0ca;
+      max-width: 650px;
+      font-size: 1.03rem;
+      line-height: 1.8;
+      font-weight: 300;
+      margin-bottom: 34px;
+    }
+
+    .language-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+      max-width: 690px;
+    }
+
+    .language-card {
+      border: 0;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: transparent;
+      min-height: 120px;
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-between;
+      padding: 18px;
+      text-align: left;
+      transition:
+        background .25s ease,
+        color .25s ease;
+    }
+
+    .language-card:hover {
+      background: var(--text);
+      color: #111;
+    }
+
+    .language-card strong {
+      font-size: 1.45rem;
+      font-weight: 500;
+    }
+
+    .language-card span {
+      font-size: .74rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      opacity: .65;
+    }
+
+    /* =========================
+       PERSONAL FAVOURITES
+    ========================== */
+
+    #favourites-view {
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      z-index: 20;
+      transform: translateX(105%);
+      opacity: 0;
+      pointer-events: none;
+      transition:
+        transform .75s var(--ease),
+        opacity .5s ease;
+      overflow-y: auto;
+    }
+
+    #favourites-view.active {
+      transform: translateX(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .favourites-shell {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .favourites-header {
+      min-height: 95px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 26px;
+      position: relative;
+      background: var(--bg);
+      z-index: 2;
+    }
+
+    .favourites-home {
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-size: clamp(1.5rem, 2.3vw, 2.2rem);
+      color: var(--text);
+      transition: opacity .2s ease;
+    }
+
+    .favourites-home:hover {
+      opacity: .6;
+    }
+
+    .favourite-grid {
+      flex: 1;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      min-height: calc(100vh - 95px);
+    }
+
+    .favourite-card {
+      position: relative;
+      overflow: hidden;
+      border: 0;
+      color: inherit;
+      cursor: pointer;
+      padding: 42px;
+      text-align: left;
+      min-height: 600px;
+      transition:
+        flex .5s var(--ease),
+        filter .3s ease;
+    }
+
+    .favourite-card:hover {
+      filter: brightness(1.06);
+    }
+
+    .favourite-card::after {
+      content: "OPEN →";
+      position: absolute;
+      bottom: 34px;
+      right: 34px;
+      font-size: .74rem;
+      letter-spacing: .16em;
+      font-weight: 600;
+      opacity: .68;
+    }
+
+    .fav-edtech {
+      background:
+        radial-gradient(circle at 78% 22%, rgba(255,255,255,.18), transparent 18%),
+        repeating-linear-gradient(
+          45deg,
+          rgba(255,255,255,.035) 0,
+          rgba(255,255,255,.035) 2px,
+          transparent 2px,
+          transparent 18px
+        ),
+        linear-gradient(145deg, #155e9c 0%, #2589d9 46%, #092f53 100%);
+    }
+
+    .fav-atp {
+      color: #35100e;
+      background:
+        radial-gradient(circle at 25% 20%, #d3283c 0 5%, transparent 5.3%),
+        radial-gradient(circle at 72% 68%, #d3283c 0 6%, transparent 6.3%),
+        radial-gradient(circle at 17% 76%, #1a563f 0 2%, transparent 2.3%),
+        linear-gradient(145deg, #fbf4e7 0%, #efe1c9 65%, #decab0 100%);
+    }
+
+    .fav-mue {
+      background:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px),
+        radial-gradient(circle at 80% 16%, rgba(200,150,255,.28), transparent 20%),
+        linear-gradient(145deg, #3b1f58 0%, #7b3fc6 55%, #271137 100%);
+      background-size:
+        35px 35px,
+        35px 35px,
+        auto,
+        auto;
+    }
+
+    .fav-number {
+      font-size: .78rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      opacity: .7;
+    }
+
+    .fav-title {
+      position: absolute;
+      left: 42px;
+      right: 42px;
+      bottom: 105px;
+      margin: 0;
+      font-size: clamp(2.3rem, 3.7vw, 4.7rem);
+      line-height: .98;
+      font-weight: 500;
+      letter-spacing: -.05em;
+    }
+
+    .fav-subtitle {
+      position: absolute;
+      left: 42px;
+      right: 42px;
+      bottom: 62px;
+      margin: 0;
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-size: 1.15rem;
+      opacity: .8;
+    }
+
+    /* =========================
+       PROJECT DETAIL / LOOKBOOK
+    ========================== */
+
+    #project-view {
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      z-index: 40;
+      transform: translateX(105%);
+      opacity: 0;
+      pointer-events: none;
+      transition:
+        transform .7s var(--ease),
+        opacity .45s ease;
+      overflow-y: auto;
+    }
+
+    #project-view.active {
+      transform: translateX(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .project-topbar {
+      min-height: 88px;
+      padding: 24px 5vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .project-back {
+      border: 0;
+      background: transparent;
+      color: var(--text);
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-size: .75rem;
+    }
+
+    .project-back:hover {
+      opacity: .6;
+    }
+
+    .project-index {
+      color: var(--muted);
+      font-size: .78rem;
+      letter-spacing: .12em;
+    }
+
+    .project-spread {
+      min-height: calc(100vh - 89px);
+      display: grid;
+      grid-template-columns: minmax(0, 1.12fr) minmax(360px, .88fr);
+    }
+
+    .project-visual {
+      min-height: 650px;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 7vw;
+    }
+
+    .project-visual-art {
+      width: min(650px, 92%);
+      aspect-ratio: 1.25;
+      border: 1px solid rgba(255,255,255,.18);
+      position: relative;
+      box-shadow: 0 30px 80px rgba(0,0,0,.25);
+      overflow: hidden;
+    }
+
+    .project-visual-art::before,
+    .project-visual-art::after {
+      content: "";
+      position: absolute;
+    }
+
+    .visual-edtech {
+      background:
+        linear-gradient(125deg, #0c3559, #2589d9 55%, #74bff7);
+    }
+
+    .visual-edtech::before {
+      width: 56%;
+      height: 56%;
+      border: 2px solid rgba(255,255,255,.55);
+      border-radius: 20px;
+      top: 20%;
+      left: 22%;
+      transform: rotate(-11deg);
+      box-shadow:
+        18px 18px 0 rgba(255,255,255,.08),
+        36px 36px 0 rgba(255,255,255,.04);
+    }
+
+    .visual-edtech::after {
+      content: "↶";
+      inset: 0;
+      display: grid;
+      place-items: center;
+      font-size: clamp(7rem, 14vw, 13rem);
+      color: rgba(255,255,255,.88);
+      font-weight: 300;
+    }
+
+    .visual-atp {
+      background:
+        radial-gradient(circle at 50% 48%, #be2236 0 13%, transparent 13.5%),
+        linear-gradient(90deg, transparent 49.5%, rgba(24,76,58,.35) 50%, transparent 50.5%),
+        linear-gradient(#f5ead4, #e7d4b7);
+    }
+
+    .visual-atp::before {
+      width: 68%;
+      height: 85%;
+      border: 3px solid rgba(24,76,58,.6);
+      left: 16%;
+      top: 7.5%;
+    }
+
+    .visual-atp::after {
+      width: 40%;
+      height: 40%;
+      border-radius: 50%;
+      border: 3px solid rgba(181,31,53,.75);
+      left: 30%;
+      top: 30%;
+    }
+
+    .visual-mue {
+      background:
+        linear-gradient(rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.05) 1px, transparent 1px),
+        linear-gradient(145deg, #271137, #7b3fc6);
+      background-size: 28px 28px, 28px 28px, auto;
+    }
+
+    .visual-mue::before {
+      content: "2019";
+      left: 8%;
+      top: 10%;
+      font-family: "Playfair Display", serif;
+      font-size: clamp(4rem, 9vw, 9rem);
+      color: rgba(255,255,255,.12);
+    }
+
+    .visual-mue::after {
+      content: "→ NOW";
+      right: 8%;
+      bottom: 12%;
+      font-size: clamp(2rem, 5vw, 4.7rem);
+      letter-spacing: -.04em;
+      color: rgba(255,255,255,.88);
+    }
+
+    .project-copy {
+      padding: clamp(42px, 6vw, 95px);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: #202020;
+    }
+
+    .project-category {
+      color: var(--muted);
+      font-size: .72rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    .project-copy h1 {
+      margin: 0 0 40px;
+      font-size: clamp(2.8rem, 5vw, 5.7rem);
+      line-height: .96;
+      font-weight: 400;
+      letter-spacing: -.055em;
+    }
+
+    .detail-block {
+      padding: 20px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .detail-label {
+      font-size: .68rem;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .detail-value {
+      color: #dedbd5;
+      line-height: 1.7;
+      font-size: .96rem;
+      font-weight: 300;
+    }
+
+    .tech-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tech-chip {
+      border: 1px solid #555;
+      padding: 7px 11px;
+      font-size: .72rem;
+      color: #ddd9d1;
+    }
+
+    .project-link {
+      margin-top: 35px;
+      align-self: flex-start;
+      text-decoration: none;
+      text-transform: uppercase;
+      letter-spacing: .13em;
+      font-size: .76rem;
+      border-bottom: 1px solid currentColor;
+      padding-bottom: 5px;
+    }
+
+    .project-link:hover {
+      opacity: .6;
+    }
+
+    /* =========================
+       LANGUAGE PROJECT BROWSER
+    ========================== */
+
+    #language-view {
+      position: fixed;
+      inset: 0;
+      background: var(--bg);
+      z-index: 30;
+      transform: translateX(105%);
+      opacity: 0;
+      pointer-events: none;
+      transition:
+        transform .7s var(--ease),
+        opacity .45s ease;
+      overflow-y: auto;
+    }
+
+    #language-view.active {
+      transform: translateX(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .language-page {
+      max-width: 1400px;
+      margin: auto;
+      padding: 38px 6vw 90px;
+    }
+
+    .language-page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 25px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .language-back {
+      border: 0;
+      background: transparent;
+      cursor: pointer;
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+    }
+
+    .language-heading {
+      font-family: "Playfair Display", serif;
+      font-style: italic;
+      font-size: clamp(2rem, 4vw, 4rem);
+      margin: 75px 0 50px;
+    }
+
+    .language-project-list {
+      display: grid;
+      gap: 1px;
+      background: var(--line);
+      border: 1px solid var(--line);
+    }
+
+    .language-project {
+      background: var(--bg);
+      display: grid;
+      grid-template-columns: 80px minmax(260px, 1fr) 1.5fr 80px;
+      align-items: center;
+      gap: 24px;
+      padding: 28px 32px;
+      text-decoration: none;
+      transition: background .2s ease;
+    }
+
+    .language-project:hover {
+      background: #242424;
+    }
+
+    .language-project-number {
+      color: var(--muted);
+      font-size: .8rem;
+    }
+
+    .language-project-title {
+      font-size: 1.3rem;
+      font-weight: 500;
+    }
+
+    .language-project-desc {
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: .92rem;
+    }
+
+    .language-project-arrow {
+      text-align: right;
+      font-size: 1.25rem;
+    }
+
+    .empty-state {
+      padding: 50px;
+      color: var(--muted);
+      background: var(--bg);
+      line-height: 1.8;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 900px) {
+      #home-view {
+        padding: 35px 6vw 60px;
+        align-items: flex-start;
+      }
+
+      .home-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .portrait-frame {
+        max-width: 100%;
+        aspect-ratio: 1 / 1.12;
+      }
+
+      .menu-column {
+        min-height: auto;
+      }
+
+      .menu-wrap {
+        max-width: none;
+      }
+
+      .menu-item {
+        padding: 16px 0;
+      }
+
+      .menu-title {
+        font-size: clamp(2.4rem, 10vw, 4rem);
+      }
+
+      .language-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .favourite-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .favourite-card {
+        min-height: 420px;
+      }
+
+      .project-spread {
+        grid-template-columns: 1fr;
+      }
+
+      .project-visual {
+        min-height: 470px;
+      }
+
+      .language-project {
+        grid-template-columns: 45px 1fr 45px;
+      }
+
+      .language-project-desc {
+        display: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .name {
+        font-size: 1.25rem;
+      }
+
+      .language-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .contact-badges {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .contact-badge {
+        justify-content: space-between;
+      }
+
+      .project-copy {
+        padding: 40px 7vw 60px;
+      }
     }
   </style>
 </head>
 
-<body class="selection:bg-accent selection:text-bgDark antialiased">
+<body>
 
-  <nav class="fixed top-0 w-full bg-bgDark/85 backdrop-blur-md border-b border-surfaceMuted z-50">
-    <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+  <!-- =====================================================
+       HOME
+  ====================================================== -->
 
-      <div class="hidden md:flex items-center space-x-8 text-sm font-medium text-mutedTxt">
-        <a href="#home" class="hover:text-primaryTxt transition-colors">Home</a>
-        <a href="#about" class="hover:text-primaryTxt transition-colors">About</a>
-        <a href="#projects" class="hover:text-primaryTxt transition-colors">Projects</a>
-        <a href="#experience" class="hover:text-primaryTxt transition-colors">Experience</a>
-        <a href="#skills" class="hover:text-primaryTxt transition-colors">Skills</a>
-        <a href="#contact" class="px-4 py-2 border border-accent/40 text-accent rounded hover:bg-accentMuted transition-all">
-          Contact
+  <main id="home-view">
+
+    <div class="home-grid">
+
+      <!-- LEFT: NAME + PORTRAIT -->
+      <section class="portrait-column">
+
+        <h1 class="name">
+          Tanaya Jadhav
+        </h1>
+
+        <div class="portrait-frame">
+          <img
+            src="tanaya-portrait.png"
+            alt="Portrait of Tanaya Jadhav"
+          >
+        </div>
+
+      </section>
+
+
+      <!-- RIGHT: INTERACTIVE MENU -->
+      <section class="menu-column">
+
+        <div class="menu-wrap">
+
+          <!-- Main four-item menu -->
+          <div id="main-menu">
+
+            <button
+              class="menu-item"
+              type="button"
+              onclick="openHomePanel('about')"
+            >
+              <span class="menu-title">About</span>
+              <span class="menu-number">01</span>
+            </button>
+
+            <button
+              class="menu-item"
+              type="button"
+              onclick="openFavourites()"
+            >
+              <span class="menu-title">Personal Favourites</span>
+              <span class="menu-number">02</span>
+            </button>
+
+            <button
+              class="menu-item"
+              type="button"
+              onclick="openHomePanel('lookbook')"
+            >
+              <span class="menu-title">Lookbook</span>
+              <span class="menu-number">03</span>
+            </button>
+
+            <button
+              class="menu-item"
+              type="button"
+              onclick="openHomePanel('contact')"
+            >
+              <span class="menu-title">Contact</span>
+              <span class="menu-number">04</span>
+            </button>
+
+          </div>
+
+
+          <!-- ABOUT -->
+          <div id="about-panel" class="home-panel hidden">
+
+            <button
+              class="panel-back"
+              type="button"
+              onclick="closeHomePanel()"
+            >
+              <span class="panel-back-title">About</span>
+              <span class="panel-number">01</span>
+            </button>
+
+            <div class="panel-copy">
+
+              <p>
+                I'm a Data Science postgraduate at the
+                <span class="panel-accent">University of Nottingham</span>,
+                working across data analysis, statistics, machine learning,
+                business intelligence and visualisation.
+              </p>
+
+              <p>
+                I like starting with the question before choosing the tool:
+                understanding what the data is actually saying, why it matters,
+                and how the result can support a useful decision.
+              </p>
+
+              <p>
+                My work spans commercial analytics, sports modelling,
+                cybersecurity, healthcare, marketing and user engagement,
+                using <span class="panel-accent">Python, SQL, R, Power BI and Excel</span>.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- LOOKBOOK INTRO -->
+          <div id="lookbook-panel" class="home-panel hidden">
+
+            <button
+              class="panel-back"
+              type="button"
+              onclick="closeHomePanel()"
+            >
+              <span class="panel-back-title">Lookbook</span>
+              <span class="panel-number">03</span>
+            </button>
+
+            <p class="language-intro">
+              Different questions call for different tools.
+              This collection moves across statistical work in R,
+              relational analysis in SQL, broader analytical workflows
+              in Python, and spreadsheet-based analysis in Excel.
+            </p>
+
+            <div class="language-grid">
+
+              <button
+                class="language-card"
+                type="button"
+                onclick="openLanguage('R')"
+              >
+                <strong>R</strong>
+                <span>View projects →</span>
+              </button>
+
+              <button
+                class="language-card"
+                type="button"
+                onclick="openLanguage('SQL')"
+              >
+                <strong>SQL</strong>
+                <span>View projects →</span>
+              </button>
+
+              <button
+                class="language-card"
+                type="button"
+                onclick="openLanguage('Python')"
+              >
+                <strong>Python</strong>
+                <span>View projects →</span>
+              </button>
+
+              <button
+                class="language-card"
+                type="button"
+                onclick="openLanguage('Excel')"
+              >
+                <strong>Excel</strong>
+                <span>View projects →</span>
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- CONTACT -->
+          <div id="contact-panel" class="home-panel hidden">
+
+            <button
+              class="panel-back"
+              type="button"
+              onclick="closeHomePanel()"
+            >
+              <span class="panel-back-title">Contact</span>
+              <span class="panel-number">04</span>
+            </button>
+
+            <p class="contact-line">
+              Got a project, role, or data problem in mind?
+              Let’s collaborate.
+            </p>
+
+            <div class="contact-badges">
+
+              <a
+                class="contact-badge"
+                href="https://www.linkedin.com/in/tanayajadhav0210/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <strong>LinkedIn</strong>
+                <span>Connect →</span>
+              </a>
+
+              <a
+                class="contact-badge"
+                href="mailto:tanaya.nsj@gmail.com"
+              >
+                <strong>Email</strong>
+                <span>Contact →</span>
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <!-- =====================================================
+       PERSONAL FAVOURITES
+  ====================================================== -->
+
+  <section id="favourites-view">
+
+    <div class="favourites-shell">
+
+      <header class="favourites-header">
+
+        <!-- Clicking this returns to the homepage -->
+        <button
+          class="favourites-home"
+          type="button"
+          onclick="closeFavourites()"
+        >
+          Personal Favourites
+        </button>
+
+      </header>
+
+      <div class="favourite-grid">
+
+        <!-- 01 EDTECH -->
+        <button
+          class="favourite-card fav-edtech"
+          type="button"
+          onclick="openFavouriteProject('edtech')"
+        >
+
+          <span class="fav-number">
+            01 / Business Analytics
+          </span>
+
+          <h2 class="fav-title">
+            EdTech<br>Analytics
+          </h2>
+
+          <p class="fav-subtitle">
+            The Uno Reverse Project
+          </p>
+
+        </button>
+
+
+        <!-- 02 ATP -->
+        <button
+          class="favourite-card fav-atp"
+          type="button"
+          onclick="openFavouriteProject('atp')"
+        >
+
+          <span class="fav-number">
+            02 / Sports Analytics
+          </span>
+
+          <h2 class="fav-title">
+            ATP Tennis<br>Match Prediction
+          </h2>
+
+          <p class="fav-subtitle">
+            The One Wimbledon Started
+          </p>
+
+        </button>
+
+
+        <!-- 03 MUE -->
+        <button
+          class="favourite-card fav-mue"
+          type="button"
+          onclick="openFavouriteProject('mue')"
+        >
+
+          <span class="fav-number">
+            03 / Data Analytics
+          </span>
+
+          <h2 class="fav-title">
+            Market User<br>Engagement
+          </h2>
+
+          <p class="fav-subtitle">
+            The Project I Came Back To
+          </p>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- =====================================================
+       PROJECT LOOKBOOK DETAIL
+  ====================================================== -->
+
+  <section id="project-view">
+
+    <header class="project-topbar">
+
+      <button
+        id="project-back"
+        class="project-back"
+        type="button"
+        onclick="closeProject()"
+      >
+        ← Personal Favourites
+      </button>
+
+      <span
+        id="project-index"
+        class="project-index"
+      >
+        01 / 03
+      </span>
+
+    </header>
+
+    <div class="project-spread">
+
+      <!-- LEFT: HERO VISUAL -->
+      <section
+        id="project-visual"
+        class="project-visual"
+      >
+        <div
+          id="project-art"
+          class="project-visual-art"
+        ></div>
+      </section>
+
+
+      <!-- RIGHT: PROJECT STORY -->
+      <section class="project-copy">
+
+        <p
+          id="project-category"
+          class="project-category"
+        ></p>
+
+        <h1 id="project-title"></h1>
+
+
+        <div class="detail-block">
+
+          <div class="detail-label">
+            The Vibe
+          </div>
+
+          <div
+            id="project-vibe"
+            class="detail-value"
+          ></div>
+
+        </div>
+
+
+        <div class="detail-block">
+
+          <div class="detail-label">
+            The Tech
+          </div>
+
+          <div
+            id="project-tech"
+            class="tech-row"
+          ></div>
+
+        </div>
+
+
+        <div class="detail-block">
+
+          <div class="detail-label">
+            The Insight
+          </div>
+
+          <div
+            id="project-insight"
+            class="detail-value"
+          ></div>
+
+        </div>
+
+
+        <a
+          id="project-link"
+          class="project-link"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Project →
         </a>
-      </div>
 
-      <button id="menu-btn" class="md:hidden text-primaryTxt focus:outline-none" aria-label="Toggle menu">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-        </svg>
-      </button>
-    </div>
-
-    <div id="mobile-menu" class="hidden md:hidden bg-surface border-b border-surfaceMuted px-6 py-4 space-y-4">
-      <a href="#home" class="block text-mutedTxt hover:text-primaryTxt">Home</a>
-      <a href="#about" class="block text-mutedTxt hover:text-primaryTxt">About</a>
-      <a href="#projects" class="block text-mutedTxt hover:text-primaryTxt">Project</a>
-      <a href="#experience" class="block text-mutedTxt hover:text-primaryTxt">Experience</a>
-      <a href="#skills" class="block text-mutedTxt hover:text-primaryTxt">Skills</a>
-      <a href="#contact" class="block text-accent hover:underline">Contact</a>
-    </div>
-  </nav>
-
-  <section id="home" class="min-h-screen flex items-center justify-center pt-24 px-6 relative overflow-hidden">
-  <div class="absolute inset-0 opacity-[0.03] pointer-events-none bg-[linear-gradient(to_right,#808080_1px,transparent_1px),linear-gradient(to_bottom,#808080_1px,transparent_1px)] bg-[size:42px_42px]"></div>
-
-  <div class="max-w-5xl text-center z-10">
-    <p class="code-font text-accent uppercase tracking-[0.35em] text-xs md:text-sm mb-8 font-semibold">
-      Available for Opportunities
-    </p>
-
-    <h1 class="text-5xl md:text-7xl lg:text-8xl font-extrabold tracking-tight text-primaryTxt mb-8 leading-[0.95]">
-      Transforming Raw Data into<br>
-      <span class="text-transparent bg-clip-text bg-gradient-to-r from-accent to-blue-400">
-        Meaningful Insights
-      </span>
-    </h1>
-
-    <p class="text-lg md:text-xl text-mutedTxt max-w-3xl mx-auto mb-12 font-light leading-relaxed">
-      Graduate Analyst specialized in translating complex data architectures into clear executive decisions. Blending predictive modeling, statistical research, and commercial strategy to solve modern organizational challenges.
-    </p>
-
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
-      <a href="#projects" class="w-full sm:w-auto px-10 py-4 bg-accent text-bgDark font-semibold rounded hover:bg-accentHover transition-all shadow-lg shadow-accent/10">
-        View My Work
-      </a>
-
-      <a href="#contact" class="w-full sm:w-auto px-10 py-4 bg-surface border border-surfaceMuted text-primaryTxt font-medium rounded hover:bg-surfaceMuted transition-all">
-        Let’s Collaborate
-      </a>
-    </div>
-  </div>
-</section>
-
-  <hr class="border-surfaceMuted max-w-7xl mx-auto" />
-
-  <section id="about" class="py-24 px-6 max-w-7xl mx-auto">
-
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-
-        <div class="lg:col-span-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-primaryTxt">
-                About
-            </h2>
-        </div>
-
-        <div class="lg:col-span-8 space-y-6 text-mutedTxt text-base md:text-lg leading-relaxed font-light">
-
-            <p>
-                I am currently pursuing an MSc in Data Science at the University of Nottingham. My work focuses on using data to identify patterns, support decision-making, and communicate findings in a clear and structured way.
-            </p>
-
-            <p>
-                Through internships and academic projects, I have worked on data cleaning, exploratory data analysis, statistical modelling, visualisation, reporting, and machine learning workflows using Python, R, Excel, and analytical libraries.
-            </p>
-
-            <p>
-                I am interested in analyst roles across data analytics, business analytics, research analytics, reporting, and insights. I enjoy work that connects technical analysis with practical decision-making.
-            </p>
-
-            <div class="pt-6 grid grid-cols-1 sm:grid-cols-2 gap-6 text-sm code-font border-t border-surfaceMuted">
-
-                <div>
-                    <span class="text-accent block text-xs uppercase mb-1">
-                        Current Focus
-                    </span>
-
-                    <span class="text-primaryTxt">
-                        Data analysis, statistical modelling, research, reporting
-                    </span>
-                </div>
-
-                <div>
-                    <span class="text-accent block text-xs uppercase mb-1">
-                        Target Roles
-                    </span>
-
-                    <span class="text-primaryTxt">
-                        Data Analyst, Business Analyst, Research Analyst, Insights Analyst
-                    </span>
-                </div>
-
-            </div>
-
-        </div>
+      </section>
 
     </div>
 
-</section>
-
-  <hr class="border-surfaceMuted max-w-7xl mx-auto" />
-
-  <section id="projects" class="py-24 px-6 max-w-7xl mx-auto">
-
-  <div class="mb-6">
-<h2 class="text-3xl md:text-4xl font-bold text-primaryTxt mb-8">
-    Projects
-</h2>  </div>
-
-  <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-
-    <div class="bg-surface border border-surfaceMuted p-8 rounded-lg group hover:border-accent/40 transition-all duration-300 flex flex-col justify-between">
-
-      <div>
-        <div class="flex items-center justify-between mb-6">
-
-          <span class="code-font text-xs text-accent bg-accentMuted px-3 py-1 rounded">
-            Exploratory Data Analysis
-          </span>
-
-          <svg class="w-5 h-5 text-mutedTxt group-hover:text-accent transition-colors"
-               fill="none"
-               stroke="currentColor"
-               viewBox="0 0 24 24">
-            <path stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M14 5l7 7m0 0l-7 7m7-7H3"/>
-          </svg>
-
-        </div>
-
-        <h3 class="text-2xl font-bold text-primaryTxt mb-3 group-hover:text-accent transition-colors">
-          Heart Disease Prediction using Machine Learning
-        </h3>
-
-        <p class="text-mutedTxt font-light mb-6">
-          Analysed clinical health data, explored key factors associated with heart disease, and compared classification models to evaluate predictive performance.
-        </p>
-
-      </div>
-
-      <div>
-
-        <div class="flex flex-wrap gap-2 text-xs code-font text-mutedTxt mb-6">
-
-          <span class="bg-bgDark px-2 py-1 rounded border border-surfaceMuted">
-            Python
-          </span>
-
-          <span class="bg-bgDark px-2 py-1 rounded border border-surfaceMuted">
-            Pandas
-          </span>
-
-          <span class="bg-bgDark px-2 py-1 rounded border border-surfaceMuted">
-            Machine Learning
-          </span>
-
-          <span class="bg-bgDark px-2 py-1 rounded border border-surfaceMuted">
-            Statistical Analysis
-          </span>
-
-        </div>
-
-        <div class="flex flex-wrap gap-3">
-
-          <a href="https://github.com/Tanaya0210/heart-disease-prediction"
-             target="_blank"
-             rel="noopener noreferrer"
-             class="inline-block px-5 py-3 bg-accent text-bgDark font-semibold rounded hover:bg-accentHover transition-all">
-
-            View Project
-
-          </a>
-
-          <button onclick="openModal('modal-heart')"
-                  class="inline-block px-5 py-3 bg-surfaceMuted text-primaryTxt font-semibold rounded hover:bg-bgDark transition-all">
-
-            Read Case Study
-
-          </button>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-  <section id="experience" class="py-24 px-6 max-w-7xl mx-auto">
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
-      <div class="lg:col-span-4">
-        <h2 class="text-3xl md:text-4xl font-bold text-primaryTxt">
-  Experience
-</h2>
-      </div>
-
-      <div class="lg:col-span-8 space-y-12">
-        <div class="relative border-l border-surfaceMuted pl-6 ml-2">
-          <div class="absolute -left-[6px] top-1.5 w-[11px] h-[11px] bg-accent rounded-full"></div>
-
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-3">
-            <div>
-              <h3 class="text-xl font-bold text-primaryTxt">Data Science Intern</h3>
-              <p class="text-accent text-sm font-medium">Labmentix</p>
-            </div>
-            <span class="code-font text-xs text-mutedTxt mt-1 sm:mt-0">2025 | 6 months</span>
-          </div>
-
-          <ul class="space-y-2 text-sm md:text-base text-mutedTxt font-light list-disc list-inside">
-            <li>Conducted data analysis on structured datasets to identify trends and generate actionable insights.</li>
-            <li>Performed data cleaning, exploratory data analysis, and model evaluation using Python-based analytical workflows.</li>
-            <li>Documented analytical findings and communicated results for technical and non-technical audiences.</li>
-          </ul>
-
-          <div class="mt-4 flex flex-wrap gap-2 text-xs code-font text-mutedTxt">
-            <span class="bg-surface px-2 py-1 rounded">Python</span>
-            <span class="bg-surface px-2 py-1 rounded">Data Analysis</span>
-            <span class="bg-surface px-2 py-1 rounded">EDA</span>
-            <span class="bg-surface px-2 py-1 rounded">Model Evaluation</span>
-          </div>
-        </div>
-
-        <div class="relative border-l border-surfaceMuted pl-6 ml-2">
-          <div class="absolute -left-[6px] top-1.5 w-[11px] h-[11px] bg-surfaceMuted rounded-full"></div>
-
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between mb-3">
-            <div>
-              <h3 class="text-xl font-bold text-primaryTxt">Data Analyst Intern</h3>
-              <p class="text-accent text-sm font-medium">Unified Mentor | EdTech</p>
-            </div>
-            <span class="code-font text-xs text-mutedTxt mt-1 sm:mt-0">2024 to 2025 | 3 months</span>
-          </div>
-
-          <ul class="space-y-2 text-sm md:text-base text-mutedTxt font-light list-disc list-inside">
-            <li>Analysed learner engagement and performance data across educational projects.</li>
-            <li>Applied quantitative analysis techniques to identify behavioural trends and support learning insights.</li>
-            <li>Prepared reports and presentations to support data-informed decision-making.</li>
-          </ul>
-
-          <div class="mt-4 flex flex-wrap gap-2 text-xs code-font text-mutedTxt">
-            <span class="bg-surface px-2 py-1 rounded">Data Analysis</span>
-            <span class="bg-surface px-2 py-1 rounded">Reporting</span>
-            <span class="bg-surface px-2 py-1 rounded">Visualisation</span>
-            <span class="bg-surface px-2 py-1 rounded">Research</span>
-          </div>
-        </div>
-      </div>
-    </div>
   </section>
 
-  <hr class="border-surfaceMuted max-w-7xl mx-auto" />
 
-  <section id="skills" class="py-24 px-6 max-w-7xl mx-auto">
-    <div class="mb-12">
-      <h2 class="text-3xl md:text-4xl font-bold text-primaryTxt">
-  Skills
-</h2>
+  <!-- =====================================================
+       LANGUAGE PROJECT LISTS
+  ====================================================== -->
+
+  <section id="language-view">
+
+    <div class="language-page">
+
+      <header class="language-page-header">
+
+        <button
+          class="language-back"
+          type="button"
+          onclick="closeLanguage()"
+        >
+          ← Lookbook
+        </button>
+
+        <span class="project-index">
+          Data Project Lookbook
+        </span>
+
+      </header>
+
+      <h1
+        id="language-heading"
+        class="language-heading"
+      >
+        Python
+      </h1>
+
+      <div
+        id="language-project-list"
+        class="language-project-list"
+      ></div>
+
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      <div class="bg-surface border border-surfaceMuted p-6 rounded-lg">
-        <h3 class="code-font text-accent text-xs uppercase font-bold tracking-widest mb-4">
-          Analytics
-        </h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-bgDark border border-surfaceMuted text-primaryTxt px-3 py-1.5 rounded text-sm font-light">Data Analysis</span>
-          <span class="bg-bgDark border border-surfaceMuted text-primaryTxt px-3 py-1.5 rounded text-sm font-light">Data Cleaning</span>
-          <span class="bg-bgDark border border-surfaceMuted text-primaryTxt px-3 py-1.5 rounded text-sm font-light">Exploratory Data Analysis</span>
-          <span class="bg-bgDark border border-surfaceMuted text-primaryTxt px-3 py-1.5 rounded text-sm font-light">Statistical Analysis</span>
-          <span class="bg-bgDark border border-surfaceMuted text-primaryTxt px-3 py-1.5 rounded text-sm font-light">Hypothesis Testing</span>
-        </div>
-      </div>
-
-      <div class="bg-surface border border-surfaceMuted p-6 rounded-lg">
-        <h3 class="code-font text-accent text-xs uppercase font-bold tracking-widest mb-4">
-          Technical
-        </h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-bgDark border border-surfaceMuted text-primaryTxt px-3 py-1.5 rounded text-sm font-light">Python</span>
-          <span class="bg-bgDark border border-surfaceMuted text-primaryTxt px-3 py-1.5 rounded text-sm font-light">R</span>
-          <span class="bg-bgDark border border-surfaceMuted text-primaryTxt px-3 py-1.5 rounded text-sm font-light">SQL Basics</span>
-          <span class="bg-bgDark border border-surfaceMuted text-primaryTxt px-3 py-1.5 rounded text-sm font-light">Pandas</span>
-          <span class="bg-bgDark border border-surfaceMuted text-primaryTxt px-3 py-1.5 rounded text-sm font-light">NumPy</span>
-          <span class="bg-bgDark border border-surfaceMuted text-primaryTxt px-3 py-1.5 rounded text-sm font-light">Machine Learning</span>
-        </div>
-      </div>
-
-      <div class="bg-surface border border-surfaceMuted p-6 rounded-lg">
-        <h3 class="code-font text-accent text-xs uppercase font-bold tracking-widest mb-4">
-          Visualisation & Reporting
-        </h3>
-        <div class="flex flex-wrap gap-2">
-          <span class="bg-bgDark border border-surfaceMuted text-primaryTxt px-3 py-1.5 rounded text-sm font-light">Matplotlib</span>
-          <span class="bg-bgDark border border-surfaceMuted text-primaryTxt px-3 py-1.5 rounded text-sm font-light">Seaborn</span>
-          <span class="bg-bgDark border border-surfaceMuted text-primaryTxt px-3 py-1.5 rounded text-sm font-light">ggplot2</span>
-          <span class="bg-bgDark border border-surfaceMuted text-primaryTxt px-3 py-1.5 rounded text-sm font-light">Microsoft Excel</span>
-          <span class="bg-bgDark border border-surfaceMuted text-primaryTxt px-3 py-1.5 rounded text-sm font-light">PowerPoint</span>
-          <span class="bg-bgDark border border-surfaceMuted text-primaryTxt px-3 py-1.5 rounded text-sm font-light">Reporting</span>
-        </div>
-      </div>
-    </div>
   </section>
 
-  <hr class="border-surfaceMuted max-w-7xl mx-auto" />
 
-  <section id="contact" class="py-24 px-6 max-w-4xl mx-auto text-center">
-    <h2 class="text-3xl md:text-4xl font-bold text-primaryTxt mb-6">
-  Contact
-</h2>
-
-    <p class="text-mutedTxt font-light mb-10 max-w-xl mx-auto leading-relaxed">
-      I am open to graduate and entry-level analyst opportunities across data, business, research, reporting, and insights functions.
-    </p>
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 code-font text-sm mb-12">
-      <a href="mailto:tanaya.nsj@gmail.com" class="bg-surface border border-surfaceMuted p-4 rounded hover:border-accent transition-colors block">
-        <span class="text-accent block text-xs mb-1">EMAIL</span>
-        tanaya.nsj@gmail.com
-      </a>
-
-      <a href="tel:+447344213168" class="bg-surface border border-surfaceMuted p-4 rounded hover:border-accent transition-colors block">
-        <span class="text-accent block text-xs mb-1">PHONE</span>
-        +44 7344 213168
-      </a>
-
-      <a href="https://www.linkedin.com/in/tanayajadhav0210/" target="_blank" rel="noopener noreferrer" class="bg-surface border border-surfaceMuted p-4 rounded hover:border-accent transition-colors block">
-        <span class="text-accent block text-xs mb-1">LINKEDIN</span>
-        /in/tanayajadhav0210
-      </a>
-
-      <a href="https://github.com/Tanaya0210" target="_blank" rel="noopener noreferrer" class="bg-surface border border-surfaceMuted p-4 rounded hover:border-accent transition-colors block">
-        <span class="text-accent block text-xs mb-1">GITHUB</span>
-        /Tanaya0210
-      </a>
-    </div>
-  </section>
-
-  <footer class="bg-surface border-t border-surfaceMuted py-8 text-center text-xs code-font text-mutedTxt">
-    <p>&copy; 2026 Tanaya Jadhav. Analyst Portfolio.</p>
-  </footer>
-
-  <div id="modal-heart" class="fixed inset-0 modal-bg backdrop-blur-sm z-50 hidden items-center justify-center p-4">
-    <div class="bg-surface border border-surfaceMuted w-full max-w-3xl rounded-lg max-h-[90vh] overflow-y-auto p-6 md:p-8 relative">
-      <button onclick="closeModal('modal-heart')" class="absolute top-4 right-4 text-mutedTxt hover:text-primaryTxt font-bold code-font text-lg">
-        &times; CLOSE
-      </button>
-
-      <span class="code-font text-xs text-accent uppercase tracking-widest block mb-2">
-        Project case study
-      </span>
-
-      <h3 class="text-2xl md:text-3xl font-bold text-primaryTxt mb-6 border-b border-surfaceMuted pb-4">
-        Heart Disease Prediction using Machine Learning
-      </h3>
-
-      <div class="space-y-6 text-mutedTxt font-light text-sm md:text-base">
-        <div>
-          <h4 class="font-bold text-primaryTxt uppercase text-xs code-font text-accent mb-1">Problem</h4>
-          <p>
-            The project explored how patient attributes can be used to identify patterns associated with heart disease. The focus was on analysing clinical variables, understanding relationships in the data, and evaluating machine learning models for classification.
-          </p>
-        </div>
-
-        <div>
-          <h4 class="font-bold text-primaryTxt uppercase text-xs code-font text-accent mb-1">Solution</h4>
-          <p>
-            I carried out exploratory data analysis, prepared the dataset for modelling, built multiple classification models, and evaluated model performance using appropriate metrics. Cross-validation and hyperparameter tuning were used to compare model reliability.
-          </p>
-        </div>
-
-        <div>
-          <h4 class="font-bold text-primaryTxt uppercase text-xs code-font text-accent mb-1">Outcome</h4>
-          <p>
-            The project helped identify the most useful clinical factors in the dataset and compare which modelling approach produced the most reliable performance. The final analysis focused on interpretability, model evaluation, and communicating results clearly.
-          </p>
-        </div>
-
-        <div>
-          <h4 class="font-bold text-primaryTxt uppercase text-xs code-font text-accent mb-1">Skills demonstrated</h4>
-          <p>
-            Python, Pandas, exploratory data analysis, classification, model evaluation, cross-validation, hyperparameter tuning, statistical analysis, data visualisation, and technical reporting.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
+  <!-- =====================================================
+       JAVASCRIPT
+  ====================================================== -->
 
   <script>
-    const menuBtn = document.getElementById('menu-btn');
-    const mobileMenu = document.getElementById('mobile-menu');
 
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-    });
+    /* -----------------------------------------
+       HOME PANELS
+    ----------------------------------------- */
 
-    document.querySelectorAll('#mobile-menu a').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.add('hidden');
+    const mainMenu = document.getElementById("main-menu");
+
+    const homePanels = {
+      about: document.getElementById("about-panel"),
+      lookbook: document.getElementById("lookbook-panel"),
+      contact: document.getElementById("contact-panel")
+    };
+
+    function openHomePanel(panelName) {
+
+      mainMenu.classList.add("hidden");
+
+      Object.values(homePanels).forEach(panel => {
+        panel.classList.add("hidden");
       });
-    });
 
-    function openModal(id) {
-      const modal = document.getElementById(id);
-      modal.classList.remove('hidden');
-      modal.classList.add('flex');
-      document.body.style.overflow = 'hidden';
+      homePanels[panelName].classList.remove("hidden");
     }
 
-    function closeModal(id) {
-      const modal = document.getElementById(id);
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
-      document.body.style.overflow = 'auto';
+    function closeHomePanel() {
+
+      Object.values(homePanels).forEach(panel => {
+        panel.classList.add("hidden");
+      });
+
+      mainMenu.classList.remove("hidden");
     }
 
-    document.addEventListener('click', function(event) {
-      if (event.target.classList.contains('modal-bg')) {
-        event.target.classList.add('hidden');
-        event.target.classList.remove('flex');
-        document.body.style.overflow = 'auto';
+
+    /* -----------------------------------------
+       PERSONAL FAVOURITES
+    ----------------------------------------- */
+
+    const homeView = document.getElementById("home-view");
+    const favouritesView = document.getElementById("favourites-view");
+
+    function openFavourites(updateHash = true) {
+
+      closeHomePanel();
+
+      homeView.classList.add("slide-away");
+
+      setTimeout(() => {
+        favouritesView.classList.add("active");
+      }, 110);
+
+      if (updateHash) {
+        history.pushState(null, "", "#personal-favourites");
       }
-    });
+    }
+
+    function closeFavourites() {
+
+      favouritesView.classList.remove("active");
+
+      setTimeout(() => {
+        homeView.classList.remove("slide-away");
+      }, 120);
+
+      history.pushState(
+        "",
+        document.title,
+        window.location.pathname + window.location.search
+      );
+    }
+
+
+    /* -----------------------------------------
+       PERSONAL FAVOURITE PROJECT DATA
+    ----------------------------------------- */
+
+    const favouriteProjects = {
+
+      edtech: {
+        index: "01 / 03",
+        category: "Business Analytics",
+        title: "EdTech Analytics",
+        vibe:
+          "An end-to-end commercial view of an EdTech business — following attention from lead generation through enrolment, payments and revenue.",
+        tech: [
+          "SQL",
+          "Power BI",
+          "Data Modelling",
+          "Business Analytics"
+        ],
+        insight:
+          "The project connects marketing performance, funnel conversion and programme economics so decisions can be made around where money is being generated, where prospects are being lost, and which programmes deserve investment.",
+        visualClass: "visual-edtech",
+        background: "#155e9c",
+        link:
+          "https://github.com/Tanaya0210/edtech-analytics"
+      },
+
+      atp: {
+        index: "02 / 03",
+        category: "Sports Analytics / Statistical Modelling",
+        title: "ATP Tennis Match Prediction",
+        vibe:
+          "Wimbledon took over my Instagram feed and left me wondering: how much of a tennis match can we actually predict before it begins?",
+        tech: [
+          "Python",
+          "Statistical Modelling",
+          "Machine Learning",
+          "Sports Analytics"
+        ],
+        insight:
+          "Using ATP men's singles data from 2005–2025, the project combines Elo ratings, rankings, surface performance, head-to-head history and recent form while comparing chronological and random validation strategies.",
+        visualClass: "visual-atp",
+        background: "#f3ead7",
+        link: ""
+      },
+
+      mue: {
+        index: "03 / 03",
+        category: "Data Analytics",
+        title: "Market User Engagement",
+        vibe:
+          "A time capsule: the same analytical starting point revisited with a very different way of thinking.",
+        tech: [
+          "Python",
+          "Pandas",
+          "EDA",
+          "Data Visualisation"
+        ],
+        insight:
+          "Instead of treating predictive modelling as the destination, the refurbished project focuses on patterns, quantified findings, user behaviour and business recommendations — showing how my approach to analysis evolved.",
+        visualClass: "visual-mue",
+        background: "#402064",
+        link:
+          "https://github.com/Tanaya0210/market-user-engagement"
+      }
+
+    };
+
+
+    /* -----------------------------------------
+       OPEN / CLOSE PROJECT LOOKBOOK
+    ----------------------------------------- */
+
+    const projectView =
+      document.getElementById("project-view");
+
+    const projectVisual =
+      document.getElementById("project-visual");
+
+    const projectArt =
+      document.getElementById("project-art");
+
+    const projectTitle =
+      document.getElementById("project-title");
+
+    const projectCategory =
+      document.getElementById("project-category");
+
+    const projectVibe =
+      document.getElementById("project-vibe");
+
+    const projectTech =
+      document.getElementById("project-tech");
+
+    const projectInsight =
+      document.getElementById("project-insight");
+
+    const projectIndex =
+      document.getElementById("project-index");
+
+    const projectLink =
+      document.getElementById("project-link");
+
+
+    function openFavouriteProject(projectKey) {
+
+      const project =
+        favouriteProjects[projectKey];
+
+      projectIndex.textContent =
+        project.index;
+
+      projectCategory.textContent =
+        project.category;
+
+      projectTitle.textContent =
+        project.title;
+
+      projectVibe.textContent =
+        project.vibe;
+
+      projectInsight.textContent =
+        project.insight;
+
+      projectTech.innerHTML = "";
+
+      project.tech.forEach(tool => {
+
+        const span =
+          document.createElement("span");
+
+        span.className =
+          "tech-chip";
+
+        span.textContent =
+          tool;
+
+        projectTech.appendChild(span);
+      });
+
+      projectVisual.style.background =
+        project.background;
+
+      projectArt.className =
+        "project-visual-art " +
+        project.visualClass;
+
+
+      /*
+        Only display the View Project link
+        when we actually have a confirmed URL.
+      */
+
+      if (project.link) {
+
+        projectLink.href =
+          project.link;
+
+        projectLink.style.display =
+          "inline-block";
+
+      } else {
+
+        projectLink.style.display =
+          "none";
+      }
+
+      projectView.classList.add("active");
+    }
+
+
+    function closeProject() {
+
+      projectView.classList.remove("active");
+    }
+
+
+    /* -----------------------------------------
+       LANGUAGE LOOKBOOK PROJECT DATA
+    ----------------------------------------- */
+
+    const languageProjects = {
+
+      R: [
+        {
+          title: "Advertising & Sales Performance",
+          description:
+            "Statistical analysis of advertising expenditure and sales performance using R.",
+          url:
+            "https://github.com/Tanaya0210/Advertising-Data-Analysis"
+        },
+        {
+          title: "Diabetes Pedigree Function Analysis",
+          description:
+            "Statistical exploration and modelling of diabetes-related data using R.",
+          url:
+            "https://github.com/Tanaya0210/Predicting-Diabetes-Pedigree-Function"
+        }
+      ],
+
+      SQL: [
+        {
+          title: "Colorado Motor Vehicle Sales",
+          description:
+            "Relational data analysis exploring vehicle sales patterns and structured querying.",
+          url:
+            "https://github.com/Tanaya0210/Colorado-Motor-Vehicle-Sales"
+        },
+        {
+          title: "EdTech Analytics",
+          description:
+            "SQL-backed funnel, marketing and commercial analytics for an EdTech business.",
+          url:
+            "https://github.com/Tanaya0210/edtech-analytics"
+        }
+      ],
+
+      Python: [
+        {
+          title: "Heart Disease Prediction",
+          description:
+            "Classification modelling and clinical-data analysis for cardiovascular risk prediction.",
+          url:
+            "https://github.com/Tanaya0210/heart-disease-prediction"
+        },
+        {
+          title: "Cybersecurity Threat Analysis",
+          description:
+            "Exploratory analysis of suspicious web interactions and behavioural threat patterns.",
+          url:
+            "https://github.com/Tanaya0210/Cybersecurity-Suspicious-Web-Threat-Interactions"
+        }
+      ],
+
+      Excel: []
+    };
+
+
+    /* -----------------------------------------
+       LANGUAGE LOOKBOOK
+    ----------------------------------------- */
+
+    const languageView =
+      document.getElementById("language-view");
+
+    const languageHeading =
+      document.getElementById("language-heading");
+
+    const languageProjectList =
+      document.getElementById("language-project-list");
+
+
+    function openLanguage(language) {
+
+      languageHeading.textContent =
+        language;
+
+      languageProjectList.innerHTML =
+        "";
+
+      const projects =
+        languageProjects[language];
+
+
+      if (!projects || projects.length === 0) {
+
+        languageProjectList.innerHTML = `
+          <div class="empty-state">
+            Selected Excel work will be added here as the portfolio develops.
+          </div>
+        `;
+
+      } else {
+
+        projects.forEach((project, index) => {
+
+          const projectElement =
+            document.createElement("a");
+
+          projectElement.className =
+            "language-project";
+
+          projectElement.href =
+            project.url;
+
+          projectElement.target =
+            "_blank";
+
+          projectElement.rel =
+            "noopener noreferrer";
+
+          projectElement.innerHTML = `
+            <span class="language-project-number">
+              ${String(index + 1).padStart(2, "0")}
+            </span>
+
+            <span class="language-project-title">
+              ${project.title}
+            </span>
+
+            <span class="language-project-desc">
+              ${project.description}
+            </span>
+
+            <span class="language-project-arrow">
+              →
+            </span>
+          `;
+
+          languageProjectList.appendChild(
+            projectElement
+          );
+        });
+      }
+
+      languageView.classList.add("active");
+    }
+
+
+    function closeLanguage() {
+
+      languageView.classList.remove("active");
+    }
+
+
+    /* -----------------------------------------
+       DIRECT LINK FROM GITHUB
+
+       https://tanaya0210.github.io/#personal-favourites
+       opens the favourites screen automatically.
+    ----------------------------------------- */
+
+    function handleHash() {
+
+      if (
+        window.location.hash ===
+        "#personal-favourites"
+      ) {
+        openFavourites(false);
+      }
+    }
+
+    window.addEventListener(
+      "load",
+      handleHash
+    );
+
   </script>
+
 </body>
 </html>
