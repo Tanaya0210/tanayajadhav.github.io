@@ -178,6 +178,2588 @@
     .menu-item {
       width: 100%;
 
+      padding: 18px 0;
+
+      border: 0;
+      background: transparent;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 55px;
+
+      gap: 24px;
+
+      align-items: center;
+
+      text-align: left;
+
+      cursor: pointer;
+
+      transition:
+        transform .25s ease,
+        opacity .25s ease;
+    }
+
+    .menu-item:hover {
+      transform: translateX(8px);
+    }
+
+    .menu-title {
+      font-family: "DM Sans", sans-serif;
+
+      font-size: clamp(2.1rem, 4.35vw, 4.5rem);
+
+      font-weight: 300;
+
+      line-height: 1;
+
+      letter-spacing: -.045em;
+    }
+
+    .menu-number {
+      color: var(--muted);
+
+      font-size: .95rem;
+
+      letter-spacing: .1em;
+    }
+
+    /* ======================================================
+       HOME PANELS
+    ====================================================== */
+
+    .home-panel {
+      width: 100%;
+
+      animation:
+        panelEnter
+        .4s
+        var(--ease);
+    }
+
+    @keyframes panelEnter {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .panel-back {
+      padding: 0;
+
+      margin-bottom: 32px;
+
+      border: 0;
+
+      background: transparent;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 15px;
+
+      cursor: pointer;
+
+      transition: opacity .2s ease;
+    }
+
+    .panel-back:hover {
+      opacity: .6;
+    }
+
+    .panel-back-title {
+      font-family: "DM Sans", sans-serif;
+
+      font-size: clamp(2.6rem, 5vw, 5rem);
+
+      font-weight: 300;
+
+      letter-spacing: -.045em;
+    }
+
+    .panel-number {
+      margin-top: 10px;
+
+      color: var(--muted);
+
+      font-size: .9rem;
+    }
+
+    .panel-copy {
+      max-width: 650px;
+
+      color: #d3d0ca;
+
+      font-size: clamp(1rem, 1.25vw, 1.17rem);
+
+      line-height: 1.85;
+
+      font-weight: 300;
+    }
+
+    .panel-copy p {
+      margin: 0 0 18px;
+    }
+
+    .panel-accent {
+      color: var(--text);
+
+      font-weight: 500;
+    }
+
+    /* ======================================================
+       EXPERIENCE
+    ====================================================== */
+
+    .experience-list {
+      max-width: 690px;
+
+      border-top: 1px solid var(--line);
+    }
+
+    .experience-item {
+      display: grid;
+
+      grid-template-columns:
+        minmax(180px, .85fr)
+        minmax(260px, 1.5fr);
+
+      gap: 30px;
+
+      padding: 25px 0;
+
+      border-bottom:
+        1px solid var(--line);
+    }
+
+    .experience-meta {
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 6px;
+    }
+
+    .experience-company {
+      color: var(--text);
+
+      font-size: 1.1rem;
+
+      font-weight: 500;
+    }
+
+    .experience-date {
+      color: var(--muted);
+
+      font-size: .8rem;
+
+      letter-spacing: .08em;
+
+      text-transform: uppercase;
+    }
+
+    .experience-role {
+      margin: 0 0 8px;
+
+      font-size: 1.15rem;
+
+      font-weight: 500;
+    }
+
+    .experience-description {
+      margin: 0;
+
+      color: #c7c4be;
+
+      font-size: .93rem;
+
+      line-height: 1.65;
+
+      font-weight: 300;
+    }
+
+    /* ======================================================
+       CONTACT
+    ====================================================== */
+
+    .contact-line {
+      max-width: 650px;
+
+      margin: 0 0 34px;
+
+      font-family: "Playfair Display", serif;
+
+      font-style: italic;
+
+      font-size: clamp(1.65rem, 2.8vw, 2.8rem);
+
+      line-height: 1.35;
+    }
+
+    .contact-badges {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+    }
+
+    .contact-badge {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 10px;
+
+      padding: 12px 17px;
+
+      border: 1px solid var(--line);
+
+      text-decoration: none;
+
+      transition:
+        background .2s ease,
+        border-color .2s ease,
+        transform .2s ease;
+    }
+
+    .contact-badge:hover {
+      background: #292929;
+
+      border-color: #666;
+
+      transform: translateY(-2px);
+    }
+
+    .contact-badge strong {
+      font-size: .82rem;
+
+      text-transform: uppercase;
+
+      letter-spacing: .12em;
+    }
+
+    .contact-badge span {
+      color: var(--muted);
+
+      font-size: .82rem;
+    }
+
+    /* ======================================================
+       LOOKBOOK
+    ====================================================== */
+
+    .language-intro {
+      max-width: 650px;
+
+      margin-bottom: 34px;
+
+      color: #d3d0ca;
+
+      font-size: 1.03rem;
+
+      line-height: 1.8;
+
+      font-weight: 300;
+    }
+
+    .language-grid {
+      max-width: 690px;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      border-top: 1px solid var(--line);
+
+      border-left: 1px solid var(--line);
+    }
+
+    .language-card {
+      min-height: 120px;
+
+      padding: 18px;
+
+      border: 0;
+
+      border-right:
+        1px solid var(--line);
+
+      border-bottom:
+        1px solid var(--line);
+
+      background: transparent;
+
+      color: var(--text);
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: flex-start;
+
+      justify-content: space-between;
+
+      text-align: left;
+
+      cursor: pointer;
+
+      transition:
+        background .25s ease,
+        color .25s ease;
+    }
+
+    .language-card:hover {
+      background: var(--text);
+
+      color: #111;
+    }
+
+    .language-card strong {
+      font-size: 1.45rem;
+
+      font-weight: 500;
+    }
+
+    .language-card span {
+      font-size: .74rem;
+
+      text-transform: uppercase;
+
+      letter-spacing: .1em;
+
+      opacity: .65;
+    }
+
+    /* ======================================================
+       PERSONAL FAVOURITES
+    ====================================================== */
+
+    #favourites-view {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 20;
+
+      overflow-y: auto;
+
+      background: var(--bg);
+
+      transform: translateX(105%);
+
+      opacity: 0;
+
+      pointer-events: none;
+
+      transition:
+        transform .75s var(--ease),
+        opacity .5s ease;
+    }
+
+    #favourites-view.active {
+      transform: translateX(0);
+
+      opacity: 1;
+
+      pointer-events: auto;
+    }
+
+    .favourites-shell {
+      min-height: 100vh;
+
+      display: flex;
+
+      flex-direction: column;
+    }
+
+    .favourites-header {
+      min-height: 95px;
+
+      padding: 26px;
+
+      background: var(--bg);
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+    }
+
+    .favourites-home {
+      border: 0;
+
+      background: transparent;
+
+      cursor: pointer;
+
+      font-family: "Playfair Display", serif;
+
+      font-style: italic;
+
+      font-size: clamp(1.5rem, 2.3vw, 2.2rem);
+
+      transition: opacity .2s ease;
+    }
+
+    .favourites-home:hover {
+      opacity: .6;
+    }
+
+    .favourite-grid {
+      flex: 1;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      min-height:
+        calc(100vh - 95px);
+    }
+
+    .favourite-card {
+      position: relative;
+
+      min-height: 600px;
+
+      padding: 42px;
+
+      overflow: hidden;
+
+      border: 0;
+
+      text-align: left;
+
+      cursor: pointer;
+
+      transition:
+        filter .25s ease;
+    }
+
+    .favourite-card:hover {
+      filter: brightness(1.035);
+    }
+
+    .fav-number {
+      font-size: .78rem;
+
+      letter-spacing: .16em;
+
+      text-transform: uppercase;
+
+      opacity: .72;
+    }
+
+    .fav-title {
+      position: absolute;
+
+      left: 42px;
+
+      right: 42px;
+
+      bottom: 105px;
+
+      margin: 0;
+
+      font-size: clamp(2.3rem, 3.7vw, 4.7rem);
+
+      line-height: .98;
+
+      font-weight: 500;
+
+      letter-spacing: -.05em;
+    }
+
+    .fav-subtitle {
+      position: absolute;
+
+      left: 42px;
+
+      right: 42px;
+
+      bottom: 62px;
+
+      margin: 0;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-style: italic;
+
+      font-size: 1.15rem;
+
+      opacity: .82;
+    }
+
+    .open-label {
+      position: absolute;
+
+      right: 34px;
+
+      bottom: 32px;
+
+      font-size: .74rem;
+
+      font-weight: 600;
+
+      letter-spacing: .16em;
+    }
+
+    /* ======================================================
+       EDTECH — PASTEL BLUE
+    ====================================================== */
+
+    .fav-edtech {
+      background:
+        linear-gradient(
+          145deg,
+          #8EA7C9 0%,
+          var(--pastel-blue) 55%,
+          #6889B5 100%
+        );
+    }
+
+    /* ======================================================
+       MUE — PASTEL PURPLE
+    ====================================================== */
+
+    .fav-mue {
+      background:
+        linear-gradient(
+          145deg,
+          #B9ABBD 0%,
+          var(--pastel-purple) 55%,
+          #96849A 100%
+        );
+
+      color: #2b1830;
+    }
+
+    /* ======================================================
+       TENNIS — PASTEL RED
+    ====================================================== */
+
+    .fav-atp {
+      background:
+        linear-gradient(
+          145deg,
+          #F08B81 0%,
+          var(--pastel-red) 55%,
+          #D55F56 100%
+        );
+
+      color: #4b1713;
+    }
+
+    /* ======================================================
+       PROJECT DETAIL
+    ====================================================== */
+
+    #project-view {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 40;
+
+      overflow-y: auto;
+
+      background: var(--bg);
+
+      transform: translateX(105%);
+
+      opacity: 0;
+
+      pointer-events: none;
+
+      transition:
+        transform .7s var(--ease),
+        opacity .45s ease;
+    }
+
+    #project-view.active {
+      transform: translateX(0);
+
+      opacity: 1;
+
+      pointer-events: auto;
+    }
+
+    .project-topbar {
+      min-height: 88px;
+
+      padding: 24px 5vw;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      border-bottom:
+        1px solid var(--line);
+    }
+
+    .project-back {
+      border: 0;
+
+      background: transparent;
+
+      cursor: pointer;
+
+      text-transform: uppercase;
+
+      letter-spacing: .14em;
+
+      font-size: .75rem;
+    }
+
+    .project-back:hover {
+      opacity: .6;
+    }
+
+    .project-index {
+      color: var(--muted);
+
+      font-size: .78rem;
+
+      letter-spacing: .12em;
+    }
+
+    .project-spread {
+      min-height:
+        calc(100vh - 89px);
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(0, 1.12fr)
+        minmax(360px, .88fr);
+    }
+
+    .project-visual {
+      min-height: 650px;
+
+      transition:
+        background .3s ease;
+    }
+
+    .project-copy {
+      padding:
+        clamp(42px, 6vw, 95px);
+
+      background: #202020;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: center;
+    }
+
+    .project-category {
+      margin-bottom: 20px;
+
+      color: var(--muted);
+
+      font-size: .72rem;
+
+      letter-spacing: .15em;
+
+      text-transform: uppercase;
+    }
+
+    .project-copy h1 {
+      margin: 0 0 40px;
+
+      font-size:
+        clamp(2.8rem, 5vw, 5.7rem);
+
+      line-height: .96;
+
+      font-weight: 400;
+
+      letter-spacing: -.055em;
+    }
+
+    .detail-block {
+      padding: 20px 0;
+
+      border-top:
+        1px solid var(--line);
+    }
+
+    .detail-label {
+      margin-bottom: 8px;
+
+      color: var(--muted);
+
+      font-size: .68rem;
+
+      text-transform: uppercase;
+
+      letter-spacing: .16em;
+    }
+
+    .detail-value {
+      color: #dedbd5;
+
+      font-size: .96rem;
+
+      line-height: 1.7;
+
+      font-weight: 300;
+    }
+
+    .tech-row {
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 8px;
+    }
+
+    .tech-chip {
+      padding: 7px 11px;
+
+      border: 1px solid #555;
+
+      color: #ddd9d1;
+
+      font-size: .72rem;
+    }
+
+    .project-link {
+      margin-top: 35px;
+
+      align-self: flex-start;
+
+      padding-bottom: 5px;
+
+      border-bottom:
+        1px solid currentColor;
+
+      text-decoration: none;
+
+      text-transform: uppercase;
+
+      letter-spacing: .13em;
+
+      font-size: .76rem;
+    }
+
+    .project-link:hover {
+      opacity: .6;
+    }
+
+    /* ======================================================
+       LANGUAGE PROJECT VIEW
+    ====================================================== */
+
+    #language-view {
+      position: fixed;
+
+      inset: 0;
+
+      z-index: 30;
+
+      overflow-y: auto;
+
+      background: var(--bg);
+
+      transform: translateX(105%);
+
+      opacity: 0;
+
+      pointer-events: none;
+
+      transition:
+        transform .7s var(--ease),
+        opacity .45s ease;
+    }
+
+    #language-view.active {
+      transform: translateX(0);
+
+      opacity: 1;
+
+      pointer-events: auto;
+    }
+
+    .language-page {
+      max-width: 1400px;
+
+      margin: auto;
+
+      padding:
+        38px 6vw 90px;
+    }
+
+    .language-page-header {
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      padding-bottom: 25px;
+
+      border-bottom:
+        1px solid var(--line);
+    }
+
+    .language-back {
+      border: 0;
+
+      background: transparent;
+
+      cursor: pointer;
+
+      font-size: .75rem;
+
+      text-transform: uppercase;
+
+      letter-spacing: .14em;
+    }
+
+    .language-heading {
+      margin:
+        75px 0 50px;
+
+      font-family:
+        "Playfair Display",
+        serif;
+
+      font-style: italic;
+
+      font-size:
+        clamp(2rem, 4vw, 4rem);
+    }
+
+    .language-project-list {
+      display: grid;
+
+      gap: 1px;
+
+      background: var(--line);
+
+      border:
+        1px solid var(--line);
+    }
+
+    .language-project {
+      padding:
+        28px 32px;
+
+      background: var(--bg);
+
+      display: grid;
+
+      grid-template-columns:
+        80px
+        minmax(260px, 1fr)
+        1.5fr
+        80px;
+
+      align-items: center;
+
+      gap: 24px;
+
+      text-decoration: none;
+
+      transition:
+        background .2s ease;
+    }
+
+    .language-project:hover {
+      background: #242424;
+    }
+
+    .language-project-number {
+      color: var(--muted);
+
+      font-size: .8rem;
+    }
+
+    .language-project-title {
+      font-size: 1.3rem;
+
+      font-weight: 500;
+    }
+
+    .language-project-desc {
+      color: var(--muted);
+
+      font-size: .92rem;
+
+      line-height: 1.6;
+    }
+
+    .language-project-arrow {
+      text-align: right;
+
+      font-size: 1.25rem;
+    }
+
+    .empty-state {
+      padding: 50px;
+
+      background: var(--bg);
+
+      color: var(--muted);
+
+      line-height: 1.8;
+    }
+
+    /* ======================================================
+       RESPONSIVE
+    ====================================================== */
+
+    @media (max-width: 900px) {
+
+      #home-view {
+        align-items: flex-start;
+
+        padding:
+          35px 6vw 60px;
+      }
+
+      .home-grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+      }
+
+      .portrait-frame {
+        max-width: 100%;
+
+        aspect-ratio: 1 / 1.12;
+      }
+
+      .menu-column {
+        min-height: auto;
+      }
+
+      .menu-wrap {
+        max-width: none;
+      }
+
+      .menu-item {
+        padding: 14px 0;
+      }
+
+      .menu-title {
+        font-size:
+          clamp(2.2rem, 9vw, 3.8rem);
+      }
+
+      .experience-item {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+      }
+
+      .language-grid {
+        grid-template-columns:
+          repeat(2, 1fr);
+      }
+
+      .favourite-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .favourite-card {
+        min-height: 430px;
+      }
+
+      .project-spread {
+        grid-template-columns: 1fr;
+      }
+
+      .project-visual {
+        min-height: 430px;
+      }
+
+      .language-project {
+        grid-template-columns:
+          45px
+          1fr
+          45px;
+      }
+
+      .language-project-desc {
+        display: none;
+      }
+    }
+
+    @media (max-width: 560px) {
+
+      .name {
+        font-size: 1.25rem;
+      }
+
+      .language-grid {
+        grid-template-columns:
+          1fr 1fr;
+      }
+
+      .contact-badges {
+        flex-direction: column;
+
+        align-items: stretch;
+      }
+
+      .contact-badge {
+        justify-content:
+          space-between;
+      }
+
+      .project-copy {
+        padding:
+          40px 7vw 60px;
+      }
+    }
+
+  </style>
+
+</head>
+
+
+<body>
+
+  <!-- ======================================================
+       HOME
+  ====================================================== -->
+
+  <main id="home-view">
+
+    <div class="home-grid">
+
+      <section class="portrait-column">
+
+        <h1 class="name">
+          Tanaya Jadhav
+        </h1>
+
+        <div class="portrait-frame">
+
+          <img
+            src="tanaya-portrait.png?v=6"
+            alt="Portrait of Tanaya Jadhav"
+          >
+
+        </div>
+
+      </section>
+
+
+      <section class="menu-column">
+
+        <div class="menu-wrap">
+
+          <div id="main-menu">
+
+            <!-- 01 ABOUT -->
+
+            <button
+              class="menu-item"
+              type="button"
+              onclick="openHomePanel('about')"
+            >
+
+              <span class="menu-title">
+                About
+              </span>
+
+              <span class="menu-number">
+                01
+              </span>
+
+            </button>
+
+
+            <!-- 02 EXPERIENCE -->
+
+            <button
+              class="menu-item"
+              type="button"
+              onclick="openHomePanel('experience')"
+            >
+
+              <span class="menu-title">
+                Experience
+              </span>
+
+              <span class="menu-number">
+                02
+              </span>
+
+            </button>
+
+
+            <!-- 03 PERSONAL FAVOURITES -->
+
+            <button
+              class="menu-item"
+              type="button"
+              onclick="openFavourites()"
+            >
+
+              <span class="menu-title">
+                Personal Favourites
+              </span>
+
+              <span class="menu-number">
+                03
+              </span>
+
+            </button>
+
+
+            <!-- 04 LOOKBOOK -->
+
+            <button
+              class="menu-item"
+              type="button"
+              onclick="openHomePanel('lookbook')"
+            >
+
+              <span class="menu-title">
+                Lookbook
+              </span>
+
+              <span class="menu-number">
+                04
+              </span>
+
+            </button>
+
+
+            <!-- 05 CONTACT -->
+
+            <button
+              class="menu-item"
+              type="button"
+              onclick="openHomePanel('contact')"
+            >
+
+              <span class="menu-title">
+                Contact
+              </span>
+
+              <span class="menu-number">
+                05
+              </span>
+
+            </button>
+
+          </div>
+
+
+          <!-- ==================================================
+               ABOUT
+          =================================================== -->
+
+          <div
+            id="about-panel"
+            class="home-panel hidden"
+          >
+
+            <button
+              class="panel-back"
+              type="button"
+              onclick="closeHomePanel()"
+            >
+
+              <span class="panel-back-title">
+                About
+              </span>
+
+              <span class="panel-number">
+                01
+              </span>
+
+            </button>
+
+
+            <div class="panel-copy">
+
+              <p>
+                I'm a Data Science postgraduate at the
+                <span class="panel-accent">
+                  University of Nottingham
+                </span>,
+                working across data analysis,
+                statistics, machine learning,
+                business intelligence and visualisation.
+              </p>
+
+              <p>
+                I like starting with the question before
+                choosing the tool: understanding what the
+                data is actually saying, why it matters,
+                and how the result can support a useful
+                decision.
+              </p>
+
+              <p>
+                My work spans commercial analytics,
+                sports modelling, cybersecurity,
+                healthcare, marketing and user engagement,
+                using
+                <span class="panel-accent">
+                  Python, SQL, R, Power BI and Excel.
+                </span>
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- ==================================================
+               EXPERIENCE
+          =================================================== -->
+
+          <div
+            id="experience-panel"
+            class="home-panel hidden"
+          >
+
+            <button
+              class="panel-back"
+              type="button"
+              onclick="closeHomePanel()"
+            >
+
+              <span class="panel-back-title">
+                Experience
+              </span>
+
+              <span class="panel-number">
+                02
+              </span>
+
+            </button>
+
+
+            <div class="experience-list">
+
+              <!-- UNIFIED MENTOR -->
+
+              <article class="experience-item">
+
+                <div class="experience-meta">
+
+                  <span class="experience-company">
+                    Unified Mentor
+                  </span>
+
+                  <span class="experience-date">
+                    Dec 2024 — Mar 2025
+                  </span>
+
+                </div>
+
+
+                <div>
+
+                  <h3 class="experience-role">
+                    Data Analyst Intern
+                  </h3>
+
+                  <p class="experience-description">
+                    Worked with EdTech course data using
+                    Python, preparing and analysing records
+                    and applying predictive modelling to
+                    understand subscriber demand.
+                  </p>
+
+                </div>
+
+              </article>
+
+
+              <!-- LABMENTIX -->
+
+              <article class="experience-item">
+
+                <div class="experience-meta">
+
+                  <span class="experience-company">
+                    Labmentix
+                  </span>
+
+                  <span class="experience-date">
+                    Apr 2025 — Oct 2025
+                  </span>
+
+                </div>
+
+
+                <div>
+
+                  <h3 class="experience-role">
+                    Data Science Intern
+                  </h3>
+
+                  <p class="experience-description">
+                    Analysed climate-related social media
+                    data using Python, including data
+                    preparation, feature engineering,
+                    exploratory analysis and predictive
+                    modelling.
+                  </p>
+
+                </div>
+
+              </article>
+
+            </div>
+
+          </div>
+
+
+          <!-- ==================================================
+               LOOKBOOK
+          =================================================== -->
+
+          <div
+            id="lookbook-panel"
+            class="home-panel hidden"
+          >
+
+            <button
+              class="panel-back"
+              type="button"
+              onclick="closeHomePanel()"
+            >
+
+              <span class="panel-back-title">
+                Lookbook
+              </span>
+
+              <span class="panel-number">
+                04
+              </span>
+
+            </button>
+
+
+            <p class="language-intro">
+              Different questions call for different tools.
+              This collection moves across statistical work
+              in R, relational analysis in SQL, broader
+              analytical workflows in Python, and
+              spreadsheet-based analysis in Excel.
+            </p>
+
+
+            <div class="language-grid">
+
+              <button
+                class="language-card"
+                type="button"
+                onclick="openLanguage('R')"
+              >
+
+                <strong>
+                  R
+                </strong>
+
+                <span>
+                  View projects →
+                </span>
+
+              </button>
+
+
+              <button
+                class="language-card"
+                type="button"
+                onclick="openLanguage('SQL')"
+              >
+
+                <strong>
+                  SQL
+                </strong>
+
+                <span>
+                  View projects →
+                </span>
+
+              </button>
+
+
+              <button
+                class="language-card"
+                type="button"
+                onclick="openLanguage('Python')"
+              >
+
+                <strong>
+                  Python
+                </strong>
+
+                <span>
+                  View projects →
+                </span>
+
+              </button>
+
+
+              <button
+                class="language-card"
+                type="button"
+                onclick="openLanguage('Excel')"
+              >
+
+                <strong>
+                  Excel
+                </strong>
+
+                <span>
+                  View projects →
+                </span>
+
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <!-- ==================================================
+               CONTACT
+          =================================================== -->
+
+          <div
+            id="contact-panel"
+            class="home-panel hidden"
+          >
+
+            <button
+              class="panel-back"
+              type="button"
+              onclick="closeHomePanel()"
+            >
+
+              <span class="panel-back-title">
+                Contact
+              </span>
+
+              <span class="panel-number">
+                05
+              </span>
+
+            </button>
+
+
+            <p class="contact-line">
+              Got a project, role, or data problem in mind?
+              Let’s collaborate.
+            </p>
+
+
+            <div class="contact-badges">
+
+              <a
+                class="contact-badge"
+                href="https://www.linkedin.com/in/tanayajadhav0210/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+
+                <strong>
+                  LinkedIn
+                </strong>
+
+                <span>
+                  Connect →
+                </span>
+
+              </a>
+
+
+              <a
+                class="contact-badge"
+                href="mailto:tanayajadhav2026@gmail.com"
+              >
+
+                <strong>
+                  Email
+                </strong>
+
+                <span>
+                  Contact →
+                </span>
+
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+
+  <!-- ======================================================
+       PERSONAL FAVOURITES
+  ====================================================== -->
+
+  <section id="favourites-view">
+
+    <div class="favourites-shell">
+
+      <header class="favourites-header">
+
+        <button
+          class="favourites-home"
+          type="button"
+          onclick="closeFavourites()"
+        >
+          Personal Favourites
+        </button>
+
+      </header>
+
+
+      <div class="favourite-grid">
+
+        <!-- EDTECH -->
+
+        <button
+          class="favourite-card fav-edtech"
+          type="button"
+          onclick="openFavouriteProject('edtech')"
+        >
+
+          <span class="fav-number">
+            01 / Business Analytics
+          </span>
+
+          <h2 class="fav-title">
+            EdTech<br>
+            Analytics
+          </h2>
+
+          <p class="fav-subtitle">
+            The Uno Reverse Project
+          </p>
+
+          <span class="open-label">
+            OPEN →
+          </span>
+
+        </button>
+
+
+        <!-- MUE -->
+
+        <button
+          class="favourite-card fav-mue"
+          type="button"
+          onclick="openFavouriteProject('mue')"
+        >
+
+          <span class="fav-number">
+            02 / Data Analytics
+          </span>
+
+          <h2 class="fav-title">
+            Market User<br>
+            Engagement
+          </h2>
+
+          <p class="fav-subtitle">
+            The Project I Came Back To
+          </p>
+
+          <span class="open-label">
+            OPEN →
+          </span>
+
+        </button>
+
+
+        <!-- TENNIS -->
+
+        <button
+          class="favourite-card fav-atp"
+          type="button"
+          onclick="openFavouriteProject('tennis')"
+        >
+
+          <span class="fav-number">
+            03 / Sports Analytics
+          </span>
+
+          <h2 class="fav-title">
+            Tennis Match<br>
+            Prediction
+          </h2>
+
+          <p class="fav-subtitle">
+            The One Wimbledon Started
+          </p>
+
+          <span class="open-label">
+            OPEN →
+          </span>
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ======================================================
+       PROJECT DETAIL
+  ====================================================== -->
+
+  <section id="project-view">
+
+    <header class="project-topbar">
+
+      <button
+        class="project-back"
+        type="button"
+        onclick="closeProject()"
+      >
+        ← Personal Favourites
+      </button>
+
+
+      <span
+        id="project-index"
+        class="project-index"
+      >
+        01 / 03
+      </span>
+
+    </header>
+
+
+    <div class="project-spread">
+
+      <section
+        id="project-visual"
+        class="project-visual"
+      ></section>
+
+
+      <section class="project-copy">
+
+        <p
+          id="project-category"
+          class="project-category"
+        ></p>
+
+
+        <h1 id="project-title"></h1>
+
+
+        <div class="detail-block">
+
+          <div class="detail-label">
+            The Vibe
+          </div>
+
+          <div
+            id="project-vibe"
+            class="detail-value"
+          ></div>
+
+        </div>
+
+
+        <div class="detail-block">
+
+          <div class="detail-label">
+            The Tech
+          </div>
+
+          <div
+            id="project-tech"
+            class="tech-row"
+          ></div>
+
+        </div>
+
+
+        <div class="detail-block">
+
+          <div class="detail-label">
+            The Insight
+          </div>
+
+          <div
+            id="project-insight"
+            class="detail-value"
+          ></div>
+
+        </div>
+
+
+        <a
+          id="project-link"
+          class="project-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          View Project →
+        </a>
+
+      </section>
+
+    </div>
+
+  </section>
+
+
+  <!-- ======================================================
+       LANGUAGE LOOKBOOK
+  ====================================================== -->
+
+  <section id="language-view">
+
+    <div class="language-page">
+
+      <header class="language-page-header">
+
+        <button
+          class="language-back"
+          type="button"
+          onclick="closeLanguage()"
+        >
+          ← Lookbook
+        </button>
+
+
+        <span class="project-index">
+          Data Project Lookbook
+        </span>
+
+      </header>
+
+
+      <h1
+        id="language-heading"
+        class="language-heading"
+      >
+        Python
+      </h1>
+
+
+      <div
+        id="language-project-list"
+        class="language-project-list"
+      ></div>
+
+    </div>
+
+  </section>
+
+
+  <script>
+
+    /* ======================================================
+       HOME PANELS
+    ====================================================== */
+
+    const mainMenu =
+      document.getElementById(
+        "main-menu"
+      );
+
+
+    const homePanels = {
+
+      about:
+        document.getElementById(
+          "about-panel"
+        ),
+
+      experience:
+        document.getElementById(
+          "experience-panel"
+        ),
+
+      lookbook:
+        document.getElementById(
+          "lookbook-panel"
+        ),
+
+      contact:
+        document.getElementById(
+          "contact-panel"
+        )
+
+    };
+
+
+    function openHomePanel(name) {
+
+      mainMenu
+        .classList
+        .add("hidden");
+
+
+      Object
+        .values(homePanels)
+        .forEach(
+          panel => {
+
+            panel
+              .classList
+              .add("hidden");
+
+          }
+        );
+
+
+      homePanels[name]
+        .classList
+        .remove("hidden");
+    }
+
+
+    function closeHomePanel() {
+
+      Object
+        .values(homePanels)
+        .forEach(
+          panel => {
+
+            panel
+              .classList
+              .add("hidden");
+
+          }
+        );
+
+
+      mainMenu
+        .classList
+        .remove("hidden");
+    }
+
+
+    /* ======================================================
+       PERSONAL FAVOURITES
+    ====================================================== */
+
+    const homeView =
+      document.getElementById(
+        "home-view"
+      );
+
+
+    const favouritesView =
+      document.getElementById(
+        "favourites-view"
+      );
+
+
+    function openFavourites(
+      updateHash = true
+    ) {
+
+      closeHomePanel();
+
+
+      homeView
+        .classList
+        .add("slide-away");
+
+
+      setTimeout(
+        () => {
+
+          favouritesView
+            .classList
+            .add("active");
+
+        },
+        110
+      );
+
+
+      if (updateHash) {
+
+        history.pushState(
+          null,
+          "",
+          "#personal-favourites"
+        );
+
+      }
+    }
+
+
+    function closeFavourites() {
+
+      favouritesView
+        .classList
+        .remove("active");
+
+
+      setTimeout(
+        () => {
+
+          homeView
+            .classList
+            .remove("slide-away");
+
+        },
+        120
+      );
+
+
+      history.pushState(
+        "",
+        document.title,
+        window.location.pathname +
+        window.location.search
+      );
+    }
+
+
+    /* ======================================================
+       PROJECT DATA
+    ====================================================== */
+
+    const favouriteProjects = {
+
+      edtech: {
+
+        index:
+          "01 / 03",
+
+        category:
+          "Business Analytics",
+
+        title:
+          "EdTech Analytics",
+
+        vibe:
+          "An end-to-end commercial view of an EdTech business — following attention from lead generation through enrolment, payments and revenue.",
+
+        tech: [
+          "SQL",
+          "Power BI",
+          "Data Modelling",
+          "Business Analytics"
+        ],
+
+        insight:
+          "The project connects marketing performance, funnel conversion and programme economics so decisions can be made around where money is being generated, where prospects are being lost, and which programmes deserve investment.",
+
+        background:
+          "#102F5A",
+
+        link:
+          "https://github.com/Tanaya0210/edtech-analytics"
+
+      },
+
+
+      mue: {
+
+        index:
+          "02 / 03",
+
+        category:
+          "Data Analytics",
+
+        title:
+          "Market User Engagement",
+
+        vibe:
+          "A time capsule: the same analytical starting point revisited with a very different way of thinking.",
+
+        tech: [
+          "Python",
+          "Pandas",
+          "EDA",
+          "Data Visualisation"
+        ],
+
+        insight:
+          "Instead of treating predictive modelling as the destination, the refurbished project focuses on patterns, quantified findings, user behaviour and business recommendations — showing how my approach to analysis evolved.",
+
+        background:
+          "#2F0A3A",
+
+        link:
+          "https://github.com/Tanaya0210/market-user-engagement"
+
+      },
+
+
+      tennis: {
+
+        index:
+          "03 / 03",
+
+        category:
+          "Sports Analytics / Statistical Modelling",
+
+        title:
+          "Tennis Match Prediction",
+
+        vibe:
+          "Wimbledon took over my Instagram feed and left me wondering: how much of a tennis match can we actually predict before it begins?",
+
+        tech: [
+          "Python",
+          "Statistical Modelling",
+          "Machine Learning",
+          "Sports Analytics"
+        ],
+
+        insight:
+          "Using ATP men's singles data from 2005–2025, the project combines Elo ratings, rankings, surface performance, head-to-head history and recent form while comparing chronological and random validation strategies.",
+
+        background:
+          "#841B13",
+
+        link:
+          ""
+
+      }
+
+    };
+
+
+    /* ======================================================
+       OPEN PROJECT
+    ====================================================== */
+
+    const projectView =
+      document.getElementById(
+        "project-view"
+      );
+
+
+    const projectVisual =
+      document.getElementById(
+        "project-visual"
+      );
+
+
+    const projectTitle =
+      document.getElementById(
+        "project-title"
+      );
+
+
+    const projectCategory =
+      document.getElementById(
+        "project-category"
+      );
+
+
+    const projectVibe =
+      document.getElementById(
+        "project-vibe"
+      );
+
+
+    const projectTech =
+      document.getElementById(
+        "project-tech"
+      );
+
+
+    const projectInsight =
+      document.getElementById(
+        "project-insight"
+      );
+
+
+    const projectIndex =
+      document.getElementById(
+        "project-index"
+      );
+
+
+    const projectLink =
+      document.getElementById(
+        "project-link"
+      );
+
+
+    function openFavouriteProject(
+      projectKey
+    ) {
+
+      const project =
+        favouriteProjects[
+          projectKey
+        ];
+
+
+      projectIndex.textContent =
+        project.index;
+
+
+      projectCategory.textContent =
+        project.category;
+
+
+      projectTitle.textContent =
+        project.title;
+
+
+      projectVibe.textContent =
+        project.vibe;
+
+
+      projectInsight.textContent =
+        project.insight;
+
+
+      projectTech.innerHTML =
+        "";
+
+
+      project.tech.forEach(
+        tool => {
+
+          const chip =
+            document.createElement(
+              "span"
+            );
+
+
+          chip.className =
+            "tech-chip";
+
+
+          chip.textContent =
+            tool;
+
+
+          projectTech
+            .appendChild(
+              chip
+            );
+
+        }
+      );
+
+
+      projectVisual.style.background =
+        project.background;
+
+
+      if (project.link) {
+
+        projectLink.href =
+          project.link;
+
+
+        projectLink.style.display =
+          "inline-block";
+
+      }
+
+      else {
+
+        projectLink.style.display =
+          "none";
+
+      }
+
+
+      projectView
+        .classList
+        .add("active");
+    }
+
+
+    function closeProject() {
+
+      projectView
+        .classList
+        .remove("active");
+
+    }
+
+
+    /* ======================================================
+       LANGUAGE PROJECTS
+
+       EDTECH REMOVED FROM SQL TO AVOID DUPLICATION
+    ====================================================== */
+
+    const languageProjects = {
+
+      R: [
+
+        {
+
+          title:
+            "Advertising & Sales Performance",
+
+          description:
+            "Statistical analysis of advertising expenditure and sales performance using R.",
+
+          url:
+            "https://github.com/Tanaya0210/Advertising-Data-Analysis"
+
+        },
+
+
+        {
+
+          title:
+            "Diabetes Pedigree Function Analysis",
+
+          description:
+            "Statistical exploration and modelling of diabetes-related data using R.",
+
+          url:
+            "https://github.com/Tanaya0210/Predicting-Diabetes-Pedigree-Function"
+
+        }
+
+      ],
+
+
+      SQL: [
+
+        {
+
+          title:
+            "Colorado Motor Vehicle Sales",
+
+          description:
+            "Relational data analysis exploring vehicle sales patterns and structured querying.",
+
+          url:
+            "https://github.com/Tanaya0210/Colorado-Motor-Vehicle-Sales"
+
+        }
+
+      ],
+
+
+      Python: [
+
+        {
+
+          title:
+            "Heart Disease Prediction",
+
+          description:
+            "Classification modelling and clinical-data analysis for cardiovascular risk prediction.",
+
+          url:
+            "https://github.com/Tanaya0210/heart-disease-prediction"
+
+        },
+
+
+        {
+
+          title:
+            "Cybersecurity Threat Analysis",
+
+          description:
+            "Exploratory analysis of suspicious web interactions and behavioural threat patterns.",
+
+          url:
+            "https://github.com/Tanaya0210/Cybersecurity-Suspicious-Web-Threat-Interactions"
+
+        }
+
+      ],
+
+
+      Excel: []
+
+    };
+
+
+    const languageView =
+      document.getElementById(
+        "language-view"
+      );
+
+
+    const languageHeading =
+      document.getElementById(
+        "language-heading"
+      );
+
+
+    const languageProjectList =
+      document.getElementById(
+        "language-project-list"
+      );
+
+
+    function openLanguage(
+      language
+    ) {
+
+      languageHeading.textContent =
+        language;
+
+
+      languageProjectList.innerHTML =
+        "";
+
+
+      const projects =
+        languageProjects[
+          language
+        ];
+
+
+      if (
+        !projects ||
+        projects.length === 0
+      ) {
+
+        languageProjectList.innerHTML = `
+
+          <div class="empty-state">
+
+            Selected ${language} work will be
+            added here as the portfolio
+            develops.
+
+          </div>
+
+        `;
+
+      }
+
+      else {
+
+        projects.forEach(
+          (project, index) => {
+
+            const link =
+              document.createElement(
+                "a"
+              );
+
+
+            link.className =
+              "language-project";
+
+
+            link.href =
+              project.url;
+
+
+            link.target =
+              "_blank";
+
+
+            link.rel =
+              "noopener noreferrer";
+
+
+            link.innerHTML = `
+
+              <span class="language-project-number">
+
+                ${String(index + 1).padStart(2, "0")}
+
+              </span>
+
+              <span class="language-project-title">
+
+                ${project.title}
+
+              </span>
+
+              <span class="language-project-desc">
+
+                ${project.description}
+
+              </span>
+
+              <span class="language-project-arrow">
+
+                →
+
+              </span>
+
+            `;
+
+
+            languageProjectList
+              .appendChild(
+                link
+              );
+
+          }
+        );
+
+      }
+
+
+      languageView
+        .classList
+        .add("active");
+    }
+
+
+    function closeLanguage() {
+
+      languageView
+        .classList
+        .remove("active");
+
+    }
+
+
+    /* ======================================================
+       GITHUB DEEP LINK
+    ====================================================== */
+
+    function handleHash() {
+
+      if (
+        window.location.hash ===
+        "#personal-favourites"
+      ) {
+
+        openFavourites(false);
+
+      }
+    }
+
+
+    window.addEventListener(
+      "load",
+      handleHash
+    );
+
+  </script>
+
+</body>
+
+</html>    }
+
+    /* ======================================================
+       HOME
+    ====================================================== */
+
+    #home-view {
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+
+      padding: 54px 7vw;
+
+      transition:
+        transform .75s var(--ease),
+        opacity .55s ease;
+    }
+
+    #home-view.slide-away {
+      transform: translateX(-105%);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .home-grid {
+      width: 100%;
+      max-width: 1450px;
+
+      margin: 0 auto;
+
+      display: grid;
+
+      grid-template-columns:
+        minmax(320px, .95fr)
+        minmax(420px, 1.1fr);
+
+      gap: 8vw;
+
+      align-items: center;
+    }
+
+    .portrait-column {
+      width: 100%;
+    }
+
+    .name {
+      margin: 0 0 28px;
+
+      font-size: clamp(1.45rem, 2.2vw, 2.5rem);
+
+      font-weight: 700;
+
+      letter-spacing: .14em;
+
+      text-transform: uppercase;
+    }
+
+    .portrait-frame {
+      width: 100%;
+      max-width: 590px;
+
+      aspect-ratio: .83;
+
+      overflow: hidden;
+
+      background: #111;
+    }
+
+    .portrait-frame img {
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: center top;
+
+      display: block;
+    }
+
+    .menu-column {
+      min-height: 590px;
+
+      display: flex;
+      align-items: center;
+    }
+
+    .menu-wrap {
+      width: 100%;
+      max-width: 640px;
+    }
+
+    .menu-item {
+      width: 100%;
+
       padding: 23px 0;
 
       border: 0;
