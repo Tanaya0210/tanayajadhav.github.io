@@ -1113,340 +1113,656 @@
 
 
 
-    /* ======================================================
-       ATP ANIMATION
-    ====================================================== */
+/* ======================================================
+   ATP ANIMATION — REFINED
+====================================================== */
 
+.fav-atp {
+  color: #4a1018;
 
-    .atp-stage {
+  background:
+    radial-gradient(
+      circle at 50% 38%,
+      #f7c6cf 0%,
+      #ef9baa 55%,
+      #df7789 100%
+    );
+}
 
-      overflow: hidden;
+.atp-stage {
+  overflow: hidden;
 
-      background:
-        radial-gradient(
-          circle at 50% 35%,
-          #fffdf7,
-          #f8efdf 58%,
-          #ead6b8
-        );
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      #f8c9d0 0%,
+      #ee9cab 58%,
+      #db7488 100%
+    );
+}
 
-    }
+.dessert-scene {
+  position: relative;
 
+  width: min(390px, 78%);
+  height: 390px;
+}
 
-    .dessert-scene {
 
-      position: relative;
+/* ======================
+   BOWL
+====================== */
 
-      width: min(360px, 74%);
+.bowl-wrap {
+  position: absolute;
 
-      height: 380px;
+  left: 50%;
+  bottom: 28px;
 
-    }
+  width: 285px;
+  height: 135px;
 
+  transform:
+    translate(-50%, 240px);
 
-    /* BOWL */
+  opacity: 0;
 
-    .bowl-wrap {
+  z-index: 5;
+}
 
-      position: absolute;
+.bowl {
+  position: absolute;
 
-      left: 50%;
+  left: 0;
+  bottom: 0;
 
-      bottom: 34px;
+  width: 285px;
+  height: 125px;
 
-      width: 270px;
+  border-radius:
+    18px 18px 150px 150px;
 
-      height: 130px;
+  background:
+    linear-gradient(
+      to bottom,
+      #fffefb,
+      #ece5da
+    );
 
-      transform:
-        translate(-50%, 220px);
+  border: 2px solid #ddd1c0;
 
-      opacity: 0;
+  box-shadow:
+    inset 0 -18px 24px rgba(0,0,0,.08),
+    0 24px 36px rgba(80,40,45,.22);
 
-    }
+  z-index: 3;
+}
 
+.bowl-rim {
+  position: absolute;
 
-    .bowl {
+  left: 0;
+  top: -8px;
 
-      position: absolute;
+  width: 285px;
+  height: 42px;
 
-      left: 0;
+  border-radius: 50%;
 
-      bottom: 0;
+  background:
+    radial-gradient(
+      ellipse at center,
+      #f7f1e7 0%,
+      #fffdf8 62%,
+      #e5dac9 100%
+    );
 
-      width: 270px;
+  border: 2px solid #d8cbbc;
 
-      height: 120px;
+  box-shadow:
+    inset 0 5px 10px rgba(0,0,0,.06);
 
-      border-radius:
-        18px 18px 145px 145px;
+  z-index: 6;
+}
 
-      background:
-        linear-gradient(
-          to bottom,
-          #ffffff,
-          #ece5d8
-        );
 
-      box-shadow:
-        inset 0 -14px 22px rgba(0,0,0,.08),
-        0 25px 35px rgba(80,50,30,.18);
+/* ======================
+   STRAWBERRIES
+====================== */
 
-      border: 2px solid #ded4c4;
+.strawberry {
+  position: absolute;
 
-      z-index: 3;
+  width: 60px;
+  height: 72px;
 
-    }
+  z-index: 8;
 
+  opacity: 0;
+}
 
-    .bowl-rim {
+.berry-body {
+  position: absolute;
 
-      position: absolute;
+  left: 8px;
+  top: 12px;
 
-      left: 0;
+  width: 45px;
+  height: 52px;
 
-      top: -7px;
+  background:
+    radial-gradient(
+      circle at 35% 28%,
+      #ff6c79 0%,
+      #ef3c4d 34%,
+      #c71933 78%,
+      #9f1026 100%
+    );
 
-      width: 270px;
+  border-radius:
+    52% 48% 58% 62% /
+    42% 44% 68% 70%;
 
-      height: 40px;
+  transform: rotate(5deg);
 
-      border-radius: 50%;
+  box-shadow:
+    inset -7px -9px 11px rgba(100,0,15,.16),
+    inset 5px 5px 9px rgba(255,255,255,.12);
+}
 
-      background: #fffdf8;
+.berry-body::after {
+  content: "";
 
-      border: 2px solid #d9cfbf;
+  position: absolute;
 
-      box-shadow:
-        inset 0 6px 10px rgba(0,0,0,.05);
+  width: 8px;
+  height: 14px;
 
-      z-index: 5;
+  border-radius: 50%;
 
-    }
+  background: rgba(255,255,255,.22);
 
+  left: 11px;
+  top: 9px;
 
-    /* STRAWBERRIES */
+  transform: rotate(25deg);
+}
 
-    .strawberry {
+.berry-leaf {
+  position: absolute;
 
-      position: absolute;
+  top: 4px;
+  left: 15px;
 
-      width: 58px;
+  width: 31px;
+  height: 23px;
 
-      height: 66px;
+  background: #246942;
 
-      z-index: 4;
+  clip-path:
+    polygon(
+      50% 0%,
+      61% 31%,
+      91% 10%,
+      77% 44%,
+      100% 56%,
+      66% 61%,
+      60% 96%,
+      48% 68%,
+      28% 94%,
+      32% 61%,
+      0% 55%,
+      24% 42%,
+      10% 11%,
+      40% 31%
+    );
 
-      opacity: 0;
+  z-index: 4;
+}
 
-      transform: translateY(-330px);
+.berry-seed {
+  position: absolute;
 
-    }
+  width: 3px;
+  height: 6px;
 
+  border-radius: 50%;
 
-    .berry-body {
+  background: #f5d98a;
 
-      position: absolute;
+  z-index: 6;
+}
 
-      inset: 8px 7px 2px;
+.seed1 {
+  left: 20px;
+  top: 30px;
+}
 
-      background: #d9273e;
+.seed2 {
+  left: 36px;
+  top: 36px;
+}
 
-      border-radius:
-        55% 55% 68% 68%;
+.seed3 {
+  left: 28px;
+  top: 49px;
+}
 
-      transform: rotate(45deg);
 
-      box-shadow:
-        inset -6px -6px 10px
-        rgba(110,0,12,.13);
+/* Random-looking final positions inside bowl */
 
-    }
+.berry1 {
+  left: 70px;
+  bottom: 92px;
 
+  transform:
+    translate(-110px, -370px)
+    rotate(-28deg);
+}
 
-    .berry-leaf {
+.berry2 {
+  left: 116px;
+  bottom: 82px;
 
-      position: absolute;
+  transform:
+    translate(80px, -400px)
+    rotate(22deg);
+}
 
-      top: 2px;
+.berry3 {
+  left: 162px;
+  bottom: 96px;
 
-      left: 17px;
+  transform:
+    translate(-35px, -390px)
+    rotate(8deg);
+}
 
-      width: 26px;
+.berry4 {
+  left: 98px;
+  bottom: 125px;
 
-      height: 18px;
+  transform:
+    translate(125px, -430px)
+    rotate(-17deg);
+}
 
-      background: #2c744e;
+.berry5 {
+  left: 150px;
+  bottom: 128px;
 
-      clip-path:
-        polygon(
-          50% 0,
-          62% 35%,
-          100% 17%,
-          77% 55%,
-          98% 78%,
-          58% 70%,
-          50% 100%,
-          41% 70%,
-          3% 80%,
-          24% 54%,
-          0 18%,
-          39% 35%
-        );
+  transform:
+    translate(-125px, -420px)
+    rotate(27deg);
+}
 
-      z-index: 4;
 
-    }
+/* ======================
+   CREAM
+====================== */
 
+.cream-svg {
+  position: absolute;
 
-    .berry-seed {
+  left: 64px;
+  top: 50px;
 
-      position: absolute;
+  width: 265px;
+  height: 225px;
 
-      width: 3px;
+  overflow: visible;
 
-      height: 5px;
+  z-index: 12;
 
-      border-radius: 50%;
+  opacity: 0;
+}
 
-      background: #f6d992;
+.cream-stream {
+  fill: none;
 
-      z-index: 6;
+  stroke: #fffdf6;
 
-    }
+  stroke-width: 20;
 
+  stroke-linecap: round;
 
-    .seed1 { left: 21px; top: 27px; }
+  stroke-dasharray: 270;
+  stroke-dashoffset: 270;
 
-    .seed2 { left: 34px; top: 34px; }
-
-    .seed3 { left: 27px; top: 46px; }
-
-
-
-    .berry1 {
-
-      left: 72px;
-
-      bottom: 99px;
-
-    }
-
-
-    .berry2 {
-
-      left: 124px;
-
-      bottom: 107px;
-
-    }
-
-
-    .berry3 {
-
-      left: 171px;
-
-      bottom: 96px;
-
-    }
-
-
-    .berry4 {
-
-      left: 104px;
-
-      bottom: 145px;
-
-      transform:
-        translateY(-330px)
-        rotate(-15deg);
-
-    }
-
-
-    .berry5 {
-
-      left: 158px;
-
-      bottom: 145px;
-
-      transform:
-        translateY(-330px)
-        rotate(12deg);
-
-    }
-
-
-
-    /* CREAM */
-
-    .cream-svg {
-
-      position: absolute;
-
-      left: 62px;
-
-      top: 65px;
-
-      width: 250px;
-
-      height: 210px;
-
-      overflow: visible;
-
-      z-index: 8;
-
-      opacity: 0;
-
-    }
-
-
-    .cream-stream {
-
-      fill: none;
-
-      stroke: #fffdf7;
-
-      stroke-width: 17;
-
-      stroke-linecap: round;
-
-      stroke-dasharray: 250;
-
-      stroke-dashoffset: 250;
-
-      filter:
-        drop-shadow(
-          0 3px 2px
-          rgba(130,100,80,.12)
-        );
-
-    }
-
-
-    .cream-swirl {
-
-      fill: none;
-
-      stroke: #fffdf7;
-
-      stroke-width: 18;
-
-      stroke-linecap: round;
-
-      stroke-linejoin: round;
-
-      stroke-dasharray: 500;
-
-      stroke-dashoffset: 500;
-
-      filter:
-        drop-shadow(
-          0 3px 2px
-          rgba(130,100,80,.12)
-        );
-
-    }
+  filter:
+    drop-shadow(
+      0 4px 3px rgba(95,35,45,.16)
+    );
+}
+
+.cream-swirl {
+  fill: none;
+
+  stroke: #fffdf6;
+
+  stroke-width: 20;
+
+  stroke-linecap: round;
+  stroke-linejoin: round;
+
+  stroke-dasharray: 520;
+  stroke-dashoffset: 520;
+
+  filter:
+    drop-shadow(
+      0 4px 3px rgba(95,35,45,.16)
+    );
+}
+
+
+/* ======================
+   ATP ANIMATION
+====================== */
+
+.fav-atp.is-animating
+.bowl-wrap {
+  animation:
+    bowlRise
+    4.35s
+    var(--ease)
+    forwards;
+}
+
+.fav-atp.is-animating
+.berry1 {
+  animation:
+    berryDrop1
+    .72s
+    1.00s
+    var(--ease)
+    forwards;
+}
+
+.fav-atp.is-animating
+.berry2 {
+  animation:
+    berryDrop2
+    .72s
+    1.17s
+    var(--ease)
+    forwards;
+}
+
+.fav-atp.is-animating
+.berry3 {
+  animation:
+    berryDrop3
+    .72s
+    1.34s
+    var(--ease)
+    forwards;
+}
+
+.fav-atp.is-animating
+.berry4 {
+  animation:
+    berryDrop4
+    .74s
+    1.52s
+    var(--ease)
+    forwards;
+}
+
+.fav-atp.is-animating
+.berry5 {
+  animation:
+    berryDrop5
+    .74s
+    1.69s
+    var(--ease)
+    forwards;
+}
+
+.fav-atp.is-animating
+.cream-svg {
+  animation:
+    creamAppear
+    1.85s
+    2.10s
+    ease
+    forwards;
+}
+
+.fav-atp.is-animating
+.cream-stream {
+  animation:
+    drawCream
+    .65s
+    2.10s
+    ease-out
+    forwards;
+}
+
+.fav-atp.is-animating
+.cream-swirl {
+  animation:
+    drawSwirl
+    .95s
+    2.58s
+    ease-out
+    forwards;
+}
+
+
+/* ======================
+   KEYFRAMES
+====================== */
+
+@keyframes bowlRise {
+  0% {
+    opacity: 0;
+    transform:
+      translate(-50%, 240px);
+  }
+
+  14% {
+    opacity: 1;
+  }
+
+  28% {
+    opacity: 1;
+    transform:
+      translate(-50%, 0);
+  }
+
+  85% {
+    opacity: 1;
+    transform:
+      translate(-50%, 0);
+  }
+
+  100% {
+    opacity: 0;
+    transform:
+      translate(-50%, 190px);
+  }
+}
+
+
+/* Each berry gets a different path */
+
+@keyframes berryDrop1 {
+  0% {
+    opacity: 0;
+    transform:
+      translate(-110px, -370px)
+      rotate(-28deg)
+      scale(.85);
+  }
+
+  70% {
+    opacity: 1;
+    transform:
+      translate(4px, 10px)
+      rotate(7deg)
+      scale(1.02);
+  }
+
+  86% {
+    transform:
+      translate(-2px, -5px)
+      rotate(-3deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform:
+      translate(0, 0)
+      rotate(-7deg);
+  }
+}
+
+@keyframes berryDrop2 {
+  0% {
+    opacity: 0;
+    transform:
+      translate(80px, -400px)
+      rotate(22deg)
+      scale(.9);
+  }
+
+  72% {
+    opacity: 1;
+    transform:
+      translate(-7px, 11px)
+      rotate(-10deg);
+  }
+
+  87% {
+    transform:
+      translate(3px, -5px)
+      rotate(3deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform:
+      translate(0, 0)
+      rotate(8deg);
+  }
+}
+
+@keyframes berryDrop3 {
+  0% {
+    opacity: 0;
+    transform:
+      translate(-35px, -390px)
+      rotate(8deg);
+  }
+
+  71% {
+    opacity: 1;
+    transform:
+      translate(8px, 8px)
+      rotate(14deg);
+  }
+
+  86% {
+    transform:
+      translate(-3px, -6px)
+      rotate(4deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform:
+      translate(0, 0)
+      rotate(-4deg);
+  }
+}
+
+@keyframes berryDrop4 {
+  0% {
+    opacity: 0;
+    transform:
+      translate(125px, -430px)
+      rotate(-17deg);
+  }
+
+  72% {
+    opacity: 1;
+    transform:
+      translate(-10px, 7px)
+      rotate(-22deg);
+  }
+
+  88% {
+    transform:
+      translate(4px, -5px)
+      rotate(-10deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform:
+      translate(0, 0)
+      rotate(-15deg);
+  }
+}
+
+@keyframes berryDrop5 {
+  0% {
+    opacity: 0;
+    transform:
+      translate(-125px, -420px)
+      rotate(27deg);
+  }
+
+  70% {
+    opacity: 1;
+    transform:
+      translate(9px, 9px)
+      rotate(19deg);
+  }
+
+  87% {
+    transform:
+      translate(-4px, -4px)
+      rotate(11deg);
+  }
+
+  100% {
+    opacity: 1;
+    transform:
+      translate(0, 0)
+      rotate(14deg);
+  }
+}
+
+@keyframes creamAppear {
+  0% {
+    opacity: 0;
+  }
+
+  8% {
+    opacity: 1;
+  }
+
+  82% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes drawCream {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes drawSwirl {
+  to {
+    stroke-dashoffset: 0;
+  }
+}tion yeah?tionyeah?
 
 
 
